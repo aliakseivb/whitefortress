@@ -1,83 +1,62 @@
 @font-face {
-  src: url("../fonts/RussoOne-Regular.ttf");
-  font-family: RussoOneRegular;
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  src: url("../fonts/Buenard-Bold.ttf");
-  font-family: BuenardBold;
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  src: url("../fonts/Buenard-Regular.ttf");
-  font-family: BuenardRegular;
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  src: url("../fonts/NotoSans-Thin.ttf");
-  font-family: NotoSansThin;
+  src: url("../fonts/Murecho-Thin.ttf");
+  font-family: Murecho-Thin;
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  src: url("../fonts/NotoSans-ExtraLight.ttf");
-  font-family: NotoSansExtraLight;
+  src: url("../fonts/Murecho-ExtraLight.ttf");
+  font-family: Murecho-ExtraLight;
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
-  src: url("../fonts/NotoSans-Light.ttf");
-  font-family: NotoSansLight;
+  src: url("../fonts/Murecho-Light.ttf");
+  font-family: Murecho-Light;
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  src: url("../fonts/NotoSans-Regular.ttf");
-  font-family: NotoSansRegular;
+  src: url("../fonts/Murecho-Regular.ttf");
+  font-family: Murecho-Regular;
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  src: url("../fonts/NotoSans-Medium.ttf");
-  font-family: NotoSansMedium;
+  src: url("../fonts/Murecho-Medium.ttf");
+  font-family: Murecho-Medium;
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  src: url("../fonts/NotoSans-SemiBold.ttf");
-  font-family: NotoSansSemiBold;
+  src: url("../fonts/Murecho-SemiBold.ttf");
+  font-family: Murecho-SemiBold;
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  src: url("../fonts/NotoSans-Bold.ttf");
-  font-family: NotoSansBold;
+  src: url("../fonts/Murecho-Bold.ttf");
+  font-family: Murecho-Bold;
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  src: url("../fonts/NotoSans-ExtraBold.ttf");
-  font-family: NotoSansExtraBold;
+  src: url("../fonts/Murecho-ExtraBold.ttf");
+  font-family: Murecho-ExtraBold;
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
-  src: url("../fonts/NotoSans-Black.ttf");
-  font-family: NotoSansBlack;
+  src: url("../fonts/Murecho-Black.ttf");
+  font-family: Murecho-Black;
   font-weight: 900;
   font-style: normal;
 }
@@ -150,7 +129,7 @@ header, main, footer {
 }
 
 .nav-link {
-  font-family: NotoSansBlack, sans-serif;
+  font-family: Murecho-ExtraBold, sans-serif;
   font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
@@ -162,13 +141,8 @@ header, main, footer {
   transition: background-size .3s;
 }
 
-.nav-link:hover {
-  color: #264695;
-  background-size: 100% 2px;
-}
-
+.nav-link:hover,
 .nav-link.active {
-  color: #264695;
   background-size: 100% 2px;
 }
 
@@ -183,20 +157,16 @@ header, main, footer {
   margin: 0 5px;
   display: flex;
   align-items: center;
-  width: 30px;
-  height: 30px;
 }
 
 .soc-link svg {
+  width: 30px;
+  height: 30px;
   fill: #264695;
-  width: 92%;
-  height: 92%;
-  position: relative;
 }
-
 .soc-link:last-child svg {
-  width: 100%;
-  height: 100%;
+  width: 31px;
+  height: 31px;
 }
 
 .soc-link:hover svg {
@@ -226,7 +196,7 @@ header, main, footer {
 .lang {
   display: flex;
   align-items: center;
-  font-family: NotoSansBlack, sans-serif;
+  font-family: Murecho-Bold, sans-serif;
   font-size: 20px;
   color: #264695;
   cursor: pointer;
@@ -258,7 +228,7 @@ header, main, footer {
 }
 
 .intro {
-  background-image: url("../images/bg-intro1.png");
+  background-image: url("../images/bg-intro.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -274,7 +244,7 @@ header, main, footer {
 }
 
 h1 {
-  font-family: NotoSansBlack, sans-serif;
+  font-family: Murecho-Black, sans-serif;
   font-size: 50px;
   letter-spacing: 4px;
   line-height: 120%;
@@ -289,7 +259,7 @@ h1 span {
 }
 
 .intro-desc {
-  font-family: NotoSansMedium, sans-serif;
+  font-family: Murecho-Regular, sans-serif;
   font-size: 26px;
   line-height: 120%;
   max-width: 650px;
@@ -306,20 +276,22 @@ h1 span {
 .button {
   outline: none;
   border: 0;
-  font-family: NotoSansBlack, sans-serif;
+  font-family: Murecho-Bold, sans-serif;
   cursor: pointer;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .intro-button {
   padding: 25px 10px;
   background: #ffffff;
   color: #264695;
-  font-size: 26px;
+  font-size: 28px;
   text-decoration: none;
 }
 
 .intro-button:hover {
+  font-family: Murecho-ExtraBold, sans-serif;
   color: #ffffff;
   background: #264695;
 }
@@ -367,7 +339,7 @@ h1 span {
 
 .partner-slider-item-text {
   padding: 20px 0;
-  font-family: NotoSansSemibold, sans-serif;
+  font-family: Murecho-Medium, sans-serif;
   font-size: 30px;
   color: #151515;
   text-align: center;
@@ -376,7 +348,7 @@ h1 span {
 }
 
 .partner-slider-item-name {
-  font-family: BuenardBold, sans-serif;
+  font-family: Murecho-SemiBold, sans-serif;
   font-size: 40px;
   text-align: center;
   color: #151515;
@@ -430,9 +402,8 @@ h1 span {
 }
 
 h2 {
-  font-family: RussoOneRegular, sans-serif;
-  font-size: 40px;
-  /*font-weight: bold;*/
+  font-family: Murecho-Black, sans-serif;
+  font-size: 44px;
   letter-spacing: 2px;
   text-align: center;
   margin-bottom: 60px;
@@ -448,7 +419,7 @@ h2 {
 }
 
 .about p {
-  font-family: BuenardRegular, sans-serif;
+  font-family: Murecho-Regular, sans-serif;
   font-size: 34px;
   line-height: 120%;
   text-align: center;
@@ -476,7 +447,7 @@ h2 {
 }
 
 .what-doing-items li {
-  font-family: NotoSansRegular, sans-serif;
+  font-family: Murecho-Regular, sans-serif;
   font-size: 30px;
   color: #ffffff;
   background: #264695;
@@ -488,10 +459,7 @@ h2 {
 
 .what-we {
   background: #ffffff;
-  padding-top: 50px;
-}
-
-.what-we-info {
+  padding: 50px 0 20px;
   margin-bottom: 50px;
 }
 
@@ -505,7 +473,6 @@ h2 {
   align-items: center;
   padding: 20px 50px;
   box-sizing: border-box;
-  /*margin-bottom: 80px;*/
 }
 
 .what-we-info-image {
@@ -521,7 +488,7 @@ h2 {
 }
 
 .what-we-info-text {
-  font-family: BuenardBold, sans-serif;
+  font-family: Murecho-SemiBold, sans-serif;
   font-size: 34px;
   line-height: 120%;
   text-align: justify;
@@ -535,8 +502,8 @@ h2 {
 }
 
 h3 {
-  font-family: BuenardRegular, sans-serif;
-  font-size: 35px;
+  font-family: Murecho-Regular, sans-serif;
+  font-size: 38px;
   text-align: center;
   margin-bottom: 50px;
 }
@@ -550,24 +517,22 @@ h3 {
   margin-bottom: unset;
 }
 
-.slogan-title span.change {
+.slogan-title span.orange {
   color: #f5ac70;
 }
-
-.slogan-title span {
-  font-family: RussoOneRegular, sans-serif;
-  font-size: 50px;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
 .slogan-title span:last-child {
-  font-family: BuenardBold, sans-serif;
+  font-family: Murecho-Bold, sans-serif;
   font-size: 50px;
   margin-top: 20px;
   display: inline-block;
 }
 
+.slogan-title span {
+  font-family: Murecho-ExtraBold, sans-serif;
+  font-size: 50px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
 .services {
   background-image: url("../images/services-bg.jpg");
   background-size: cover;
@@ -606,7 +571,7 @@ h3 {
 }
 
 .services-item-text {
-  font-family: NotoSansBold, sans-serif;
+  font-family: Murecho-Medium, sans-serif;
   font-size: 30px;
   text-align: center;
   text-transform: uppercase;
@@ -684,8 +649,8 @@ h3 {
 }
 
 .questions-container p {
-  font-family: BuenardRegular, sans-serif;
-  font-size: 24px;
+  font-family: Murecho-Regular, sans-serif;
+  font-size: 30px;
   line-height: 120%;
   text-align: center;
   max-width: 650px;
@@ -718,8 +683,8 @@ h3 {
   margin: 0 0 15px;
   text-decoration: none;
   color: #264695;
-  font-family: NotoSansRegular, sans-serif;
-  font-size: 18px;
+  font-family: Murecho-Regular, sans-serif;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -747,12 +712,16 @@ h3 {
   border-radius: 5px;
   background-color: #F3F3F3;
   padding: 15px 20px;
-  font-family: BuenardBold, sans-serif;
-  font-size: 16px;
+  font-family: Murecho-Bold, sans-serif;
+  font-size: 20px;
+  max-width: 100%;
+  color: #172c61;
 }
 
 textarea {
   min-height: 150px;
+  resize: none;
+  overflow-y: auto;
 }
 
 .form-input::placeholder {
@@ -779,7 +748,6 @@ textarea {
   background-color: #172c61;
   border: 1px solid transparent;
 }
-
 
 .footer {
   background-color: #0e1b3b;
@@ -836,8 +804,8 @@ textarea {
 
 .contacts-title,
 .social-title{
-  font-family: NotoSansBlack, sans-serif;
-  font-size: 20px;
+  font-family: Murecho-Black, sans-serif;
+  font-size: 22px;
   margin-bottom: 30px;
   text-transform: uppercase;
 }
@@ -845,15 +813,16 @@ textarea {
 .contacts-item {
   margin-bottom: 20px;
 }
+
 .address-title {
-  font-family: NotoSansBlack, sans-serif;
-  font-size: 18px;
+  font-family: Murecho-ExtraBold, sans-serif;
+  font-size: 20px;
   margin-bottom: 5px;
 }
 
 .address-place {
-  font-family: NotoSansRegular, sans-serif;
-  font-size: 16px;
+  font-family: Murecho-Regular, sans-serif;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
@@ -878,7 +847,7 @@ textarea {
 }
 
 .rights {
-  font-family: NotoSansBlack,sans-serif;
-  font-size: 14px;
+  font-family: Murecho-Light, sans-serif;
+  font-size: 16px;
   color: #ffffff;
 }
