@@ -172,7 +172,7 @@ header, main, footer {
 
 .social {
   position: relative;
-  z-index: 20;
+  z-index: inherit;
   display: flex;
   align-items: center;
   background-color: #ffffff;
