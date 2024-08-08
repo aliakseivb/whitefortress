@@ -1,7 +1,54 @@
 (() => {
-  const body = document.querySelector('body');
 
+
+  const body = document.querySelector('body');
+  const bodyOverlay = document.querySelector('.body-overlay');
   const header = document.querySelector('.header');
+  const menu = document.querySelector('.menu');
+  const burger = document.querySelector('#burger');
+  // const nav = document.querySelector('.nav');
+  //
+  // const navLinks = document.querySelectorAll('.nav-link');
+  // const langItems = document.querySelectorAll('.lang-item');
+
+  // if(window.innerWidth <= 630){
+  //   menu.classList.add('small');
+  // }else {
+  //   menu.classList.remove('small');
+  // }
+  /**бургер*/
+  burger.addEventListener('click', (e) => {
+    event.preventDefault();
+    burger.classList.toggle('active');
+    menu.classList.toggle('open');
+    body.classList.toggle('hidden');
+    bodyOverlay.classList.toggle('open');
+  });
+
+  menu.addEventListener('click', (e) => {
+    if (menu.classList.contains('open')
+        && ((e.target.classList.contains('nav-link')) || e.target.classList.contains('soc-link')
+            || e.target.tagName === 'path')) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (menu.classList.contains('open')
+        && (e.target === bodyOverlay || e.target.classList.contains('header-container')
+            || e.target.classList.contains('logo'))) {
+      closeMenu();
+    }
+  });
+
+  function closeMenu() {
+    burger.classList.toggle('active');
+    menu.classList.toggle('open');
+    body.classList.toggle('hidden');
+    bodyOverlay.classList.toggle('open');
+  }
+
+  /**разные страницы, исключение ошибок рантайма*/
   if (location.href.includes('index.html')) {
     new WOW({
       animateClass: 'animate__animated',
@@ -11,10 +58,8 @@
     window.onscroll = () => {
       if (window.scrollY > 1) {
         header.classList.add('scrolly');
-        intro.style.marginTop = '150px';
       } else {
         header.classList.remove('scrolly');
-        intro.style.marginTop = 'unset';
       }
     };
 
@@ -25,25 +70,21 @@
     const successPopup = document.querySelector('.success-popup');
 
     formButton.addEventListener('click', () => {
-      console.log(1)
       successPopupOverlay.classList.add('show');
       successPopup.classList.add('show');
-      body.classList.add('noscroll');
+      body.classList.add('hidden');
     });
     successPopupButton.addEventListener('click', () => {
       successPopupOverlay.classList.remove('show');
       successPopup.classList.remove('show');
-      body.classList.remove('noscroll');
+      body.classList.remove('hidden');
     });
   } else {
-    const partnersMain = document.querySelector('.partners-main');
     window.onscroll = () => {
       if (window.scrollY > 1) {
         header.classList.add('scrolly');
-        partnersMain.style.marginTop = '150px';
       } else {
         header.classList.remove('scrolly');
-        partnersMain.style.marginTop = 'unset';
       }
     };
     const partnersItemsBlock = document.querySelector('.partners-items');
@@ -113,7 +154,6 @@
       if (!e.composedPath().includes(partnersItemsBlock)) {
         partnersPopup.classList.remove('show');
         overlay.classList.remove('show');
-        // body.classList.remove('noscroll');
         popupTitle.textContent = '';
         popupText.textContent = '';
       }
@@ -122,7 +162,6 @@
     popupClose.addEventListener('click', () => {
       partnersPopup.classList.remove('show');
       overlay.classList.remove('show');
-      // body.classList.remove('noscroll');
       popupTitle.textContent = '';
       popupText.textContent = '';
 
@@ -131,8 +170,6 @@
     overlay.addEventListener('click', () => {
       partnersPopup.classList.remove('show');
       overlay.classList.remove('show');
-      // body.classList.remove('noscroll');
-
       popupTitle.textContent = '';
       popupText.textContent = '';
 
@@ -148,7 +185,6 @@
           popupText.textContent = currentItem.text
           partnersPopup.classList.add('show');
           overlay.classList.add('show');
-          // body.classList.add('noscroll');
         }
       }
     });
