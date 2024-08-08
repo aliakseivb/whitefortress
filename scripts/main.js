@@ -6,16 +6,15 @@
   const header = document.querySelector('.header');
   const menu = document.querySelector('.menu');
   const burger = document.querySelector('#burger');
-  // const nav = document.querySelector('.nav');
-  //
-  // const navLinks = document.querySelectorAll('.nav-link');
-  // const langItems = document.querySelectorAll('.lang-item');
 
-  // if(window.innerWidth <= 630){
-  //   menu.classList.add('small');
-  // }else {
-  //   menu.classList.remove('small');
-  // }
+  window.onscroll = () => {
+    if (window.scrollY > 1) {
+      header.classList.add('scrolly');
+    } else {
+      header.classList.remove('scrolly');
+    }
+  };
+
   /**бургер*/
   burger.addEventListener('click', (e) => {
     event.preventDefault();
@@ -49,44 +48,7 @@
   }
 
   /**разные страницы, исключение ошибок рантайма*/
-  if (location.href.includes('index.html')) {
-    new WOW({
-      animateClass: 'animate__animated',
-    }).init();
-    const intro = document.querySelector('.intro');
-
-    window.onscroll = () => {
-      if (window.scrollY > 1) {
-        header.classList.add('scrolly');
-      } else {
-        header.classList.remove('scrolly');
-      }
-    };
-
-
-    const formButton = document.querySelector('.form-button');
-    const successPopupButton = document.querySelector('.success-popup-button');
-    const successPopupOverlay = document.querySelector('.success-popup-overlay');
-    const successPopup = document.querySelector('.success-popup');
-
-    formButton.addEventListener('click', () => {
-      successPopupOverlay.classList.add('show');
-      successPopup.classList.add('show');
-      body.classList.add('hidden');
-    });
-    successPopupButton.addEventListener('click', () => {
-      successPopupOverlay.classList.remove('show');
-      successPopup.classList.remove('show');
-      body.classList.remove('hidden');
-    });
-  } else {
-    window.onscroll = () => {
-      if (window.scrollY > 1) {
-        header.classList.add('scrolly');
-      } else {
-        header.classList.remove('scrolly');
-      }
-    };
+  if (location.href.includes('partners.html')) {
     const partnersItemsBlock = document.querySelector('.partners-items');
     const partnersPopup = document.querySelector('.partners-popup');
     const popupBody = document.querySelector('.partners-popup-body');
@@ -188,5 +150,29 @@
         }
       }
     });
+  }
+  if (location.href.includes('index.html')) {
+    new WOW({
+      animateClass: 'animate__animated',
+    }).init();
+
+
+    const formButton = document.querySelector('.form-button');
+    const successPopupButton = document.querySelector('.success-popup-button');
+    const successPopupOverlay = document.querySelector('.success-popup-overlay');
+    const successPopup = document.querySelector('.success-popup');
+
+    formButton.addEventListener('click', () => {
+      successPopupOverlay.classList.add('show');
+      successPopup.classList.add('show');
+      body.classList.add('hidden');
+    });
+    successPopupButton.addEventListener('click', () => {
+      successPopupOverlay.classList.remove('show');
+      successPopup.classList.remove('show');
+      body.classList.remove('hidden');
+    });
+  } else {
+
   }
 })();

@@ -1275,13 +1275,22 @@ textarea {
   background: #172c61;
 }
 
+.main.conditions,
+.main.privacy{
+  margin: 0;
+  padding: 0;
+}
+
 .rule-container {
-  padding: 100px 20px;
+  padding: 300px 20px 50px;
+  box-sizing: border-box;
 }
 
 .rule-title {
   text-align: center;
   color: #264695;
+  text-transform: uppercase;
+  font-size: 40px;
 }
 
 .rule-subtitle,
