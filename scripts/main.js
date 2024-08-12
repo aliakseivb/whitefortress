@@ -48,7 +48,7 @@
   }
 
   /**разные страницы, исключение ошибок рантайма*/
-  if (location.href.includes('partners.html')) {
+  // if (location.href.includes('partners.html')) {
     const partnersItemsBlock = document.querySelector('.partners-items');
     const partnersPopup = document.querySelector('.partners-popup');
     const popupBody = document.querySelector('.partners-popup-body');
@@ -121,21 +121,21 @@
       }
     });
 
-    popupClose.addEventListener('click', () => {
-      partnersPopup.classList.remove('show');
-      overlay.classList.remove('show');
-      popupTitle.textContent = '';
-      popupText.textContent = '';
+    // popupClose.addEventListener('click', () => {
+    //   partnersPopup.classList.remove('show');
+    //   overlay.classList.remove('show');
+    //   popupTitle.textContent = '';
+    //   popupText.textContent = '';
+    //
+    // });
 
-    });
-
-    overlay.addEventListener('click', () => {
-      partnersPopup.classList.remove('show');
-      overlay.classList.remove('show');
-      popupTitle.textContent = '';
-      popupText.textContent = '';
-
-    });
+    // overlay.addEventListener('click', () => {
+    //   partnersPopup.classList.remove('show');
+    //   overlay.classList.remove('show');
+    //   popupTitle.textContent = '';
+    //   popupText.textContent = '';
+    //
+    // });
 
     partnersItemsBlock.addEventListener('click', (e) => {
       if (e.target.tagName === 'IMG') {
@@ -150,7 +150,7 @@
         }
       }
     });
-  }
+  // }
   if (location.href.includes('index.html')) {
     new WOW({
       animateClass: 'animate__animated',
