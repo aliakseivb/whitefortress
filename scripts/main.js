@@ -199,7 +199,7 @@
     popupText.textContent = '';
   });
 
-  if (location.href.includes('index.html')) {
+  if (location.href.includes('index.html') || 'whitefortress') {
     new WOW({
       animateClass: 'animate__animated',
     }).init();
