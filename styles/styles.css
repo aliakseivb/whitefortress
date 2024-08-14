@@ -402,10 +402,9 @@ body.hidden {
   align-items: center;
   box-shadow: 0 0 7px 7px rgb(255, 255, 255);
   padding: 40px 40px;
-  background: rgba(88, 122, 199, 0.39);
+  background: rgba(88, 122, 199, 0.5);
   position: relative;
   z-index: 3;
-
 }
 
 h1 {
@@ -438,14 +437,14 @@ h1 span {
   font-family: Murecho-Medium, sans-serif;
   font-size: 30px;
   line-height: 110%;
-  width: 120%;
+  width: 125%;
   margin-bottom: 90px;
   color: #ffffff;
   position: relative;
   z-index: 1;
   box-shadow: 0 0 7px 7px rgb(255, 255, 255);
   padding: 20px 40px;
-  background-color: rgba(38, 70, 149, 0.53);
+  background-color: rgba(38, 70, 149, 0.7);
 }
 
 .intro-action {
@@ -1500,5 +1499,3 @@ textarea {
   display: inline-block;
   font-weight: normal;
 }
-
-

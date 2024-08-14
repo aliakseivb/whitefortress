@@ -592,7 +592,13 @@
 
   .intro-desc {
     font-size: 18px;
-    width: 120%;
+    padding: 20px 25px;
+    width: 126%;
+    margin-bottom: 70px;
+  }
+
+  .intro-action {
+    bottom: 25px;
   }
 
   .partner-slider {
