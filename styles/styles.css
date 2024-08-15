@@ -657,14 +657,13 @@ h1 span {
 }
 
 .partner-logo {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
   height: 50px;
   width: 100%;
-  justify-self: center;
 }
 
+.partner-logo-image {
+  width: 90%;
+}
 .partner-title {
   font-family: Murecho-Bold, sans-serif;
   font-size: 24px;
