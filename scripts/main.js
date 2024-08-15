@@ -21,7 +21,7 @@ import {partnersArr} from "./partnersData.js";
 
   window.onscroll = () => {
     navbar.removeAttribute('style');
-    if (window.scrollY > 80) {
+    if (window.scrollY > 80 && window.innerWidth < 1024) {
       logoScroll.classList.add('active');
       logoScroll.style.right = `calc(50% - ${container.clientWidth / 2 - 20}px)`;
     } else {
