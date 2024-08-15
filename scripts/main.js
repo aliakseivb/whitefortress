@@ -232,7 +232,7 @@ import {partnersArr} from "./partnersData.js";
 
     const currentPartner = JSON.parse(localStorage.getItem('partner'));
     if (currentPartner) {
-      partnerLogo.style.backgroundImage = `url("../${currentPartner.image}")`;
+      partnerLogo.style.backgroundImage = `url("${currentPartner.image}")`;
       partnerTitle.textContent = currentPartner.title;
       partnerText.innerHTML = currentPartner.text;
       partnerLink.setAttribute('href', currentPartner.url);
