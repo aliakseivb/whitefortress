@@ -78,9 +78,9 @@
       </div>
 
       <div class="lang">
-        <span class="lang-item active">Ru</span>
+        <span class="lang-item lang-item-ru">Ru</span>
         <span class="lang-line"></span>
-        <span class="lang-item">En</span>
+        <span class="lang-item lang-item-en">En</span>
       </div>
     </div>
   </div>
@@ -151,9 +151,9 @@
         </div>
 
         <div class="lang">
-          <span class="lang-item active">Ru</span>
+          <span class="lang-item lang-item-ru">Ru</span>
           <span class="lang-line"></span>
-          <span class="lang-item">En</span>
+          <span class="lang-item lang-item-en">En</span>
         </div>
       </div>
 
@@ -170,7 +170,7 @@
 
       <div class="inn-block">
         <div class="intro-info">
-          <h1 class="intro-title">Надежная <span>IT-инфраструктура</span> <br>
+          <h1 class="intro-title">Надежная <span class="infras">IT-инфраструктура</span> <br>
             <span>для вашего бизнеса</span></h1>
           <div class="intro-desc">
             Выходите на новый уровень с нами
@@ -235,7 +235,7 @@
           </div>
         </div>
       </div>
-      <div class="partners-items">
+      <div class="partners-items" id="partnersItems">
 
       </div>
     </div>
@@ -290,6 +290,7 @@
             </div>
             <div class="what-we-info-text">
               Высокий профессионализм.
+              <br>
               Сертифицированные инженеры с большим опытом работы.
             </div>
           </div>
@@ -298,9 +299,9 @@
               <img src="images/about2.png" alt="">
             </div>
             <div class="what-we-info-text">
-              Широкий спектр программных инструментов для интеграции, обмена и обработки данных между
-              бизнес-приложениями, базами данных, сетевыми и веб-сервисами, инфраструктурными компонентами и
-              оборудование от ведущих IT-компаний
+              Широкий спектр программных инструментов и оборудования от ведущих IT-компаний для интеграции,
+              обмена и обработки данных между бизнес-приложениями, базами данных, сетевыми и веб-сервисами,
+              инфраструктурными компонентами
             </div>
           </div>
           <div class="what-we-info-item wow animate__zoomIn">
@@ -309,6 +310,7 @@
             </div>
             <div class="what-we-info-text">
               Индивидуальный и комплексный подходы - все услуги из одних рук.
+              <br>
               Решения под конкретные задачи
             </div>
           </div>
@@ -318,6 +320,7 @@
             </div>
             <div class="what-we-info-text">
               Надежность.
+              <br>
               Локальный склад запчастей, круглосуточная поддержка
             </div>
           </div>
@@ -337,75 +340,235 @@
   </section>
 
   <section class="services" id="services">
-    <div class="container services-container wow animate__zoomIn">
+    <div class="container services-container">
 
       <h2 class="services-title">Направления</h2>
 
       <div class="services-items">
-        <div class="services-item">
-          <div class="services-item-image">
-            <img src="images/solutions.png" alt="solutions">
+
+        <div class="services-item wow animate__zoomIn">
+          <div class="services-item-head">
+            <div class="services-item-image">
+              <img src="images/solutions.png" alt="solutions">
+            </div>
+            <div class="services-item-desc">
+              <div class="services-item-name">
+                Инфраструктурные решения
+              </div>
+              <ul class="services-item-specific">
+                <li><span></span>Системы хранения данных</li>
+                <li><span></span>Сервера</li>
+                <li><span></span>Гиперконвергентные решения</li>
+                <li><span></span>Системы резервного копирования</li>
+                <li><span></span>Решения на базе облака</li>
+              </ul>
+            </div>
           </div>
+
           <div class="services-item-text">
-            Инфраструктурные решения
+            ИТ-инфраструктура предприятия — это единый комплекс программных, технических, коммуникационных,
+            информационных и организационно-технологических средств обеспечения функционирования предприятия,
+            а также средств управления ими.
+            <br>
+            Для обеспечения эффективной деятельности современные предприятия нуждаются в ИТ-инфраструктуре,
+            состоящей из интегрированного комплекса систем, программ и служб. ИТ-инфраструктура должна быть целостной,
+            максимально надежной, грамотно спроектированной, обладать большим запасом прочности, соответствовать не
+            только текущему состоянию бизнеса, но и учитывать его развитие в будущем.
+            <br>
+            Базовая ИТ-инфраструктура является технологической подложкой для работы других слоёв корпоративной
+            архитектуры.
           </div>
         </div>
-        <div class="services-item">
-          <div class="services-item-image">
-            <img src="images/defence.png" alt="defense">
+
+        <div class="services-item wow animate__zoomIn">
+          <div class="services-item-head">
+            <div class="services-item-image">
+              <img src="images/defence.png" alt="defence">
+            </div>
+            <div class="services-item-desc">
+              <div class="services-item-name">
+                Кибербезопасность
+              </div>
+              <ul class="services-item-specific">
+                <li><span></span>Сетевая безопасность</li>
+                <li><span></span>Безопасность приложений</li>
+                <li><span></span>Безопасность информации или данных</li>
+              </ul>
+            </div>
           </div>
+
           <div class="services-item-text">
-            Кибербезопасность
+            Кибербезопасность - это совокупность технологий, процессов и практик, предназначенных для защиты сетей,
+            устройств, программ и данных от атак, кражи, повреждения, модификации или несанкционированного доступа.
+            Это включает в себя использование специальных программ для проверки на наличие вредоносного программного
+            обеспечения. Соблюдая надлежащую кибербезопасность, вы можете гарантировать, что ваши данные останутся
+            конфиденциальными, а ваш онлайн-опыт безопасным.
           </div>
         </div>
-        <div class="services-item">
-          <div class="services-item-image">
-            <img src="images/consulting.png" alt="consulting">
+
+        <div class="services-item wow animate__zoomIn">
+          <div class="services-item-head">
+            <div class="services-item-image">
+              <img src="images/consulting.png" alt="consulting">
+            </div>
+            <div class="services-item-desc">
+              <div class="services-item-name">
+                IT-консалтинг
+              </div>
+              <ul class="services-item-specific">
+                <li><span></span>Аудит</li>
+                <li><span></span>Проектирование ИТ инфраструктуры</li>
+                <li><span></span>Выбор оптимальной архитектуры</li>
+              </ul>
+            </div>
           </div>
+
           <div class="services-item-text">
-            IT-консалтинг
+            IT-консалтинг — проектно-ориентированная деятельность, связанная с информационной поддержкой
+            бизнес-процессов, позволяющая дать независимую экспертную оценку эффективности использования информационных
+            технологий.
+            Анализ результатов обследования IT-инфраструктуры позволяет устранить ошибки в архитектуре и предложить
+            решение корпоративной IT-системы.
           </div>
         </div>
-        <div class="services-item">
-          <div class="services-item-image">
-            <img src="images/support.png" alt="support">
+
+        <div class="services-item wow animate__zoomIn">
+          <div class="services-item-head">
+            <div class="services-item-image">
+              <img src="images/support.png" alt="support">
+            </div>
+            <div class="services-item-desc">
+              <div class="services-item-name">
+                Техническая поддержка и сервисное сопровождение
+              </div>
+              <ul class="services-item-specific">
+                <li><span></span>Служба технической поддержки 24x7</li>
+                <li><span></span>Сертифицированные инженеры</li>
+                <li><span></span>Локальный склад запчастей</li>
+              </ul>
+            </div>
           </div>
+
           <div class="services-item-text">
-            Техническая поддержка и сервисное сопровождение
+            Единый ресурс для решения проблем оборудования, микропрограммного и программного обеспечения, получения
+            запасных деталей и материалов, доступа к обновлениям, а также совместной поддержки для независимых
+            поставщиков ПО.
+            <br>
+            Благодаря мониторингу систем в режиме 24x7, быстрой диагностике, автоматическому созданию заявок и отправке
+            запчастей процесс поддержки становится проще.
           </div>
         </div>
-        <div class="services-item">
-          <div class="services-item-image">
-            <img src="images/app.png" alt="app">
+
+        <div class="services-item wow animate__zoomIn">
+          <div class="services-item-head">
+            <div class="services-item-image">
+              <img src="images/app.png" alt="app">
+            </div>
+            <div class="services-item-desc">
+              <div class="services-item-name">
+                Бизнес-приложения
+              </div>
+              <ul class="services-item-specific">
+                <li><span></span>CRM-системы</li>
+                <li><span></span>Аналитические системы</li>
+                <li><span></span>редства коллективной работы</li>
+              </ul>
+            </div>
           </div>
+
           <div class="services-item-text">
-            Бизнес-приложения
+            Бизнес-приложения — это многофункциональные программные системы и комплексы, предназначенные для
+            автоматизации ключевых бизнес-функций и процессов внутри компании. Наличие таких приложений повышает
+            эффективность ключевых бизнес-процессов предприятия, позволяет сократить сроки поиска и обработки
+            информации,
+            экономить материальные и человеческие ресурсы, а также автоматизировать типовые действия в рамках выполнения
+            процессов и т.д.
           </div>
         </div>
-        <div class="services-item">
-          <div class="services-item-image">
-            <img src="images/ai-solutions.png" alt="intellect">
+
+        <div class="services-item wow animate__zoomIn">
+          <div class="services-item-head">
+            <div class="services-item-image">
+              <img src="images/ai-solutions.png" alt="ai-solutions">
+            </div>
+            <div class="services-item-desc">
+              <div class="services-item-name">
+                Интеллектуальные инженерные решения
+              </div>
+              <ul class="services-item-specific">
+                <li><span></span>Локальная автоматизация инженерных систем (АСУ)</li>
+                <li><span></span>Система управления энергопотреблением</li>
+                <li><span></span>Система управления инфраструктурой центра обработки данных (ЦОД)</li>
+                <li><span></span>Структурированные системы мониторинга и управления инженерными системами зданий и сооружений (СМИС)</li>
+              </ul>
+            </div>
           </div>
+
           <div class="services-item-text">
-            Интеллектуальные инженерные решения
+            Автоматизация управления современными зданиями представляет собой комплексную систему аппаратного и
+            программного
+            обеспечения, предназначенную для удаленного централизованного мониторинга и управления инженерными
+            системами.
+            Эффективная система управления обеспечивает правильное функционирование и эффективную эксплуатацию
+            современных зданий, отвечая за создание комфорта и безопасности людей, а также служит для оптимизации
+            энергозатрат.
           </div>
         </div>
-        <div class="services-item">
-          <div class="services-item-image">
-            <img src="images/iptele.png" alt="tele">
+
+        <div class="services-item wow animate__zoomIn">
+          <div class="services-item-head">
+            <div class="services-item-image">
+              <img src="images/iptele.png" alt="iptele">
+            </div>
+            <div class="services-item-desc">
+              <div class="services-item-name">
+                IP-телефония и видео-конференц-связь
+              </div>
+              <ul class="services-item-specific">
+                <li><span></span>Монтаж</li>
+                <li><span></span>Настройка</li>
+                <li><span></span>Обслуживание</li>
+              </ul>
+            </div>
           </div>
+
           <div class="services-item-text">
-            IP-телефония и видео-конференц-связь
+            Быстрая и качественная связь – одно из ключевых технических условий успешного ведения бизнеса. Высокий
+            уровень конкуренции на рынке и глобализация бизнеса предъявляют к связи новые требования: теперь связь
+            должна быть всё более мобильна и предоставлять широкие возможности настроек и переадресаций. Современным
+            решением задачи по настройке качественной доступной связи с максимально широкими возможностями при небольших
+            финансовых издержках выступает IP-телефония
           </div>
         </div>
-        <div class="services-item">
-          <div class="services-item-image">
-            <img src="images/network.png" alt="net">
+
+        <div class="services-item wow animate__zoomIn">
+          <div class="services-item-head">
+            <div class="services-item-image">
+              <img src="images/network.png" alt="network">
+            </div>
+            <div class="services-item-desc">
+              <div class="services-item-name">
+                Корпоративные сети
+              </div>
+              <ul class="services-item-specific">
+                <li><span></span>ЛВС</li>
+                <li><span></span>Интернет</li>
+                <li><span></span>WAN каналы передачи данных</li>
+                <li><span></span>Беспроводные сети</li>
+              </ul>
+            </div>
           </div>
+
           <div class="services-item-text">
-            Корпоративные сети
+            Каждая компания при открытии нового офиса или при переезде сталкивается с задачей создания новой
+            IT-инфраструктуры:
+            прокладки и настройки локальной сети, установки и настройки оборудования, настройки сервисов, подключения
+            к внешним сетям связи, дальнейшее техническое обслуживание. Благодаря предложению нашей компании все
+            вопросы,
+            связанные с этой комплексной задачей, можно решить, обратившись к одному интегратору.
           </div>
         </div>
+
       </div>
 
     </div>

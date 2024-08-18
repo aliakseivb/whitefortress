@@ -3,13 +3,35 @@ import {partnersArr} from "./partnersData.js";
 
 (() => {
   const body = document.querySelector('body');
+  const header = document.querySelector('header');
   const bodyOverlay = document.querySelector('.body-overlay');
   const navbar = document.querySelector('.navbar');
   const menuNavbar = document.querySelector('.navbar .menu');
+  const ruButtons = document.querySelectorAll('.lang-item-ru');
+  const enButtons = document.querySelectorAll('.lang-item-en');
+  const langBlocks = document.querySelectorAll('.lang');
   const burger = document.querySelector('#burger');
   const logoScroll = document.querySelector('.logo-scroll');
   const container = document.querySelector('.container');
+  let language = JSON.parse(localStorage.getItem('whitefortress')) ?
+      JSON.parse(localStorage.getItem('whitefortress')).language ? JSON.parse(localStorage.getItem('whitefortress')).language : 'ru' : 'ru';
 
+  if (language === 'ru') {
+    ruButtons.forEach(item => {
+      item.classList.add('active');
+    });
+    enButtons.forEach(item => {
+      item.classList.remove('active');
+    });
+  }
+  if (language === 'en') {
+    ruButtons.forEach(item => {
+      item.classList.remove('active');
+    });
+    enButtons.forEach(item => {
+      item.classList.add('active');
+    });
+  }
 
   window.onresize = () => {
     navbar.classList.remove('show');
@@ -21,9 +43,14 @@ import {partnersArr} from "./partnersData.js";
 
   window.onscroll = () => {
     navbar.removeAttribute('style');
-    if (window.scrollY > 80 && window.innerWidth < 1024) {
+    if (window.scrollY > 30 && window.innerWidth > 1000) {
+      header.classList.add('scroll');
+    } else {
+      header.classList.remove('scroll');
+    }
+    if (window.scrollY > 80 && window.innerWidth <= 1000) {
       logoScroll.classList.add('active');
-      logoScroll.style.right = `calc(50% - ${container.clientWidth / 2 - 20}px)`;
+      logoScroll.style.right = `calc(50% - ${container.clientWidth / 2 - 10}px)`;
     } else {
       navbar.classList.remove('show');
       navbar.removeAttribute('style');
@@ -83,7 +110,7 @@ import {partnersArr} from "./partnersData.js";
 
   const partnersItemsBlock = document.querySelector('.partners-items');
 
-  if (location.href.includes('index')) {
+  if (location.href.includes('index.html')) {
     new WOW({
       animateClass: 'animate__animated',
     }).init();
@@ -94,6 +121,7 @@ import {partnersArr} from "./partnersData.js";
       newElem.className = 'partners-item wow animate__bounce';
       newElem.setAttribute('data-name', item.name);
       // newElem.setAttribute('href', 'partner.html');
+      // newElem.setAttribute('target', '_blank');
       newElem.innerHTML = `
         <img src="${item.image}" alt="${item.name}" data-name="${item.name}">
       `;
@@ -106,7 +134,7 @@ import {partnersArr} from "./partnersData.js";
           return item.name.toLowerCase() === e.target.dataset.name.toLowerCase();
         });
         if (currentPartner) {
-          localStorage.setItem('partner', JSON.stringify(currentPartner));
+          localStorage.setItem('whitefortress', JSON.stringify({partner: currentPartner, language: language}));
           location.href = 'partner.html' + '?partner=' + currentPartner.name;
         }
       }
@@ -222,24 +250,53 @@ import {partnersArr} from "./partnersData.js";
       body.classList.remove('hidden');
     });
   }
-  if (location.href.includes('partner')) {
+  if (location.href.includes('partner.html')) {
     const partnerLogo = document.querySelector('.partner-logo-image');
     const partnerTitle = document.querySelector('.partner-title');
     const partnerText = document.querySelector('.partner-text');
     const partnerLink = document.querySelector('.partner-link');
     const aboutButton = document.getElementById('about');
     const aboutSolutions = document.getElementById('solutions');
+    const whitefortress = JSON.parse(localStorage.getItem('whitefortress'));
+    const currentPartner = whitefortress.partner;
 
-    const currentPartner = JSON.parse(localStorage.getItem('partner'));
+    langBlocks.forEach(item => {
+      item.addEventListener('click', (e) => {
+        if (e.target.classList.contains('lang-item-ru') && currentPartner && whitefortress) {
+          ruButtons.forEach(item => {
+            item.classList.add('active');
+            language = 'ru';
+          });
+          enButtons.forEach(item => {
+            item.classList.remove('active');
+          });
+
+        }
+        if (e.target.classList.contains('lang-item-en') && currentPartner && whitefortress) {
+          ruButtons.forEach(item => {
+            item.classList.remove('active')
+          });
+          enButtons.forEach(item => {
+            item.classList.add('active')
+            language = 'en';
+          });
+        }
+        partnerTitle.textContent = language === "ru" ? currentPartner.ru.title : currentPartner.en.title;
+        partnerText.innerHTML = language === "ru" ? currentPartner.ru.text : currentPartner.en.text;
+        // doSolutions(currentPartner, language);
+      })
+    })
+
+
     if (currentPartner) {
       partnerLogo.setAttribute('src', currentPartner.image);
-      partnerTitle.textContent = currentPartner.title;
-      partnerText.innerHTML = currentPartner.text;
+      partnerTitle.textContent = language === "ru" ? currentPartner.ru.title : currentPartner.en.title;
+      partnerText.innerHTML = language === "ru" ? currentPartner.ru.text : currentPartner.en.text;
       partnerLink.setAttribute('href', currentPartner.url);
     }
 
     aboutButton.addEventListener('click', () => {
-      partnerText.innerHTML = currentPartner.text;
+      partnerText.innerHTML = language === "ru" ? currentPartner.ru.text : currentPartner.en.text;
       aboutButton.classList.add('active');
       aboutSolutions.classList.remove('active');
     });
@@ -248,7 +305,11 @@ import {partnersArr} from "./partnersData.js";
       aboutButton.classList.remove('active');
       aboutSolutions.classList.add('active');
       partnerText.textContent = '';
-      currentPartner.solutions.forEach(item => {
+      doSolutions(currentPartner, language);
+    });
+
+    function doSolutions(currentPartner, language) {
+      currentPartner[language].solutions.forEach(item => {
         const newElem = document.createElement('div');
         newElem.className = 'partner-text-item';
         const newElemHead = document.createElement('div');
@@ -261,6 +322,6 @@ import {partnersArr} from "./partnersData.js";
         newElem.append(newElemDesc);
         partnerText.append(newElem);
       })
-    });
+    }
   }
 })();

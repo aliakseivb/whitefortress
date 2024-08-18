@@ -20,6 +20,7 @@
   <script defer type="module" src="scripts/main.js"></script>
 </head>
 <body class="">
+<div class="body-overlay"></div>
 <div class="logo-scroll"></div>
 <div class="navbar">
   <a href="index.html" class="logo header-logo">
@@ -29,10 +30,10 @@
     <nav class="nav">
       <ul class="nav-items">
         <li class="nav-item">
-          <a href="index.html" class="nav-link">Главная</a>
+          <a href="index.html#partnersItems" class="nav-link">Главная</a>
         </li>
         <li class="nav-item">
-          <a href="index.html#partners" class="nav-link active">Партнеры</a>
+          <a href="index.html#partnersItems" class="nav-link active">Партнеры</a>
         </li>
         <li class="nav-item">
           <a href="index.html#about" class="nav-link">Наша компания</a>
@@ -77,9 +78,9 @@
       </div>
 
       <div class="lang">
-        <span class="lang-item active">Ru</span>
+        <span class="lang-item lang-item-ru">Ru</span>
         <span class="lang-line"></span>
-        <span class="lang-item">En</span>
+        <span class="lang-item lang-item-en">En</span>
       </div>
     </div>
   </div>
@@ -102,7 +103,7 @@
       <nav class="nav">
         <ul class="nav-items">
           <li class="nav-item">
-            <a href="index.html" class="nav-link">Главная</a>
+            <a href="index.html#partners" class="nav-link">Главная</a>
           </li>
           <li class="nav-item">
             <a href="index.html#partners" class="nav-link active">Партнеры</a>
@@ -150,9 +151,9 @@
         </div>
 
         <div class="lang">
-          <span class="lang-item active">Ru</span>
+          <span class="lang-item lang-item-ru">Ru</span>
           <span class="lang-line"></span>
-          <span class="lang-item">En</span>
+          <span class="lang-item lang-item-en">En</span>
         </div>
       </div>
 
@@ -177,7 +178,10 @@
           <div class="partner-menu-item" data-id="solutions" id="solutions">Решения</div>
         </div>
 
-        <a href="" class="partner-link" target="_blank">На сайт партнера</a>
+        <div class="partner-links-block">
+        <a href="" class="partner-link" target="_blank">К партнеру</a>
+        <a href="index.html#partnersItems" class="go-back">На главную</a>
+        </div>
       </div>
       <div class="partner-text-block">
         <div class="partner-text" data-id="information"></div>
@@ -200,10 +204,10 @@
           </div>
           <ul class="nav-items">
             <li class="nav-item">
-              <a href="index.html" class="nav-link active">Главная</a>
+              <a href="index.html" class="nav-link">Главная</a>
             </li>
             <li class="nav-item">
-              <a href="index.html#partners" class="nav-link">Партнеры</a>
+              <a href="index.html#partners" class="nav-link active">Партнеры</a>
             </li>
             <li class="nav-item">
               <a href="index.html#about" class="nav-link">Наша компания</a>
@@ -232,7 +236,7 @@
             <div class="contacts-item">
               <div class="address-title subtitle">Юридический адрес:</div>
               <div class="address-place">
-                223037, Минская область, Минский район, <br>Колодищанский с/с, 1,1 км западнее
+                223037, Минская область, Минский район, <br>Колодищанский с/с, 1.1 км западнее
                 д.Жуков Луг, <br>литер А 1-3/к, помещение 10
               </div>
             </div>
