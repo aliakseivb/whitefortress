@@ -993,12 +993,15 @@
     margin-bottom: 20px;
     width: 90%;
   }
+
   .what-we {
     padding: 30px 20px 20px;
   }
+
   .what-doing-items {
     gap: 15px;
   }
+
   .what-we-info-item {
     padding: 20px 0 20px;
     gap: 10px;
@@ -1150,6 +1153,10 @@
     margin-bottom: 20px;
   }
 
+  .point-title {
+    font-size: 15px;
+  }
+
   .services-item-name {
     font-size: 16px;
   }
@@ -1239,11 +1246,12 @@
   }
 
   .rule-title {
-    font-size: 20px;
+    font-size: 19px;
+    line-height: 110%;
   }
 
   .rule-subtitle {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .partner-menu-item {
