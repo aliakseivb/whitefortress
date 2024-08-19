@@ -1,5 +1,5 @@
 import {partnersArr} from "./partnersData.js";
-
+import {languageObj} from "./languageData.js";
 
 (() => {
   const body = document.querySelector('body');
@@ -16,22 +16,179 @@ import {partnersArr} from "./partnersData.js";
   let language = JSON.parse(localStorage.getItem('whitefortress')) ?
       JSON.parse(localStorage.getItem('whitefortress')).language ? JSON.parse(localStorage.getItem('whitefortress')).language : 'ru' : 'ru';
 
-  if (language === 'ru') {
-    ruButtons.forEach(item => {
-      item.classList.add('active');
-    });
-    enButtons.forEach(item => {
-      item.classList.remove('active');
-    });
+
+  /** ЛОВИМ ТЕКУЩИЙ ЯЗЫК И МЕНЯЕМ ТАМ ГДЕ НАДО ВСЕ ЧТО НАДО*/
+
+  changeLanguage(language);
+  function changeLanguage(language){
+    if (language === 'ru') {
+      ruButtons.forEach(item => {
+        item.classList.add('active');
+      });
+      enButtons.forEach(item => {
+        item.classList.remove('active');
+      });
+      for (let key in languageObj.ru.navbarItem){
+        let elem = document.querySelector(`.${key}`)
+        if(elem){
+          elem.innerHTML = languageObj.ru.navbarItem[`${key}`];
+        }
+      }
+      for (let key in languageObj.ru.headerItem){
+        let elem = document.querySelector(`.${key}`)
+        if(elem){
+          elem.innerHTML = languageObj.ru.headerItem[`${key}`];
+        }
+      }
+      for (let key in languageObj.ru.footerItem){
+        let elem = document.querySelector(`.${key}`)
+        if(elem){
+          elem.innerHTML = languageObj.ru.footerItem[`${key}`];
+        }
+      }
+      if(location.href.includes('index.html')){
+        for (let key in languageObj.ru.successPopup){
+          let elem = document.querySelector(`.${key}`)
+          if(elem){
+            elem.innerHTML = languageObj.ru.successPopup[`${key}`];
+          }
+        }
+        for (let key in languageObj.ru.placeholders){
+          let elem = document.querySelector(`#${key}`)
+          if(elem){
+            elem.placeholder = languageObj.ru.placeholders[`${key}`];
+          }
+        }
+        for (let key in languageObj.ru.mainPage){
+          let elem = document.querySelector(`.${key}`)
+          if(elem){
+            elem.innerHTML = languageObj.ru.mainPage[`${key}`];
+          }
+        }
+      }
+      if(location.href.includes('partner.html')){
+        for (let key in languageObj.ru.partnerPage){
+          let elem = document.querySelector(`.${key}`)
+          console.log(elem)
+          if(elem){
+            elem.innerHTML = languageObj.ru.partnerPage[`${key}`];
+          }
+        }
+      }
+      if(location.href.includes('privacy.html')){
+        for (let key in languageObj.ru.privacyPage){
+          let elem = document.querySelector(`.${key}`)
+          if(elem){
+            elem.innerHTML = languageObj.ru.privacyPage[`${key}`];
+          }
+        }
+      }
+      if(location.href.includes('conditions.html')){
+        for (let key in languageObj.ru.conditionsPage){
+          let elem = document.querySelector(`.${key}`)
+          if(elem){
+            elem.innerHTML = languageObj.ru.conditionsPage[`${key}`];
+          }
+        }
+      }
+    }
+    if (language === 'en') {
+      ruButtons.forEach(item => {
+        item.classList.remove('active');
+      });
+      enButtons.forEach(item => {
+        item.classList.add('active');
+      });
+      for (let key in languageObj.en.navbarItem){
+        let elem = document.querySelector(`.${key}`)
+        if(elem){
+          elem.innerHTML = languageObj.en.navbarItem[`${key}`];
+        }
+      }
+      for (let key in languageObj.en.headerItem){
+        let elem = document.querySelector(`.${key}`)
+        if(elem){
+          elem.innerHTML = languageObj.en.headerItem[`${key}`];
+        }
+      }
+      for (let key in languageObj.en.footerItem){
+        let elem = document.querySelector(`.${key}`)
+        if(elem){
+          elem.innerHTML = languageObj.en.footerItem[`${key}`];
+        }
+      }
+      if(location.href.includes('index.html')){
+        for (let key in languageObj.en.successPopup){
+          let elem = document.querySelector(`.${key}`)
+          if(elem){
+            elem.innerHTML = languageObj.en.successPopup[`${key}`];
+          }
+        }
+        for (let key in languageObj.en.placeholders){
+          let elem = document.querySelector(`#${key}`)
+          if(elem){
+            elem.placeholder = languageObj.en.placeholders[`${key}`];
+          }
+        }
+        for (let key in languageObj.en.mainPage){
+          let elem = document.querySelector(`.${key}`)
+          if(elem){
+            elem.innerHTML = languageObj.en.mainPage[`${key}`];
+          }
+        }
+      }
+      if(location.href.includes('partner.html')){
+        for (let key in languageObj.en.partnerPage){
+          let elem = document.querySelector(`.${key}`)
+          if(elem){
+            elem.innerHTML = languageObj.en.partnerPage[`${key}`];
+          }
+        }
+      }
+      if(location.href.includes('privacy.html')){
+        for (let key in languageObj.en.privacyPage){
+          let elem = document.querySelector(`.${key}`)
+          if(elem){
+            elem.innerHTML = languageObj.en.privacyPage[`${key}`];
+          }
+        }
+      }
+      if(location.href.includes('conditions.html')){
+        for (let key in languageObj.en.conditionsPage){
+          let elem = document.querySelector(`.${key}`)
+          if(elem){
+            elem.innerHTML = languageObj.en.conditionsPage[`${key}`];
+          }
+        }
+      }
+    }
   }
-  if (language === 'en') {
-    ruButtons.forEach(item => {
-      item.classList.remove('active');
-    });
-    enButtons.forEach(item => {
-      item.classList.add('active');
-    });
-  }
+  langBlocks.forEach(item => {
+    item.addEventListener('click', (e) => {
+      if (e.target.classList.contains('lang-item-ru')) {
+        ruButtons.forEach(item => {
+          item.classList.add('active');
+          language = 'ru';
+        });
+        enButtons.forEach(item => {
+          item.classList.remove('active');
+        });
+      }
+      if (e.target.classList.contains('lang-item-en')) {
+        ruButtons.forEach(item => {
+          item.classList.remove('active')
+        });
+        enButtons.forEach(item => {
+          item.classList.add('active')
+          language = 'en';
+        });
+      }
+      let tmp = JSON.parse(localStorage.getItem('whitefortress'));
+      tmp.language = language;
+      localStorage.setItem('whitefortress', JSON.stringify(tmp));
+      changeLanguage(language);
+    })
+  });
 
   window.onresize = () => {
     navbar.classList.remove('show');
@@ -74,13 +231,13 @@ import {partnersArr} from "./partnersData.js";
 
   menuNavbar.addEventListener('click', (e) => {
     if (e.target.classList.contains('nav-link') || e.target.classList.contains('soc-link')
-        || e.target.tagName === 'svg' || e.target.tagName === 'path') {
+        || e.target.tagName === 'svg' || e.target.tagName === 'path' || e.target.classList.contains('lang-item')) {
       closeNavbar();
     }
   });
 
 
-  /**бургер*/
+  /** СЛАШЕМ БУРГЕР */
   burger.addEventListener('click', (e) => {
     burger.classList.toggle('active');
     navbar.classList.toggle('show');
@@ -108,14 +265,15 @@ import {partnersArr} from "./partnersData.js";
     navbar.style.right = '-100%';
   }
 
-  const partnersItemsBlock = document.querySelector('.partners-items');
+
 
   if (location.href.includes('index.html')) {
     new WOW({
       animateClass: 'animate__animated',
     }).init();
 
-    /** создаем карточки партнеров */
+    /** СОЗДАЕМ КАРТОЧКИ ПАРТНЕРОВ */
+    const partnersItemsBlock = document.querySelector('.partners-items');
     partnersArr.forEach(item => {
       const newElem = document.createElement('div');
       newElem.className = 'partners-item wow animate__bounce';
@@ -128,6 +286,8 @@ import {partnersArr} from "./partnersData.js";
       partnersItemsBlock.append(newElem);
     });
 
+
+    /** ЛОВИМ КЛИК ПО КАРТОЧКЕ ПАРТНЕРОВ */
     partnersItemsBlock.addEventListener('click', (e) => {
       if (e.target.tagName === 'IMG' || e.target.classList.contains('partners-item')) {
         const currentPartner = partnersArr.find(item => {
@@ -139,7 +299,9 @@ import {partnersArr} from "./partnersData.js";
         }
       }
     });
-    /** форма отправки */
+
+
+    /** РАБОТАЕМ С ФОРМОЙ ОТПРАВКИ */
     const formInputs = document.querySelectorAll('.form-input');
     const agreeElement = document.getElementById('agree');
     const formButton = document.querySelector('.form-button');
@@ -250,13 +412,14 @@ import {partnersArr} from "./partnersData.js";
       body.classList.remove('hidden');
     });
   }
+
   if (location.href.includes('partner.html')) {
     const partnerLogo = document.querySelector('.partner-logo-image');
     const partnerTitle = document.querySelector('.partner-title');
     const partnerText = document.querySelector('.partner-text');
     const partnerLink = document.querySelector('.partner-link');
     const aboutButton = document.getElementById('about');
-    const aboutSolutions = document.getElementById('solutions');
+    const solutionsButton = document.getElementById('solutions');
     const whitefortress = JSON.parse(localStorage.getItem('whitefortress'));
     const currentPartner = whitefortress.partner;
 
@@ -281,11 +444,11 @@ import {partnersArr} from "./partnersData.js";
             language = 'en';
           });
         }
+        localStorage.setItem('whitefortress', JSON.stringify({partner: currentPartner, language: language}));
         partnerTitle.textContent = language === "ru" ? currentPartner.ru.title : currentPartner.en.title;
-        partnerText.innerHTML = language === "ru" ? currentPartner.ru.text : currentPartner.en.text;
-        // doSolutions(currentPartner, language);
+        doSolutions(currentPartner, language);
       })
-    })
+    });
 
 
     if (currentPartner) {
@@ -298,30 +461,44 @@ import {partnersArr} from "./partnersData.js";
     aboutButton.addEventListener('click', () => {
       partnerText.innerHTML = language === "ru" ? currentPartner.ru.text : currentPartner.en.text;
       aboutButton.classList.add('active');
-      aboutSolutions.classList.remove('active');
+      solutionsButton.classList.remove('active');
     });
 
-    aboutSolutions.addEventListener('click', () => {
+    solutionsButton.addEventListener('click', () => {
       aboutButton.classList.remove('active');
-      aboutSolutions.classList.add('active');
+      solutionsButton.classList.add('active');
       partnerText.textContent = '';
       doSolutions(currentPartner, language);
     });
 
     function doSolutions(currentPartner, language) {
-      currentPartner[language].solutions.forEach(item => {
-        const newElem = document.createElement('div');
-        newElem.className = 'partner-text-item';
-        const newElemHead = document.createElement('div');
-        newElemHead.className = 'partner-text-item-head';
-        newElemHead.textContent = item.head;
-        const newElemDesc = document.createElement('div');
-        newElemDesc.className = 'partner-text-item-desc';
-        newElemDesc.textContent = item.desc;
-        newElem.append(newElemHead);
-        newElem.append(newElemDesc);
-        partnerText.append(newElem);
-      })
+
+      if (aboutButton.classList.contains('active')) {
+        partnerText.innerHTML = language === "ru" ? currentPartner.ru.text : currentPartner.en.text;
+      }
+      if (solutionsButton.classList.contains('active')) {
+        partnerText.innerHTML = '';
+        currentPartner[language].solutions.forEach(item => {
+          const newElem = document.createElement('div');
+          newElem.className = 'partner-text-item';
+          const newElemHead = document.createElement('div');
+          newElemHead.className = 'partner-text-item-head';
+          newElemHead.textContent = item.head;
+          const newElemDesc = document.createElement('div');
+          newElemDesc.className = 'partner-text-item-desc';
+          newElemDesc.textContent = item.desc;
+          newElem.append(newElemHead);
+          newElem.append(newElemDesc);
+          partnerText.append(newElem);
+        });
+      }
     }
   }
+  if (location.href.includes('privacy.html')) {
+
+  }
+  if (location.href.includes('conditions.html')) {
+
+  }
 })();
+
