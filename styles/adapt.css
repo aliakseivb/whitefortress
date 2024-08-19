@@ -993,6 +993,9 @@
     margin-bottom: 20px;
     width: 90%;
   }
+  .what-we {
+    padding: 30px 20px 20px;
+  }
   .what-doing-items {
     gap: 15px;
   }

@@ -21,7 +21,9 @@ import {languageObj} from "./languageData.js";
 
   changeLanguage(language);
   function changeLanguage(language){
+    document.querySelector('.html').setAttribute('lang', language);
     if (language === 'ru') {
+
       ruButtons.forEach(item => {
         item.classList.add('active');
       });
