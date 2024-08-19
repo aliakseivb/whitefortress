@@ -125,8 +125,8 @@ export const languageObj = {
     },
     placeholders: {
       name: 'Введите имя',
-      phone: 'Введите имя',
-      email: 'Введите имя',
+      phone: 'Введите телефон',
+      email: 'Введите почту',
       message: 'Введите сообщение...'
     },
     partnerPage: {
@@ -299,8 +299,8 @@ export const languageObj = {
     },
     placeholders: {
       name: 'Enter name',
-      phone: 'Enter name',
-      email: 'Enter name',
+      phone: 'Enter phone',
+      email: 'Enter email',
       message: 'Enter message...'
     },
     partnerPage: {
