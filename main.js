@@ -19,6 +19,7 @@ import {languageObj} from "./scripts/languageData.js";
   if (whitefortress) {
     language = whitefortress.language ? whitefortress.language : 'ru';
   }else {
+    language = 'ru';
     localStorage.setItem('whitefortress', JSON.stringify({language: 'ru'}))
   }
   /** ЛОВИМ ТЕКУЩИЙ ЯЗЫК И МЕНЯЕМ ТАМ ГДЕ НАДО ВСЕ ЧТО НАДО*/
