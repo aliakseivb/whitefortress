@@ -1,7 +1,8 @@
-import {partnersArr} from "./partnersData.js";
-import {languageObj} from "./languageData.js";
+import {partnersArr} from "./scripts/partnersData.js";
+import {languageObj} from "./scripts/languageData.js";
 
 (() => {
+
   const body = document.querySelector('body');
   const header = document.querySelector('header');
   const bodyOverlay = document.querySelector('.body-overlay');
@@ -13,10 +14,13 @@ import {languageObj} from "./languageData.js";
   const burger = document.querySelector('#burger');
   const logoScroll = document.querySelector('.logo-scroll');
   const container = document.querySelector('.container');
-  let language = JSON.parse(localStorage.getItem('whitefortress')) ?
-      JSON.parse(localStorage.getItem('whitefortress')).language ? JSON.parse(localStorage.getItem('whitefortress')).language : 'ru' : 'ru';
-
-
+  let language
+  const whitefortress = JSON.parse(localStorage.getItem('whitefortress')) ? JSON.parse(localStorage.getItem('whitefortress')) : null;
+  if (whitefortress) {
+    language = whitefortress.language ? whitefortress.language : 'ru';
+  }else {
+    localStorage.setItem('whitefortress', JSON.stringify({language: 'ru'}))
+  }
   /** ЛОВИМ ТЕКУЩИЙ ЯЗЫК И МЕНЯЕМ ТАМ ГДЕ НАДО ВСЕ ЧТО НАДО*/
 
   changeLanguage(language);
@@ -71,7 +75,6 @@ import {languageObj} from "./languageData.js";
       if(location.href.includes('partner.html')){
         for (let key in languageObj.ru.partnerPage){
           let elem = document.querySelector(`.${key}`)
-          console.log(elem)
           if(elem){
             elem.innerHTML = languageObj.ru.partnerPage[`${key}`];
           }
@@ -427,7 +430,7 @@ import {languageObj} from "./languageData.js";
 
     langBlocks.forEach(item => {
       item.addEventListener('click', (e) => {
-        if (e.target.classList.contains('lang-item-ru') && currentPartner && whitefortress) {
+        if (e.target.classList.contains('lang-item-ru')) {
           ruButtons.forEach(item => {
             item.classList.add('active');
             language = 'ru';
@@ -437,7 +440,7 @@ import {languageObj} from "./languageData.js";
           });
 
         }
-        if (e.target.classList.contains('lang-item-en') && currentPartner && whitefortress) {
+        if (e.target.classList.contains('lang-item-en')) {
           ruButtons.forEach(item => {
             item.classList.remove('active')
           });
@@ -447,6 +450,7 @@ import {languageObj} from "./languageData.js";
           });
         }
         localStorage.setItem('whitefortress', JSON.stringify({partner: currentPartner, language: language}));
+
         partnerTitle.textContent = language === "ru" ? currentPartner.ru.title : currentPartner.en.title;
         doSolutions(currentPartner, language);
       })
