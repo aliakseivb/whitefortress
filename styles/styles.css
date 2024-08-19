@@ -737,6 +737,8 @@ body.hidden {
   cursor: pointer;
   position: relative;
   top: 1px;
+  z-index: 1;
+  background: #ffffff;
 }
 
 .partner-menu-item.active {
