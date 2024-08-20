@@ -5,6 +5,7 @@
 
   .aboutOffer {
     font-size: 22px;
+    width: 65%;
   }
 }
 
@@ -17,6 +18,9 @@
     margin-right: unset;
   }
 
+  .aboutOffer {
+    width: 75%;
+  }
   .what-we-info {
     row-gap: 20px;
   }
@@ -112,21 +116,21 @@
     padding: 20px 20px;
   }
 
-  .slogan-title {
-    font-size: 36px;
-  }
+  /*.slogan-title {*/
+  /*  font-size: 36px;*/
+  /*}*/
 
-  .slogan-title span {
-    font-size: 30px;
-  }
+  /*.slogan-title span {*/
+  /*  font-size: 30px;*/
+  /*}*/
 
-  .slogan-small {
-    font-size: 28px;
-  }
+  /*.slogan-small {*/
+  /*  font-size: 28px;*/
+  /*}*/
 
-  .slogan-big {
-    font-size: 36px;
-  }
+  /*.slogan-big {*/
+  /*  font-size: 36px;*/
+  /*}*/
 
   .services-container {
     padding-bottom: 40px;
@@ -231,7 +235,9 @@
   .partner-slider-item-name {
     font-size: 19px;
   }
-
+  .what-we {
+    padding: 60px 0 0;
+  }
   .what-we-info {
     padding: 0 0;
   }
@@ -249,6 +255,9 @@
   .what-we-info-text {
     order: 1;
     width: 90%;
+  }
+  .slogan {
+    padding: 0 20px 40px;
   }
 
   .contacts-item,
@@ -345,6 +354,7 @@
   .aboutOffer {
     font-size: 20px;
     margin-bottom: 40px;
+    width: 80%;
   }
 
   .what-doing-items {
@@ -473,6 +483,7 @@
 
   .slogan-title {
     font-size: 30px;
+    padding-top: 20px;
   }
 
   .slogan-title span {
@@ -576,6 +587,10 @@
 
   .services-item-specific {
     font-size: 16px;
+  }
+
+  .services-item-specific li span {
+    bottom: 4px;
   }
 }
 
@@ -708,8 +723,7 @@
     max-width: 50%;
   }
 
-  .what-doing,
-  .what-we {
+  .what-doing {
     margin-bottom: 30px;
   }
 
@@ -813,17 +827,18 @@
   }
 
   .about-title span {
-    font-size: 15px;
+    font-size: 17px;
     margin-top: 10px;
   }
 
   .aboutOffer {
     font-size: 18px;
     margin-bottom: 30px;
+    width: 100%;
   }
 
   .what-doing-items li {
-    font-size: 18px;
+    font-size: 17px;
     padding: 15px 15px;
   }
 
@@ -952,13 +967,14 @@
     padding: 10px 15px;
   }
 
-  .slogan {
-    padding: 30px 20px;
-  }
+  /*.slogan {*/
+  /*  padding: 30px 20px;*/
+  /*}*/
 
   .slogan-title {
-    font-size: 26px;
+    font-size: 20px;
     line-height: 100%;
+    padding-top: 0;
   }
 
   .slogan-title span {
@@ -1026,7 +1042,12 @@
     padding: 15px 15px;
     width: 85%;
   }
-
+  .slogan-title {
+    margin-bottom: 20px;
+  }
+  .slogan {
+    padding: 0 20px 20px;
+  }
   .certificates-slider {
     width: 90%;
   }
@@ -1171,10 +1192,18 @@
   .services-item-specific {
     font-size: 13px;
   }
+  .services-item-specific li span {
+    width: 4px;
+    height: 4px;
+    min-width: 4px;
+    min-height: 4px;
+    bottom: 3px;
+  }
 
   .services-item-text {
     font-family: Murecho-Light, sans-serif;
-    font-size: 12px;
+    font-size: 13px;
+    text-align: center;
   }
 
   .certificate-button-prev, .certificate-button-next {

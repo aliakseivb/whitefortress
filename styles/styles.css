@@ -828,43 +828,46 @@ h2 {
   font-family: Murecho-Bold, sans-serif;
   font-size: 36px;
   color: #f5ac70;
-  text-shadow: 1px 1px 1px rgb(255 255 255);
-  filter: drop-shadow(1px 1px -12px #f5ac70);
+  text-shadow: 1px 1px 1px rgb(38 70 149);
+  /*filter: drop-shadow(1px 1px -12px #f5ac70);*/
   display: inline-block;
   text-transform: capitalize;
+  line-height: 100%;
 }
 
 .about-title span {
   display: inline-block;
-  color: #ffffff;
+  color: #264695;
   text-align: center;
   font-family: Murecho-Medium, sans-serif;
   font-size: 26px;
   text-transform: none;
-  text-shadow: 1px 1px 1px rgb(27 27 27);
+  /*text-shadow: 1px 1px 1px rgb(27 27 27);*/
   line-height: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .aboutOffer {
-  font-family: Murecho-Regular, sans-serif;
+  font-family: Murecho-Medium, sans-serif;
   font-size: 24px;
   line-height: 120%;
   text-align: center;
   margin: 0 auto 40px;
-  color: #ffffff;
+  color: #264695;
+  width: 61%;
 }
 
 .what-doing {
   padding: 40px 50px 60px;
-  background: rgb(255 255 255 / 8%);
-  background: -moz-linear-gradient(1deg, #264695 0%, rgba(101, 127, 159, 0.5) 100%);
+  /*background: rgb(255 255 255 / 8%);*/
+  background: #ffffff;
+  /*background: -moz-linear-gradient(1deg, #264695 0%, rgba(101, 127, 159, 0.5) 100%);*/
   margin-bottom: 60px;
-  box-shadow: 0 0 13px 12px rgb(255 255 255) inset;
+  /*box-shadow: 0 0 13px 12px rgb(255 255 255) inset;*/
 }
 
 .what-doing-title {
-  color: #ffffff;
+  color: #264695;
   margin-bottom: 40px;
 }
 
@@ -878,13 +881,14 @@ h2 {
 
 .what-doing-items li {
   font-family: Murecho-Regular, sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 120%;
   color: #ffffff;
-  background: rgba(38, 70, 149, 0.5);
-  background: linear-gradient(1deg, #264695 0%, rgba(101, 127, 159, 0.5) 100%);
-  background: -webkit-linear-gradient(1deg, #264695 0%, rgba(101, 127, 159, 0.5) 100%);
-  background: -moz-linear-gradient(1deg, #264695 0%, rgba(101, 127, 159, 0.5) 100%);
+  background: -webkit-linear-gradient(1deg, rgb(38 70 149) 0%, #0e0e0e 100%);
+  /*background: rgba(38, 70, 149, 0.5);*/
+  /*background: linear-gradient(1deg, #264695 0%, rgba(101, 127, 159, 0.8) 100%);*/
+  /*background: -webkit-linear-gradient(1deg, #264695 0%, rgba(101, 127, 159, 0.8) 100%);*/
+  /*background: -moz-linear-gradient(1deg, #264695 0%, rgba(101, 127, 159, 0.8) 100%);*/
   padding: 25px 40px;
   border: 1px solid #ffffff;
   display: flex;
@@ -896,7 +900,6 @@ h2 {
 .what-we {
   background: #ffffff;
   padding: 60px 0 60px;
-  margin-bottom: 50px;
 }
 
 .what-we-title {
@@ -948,7 +951,7 @@ h2 {
 
 .slogan {
   background: #ffffff;
-  padding: 40px 20px;
+  padding: 20px 20px 40px;
   width: 100%;
   text-align: center;
 }
@@ -965,6 +968,7 @@ h3 {
   font-size: 32px;
   margin-bottom: 30px;
   line-height: 100%;
+  text-shadow: 1px 1px 1px rgb(38 70 149);
 }
 
 .slogan-title span {
@@ -1034,23 +1038,26 @@ h3 {
 
 .services-item-specific {
   font-family: Murecho-Regular, sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   list-style: none;
 }
 
 .services-item-specific li {
   line-height: 120%;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: flex-start;
 }
 .services-item-specific li span{
   display: inline-block;
+  width: 5px;
+  height: 5px;
   min-width: 5px;
-  max-height: 5px;
   min-height: 5px;
   background: #264695;
-  margin-right: 5px;
+  margin-right: 8px;
+  position: relative;
+  bottom: 5px;
 }
 .services-item:last-child {
   margin-bottom: 0;
@@ -1067,7 +1074,7 @@ h3 {
 
 .services-item-text {
   font-family: Murecho-Regular, sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 120%;
   color: #ffffff;
   text-align: justify;
