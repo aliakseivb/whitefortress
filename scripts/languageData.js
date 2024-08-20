@@ -271,7 +271,7 @@ export const languageObj = {
       appName: 'Business applications',
       appSpecific1: '<span></span>CRM systems',
       appSpecific2: '<span></span>Analytical systems',
-      appSpecific3: 'Collaboration tools',
+      appSpecific3: '<span></span>Collaboration tools',
       appText: 'Business applications are software systems and complexes designed to automate key business functions and processes within a company. The presence of such applications increases the efficiency of key business processes of an enterprise, allows to reduce the time of searching and processing information, save material and human resources, and automate typical actions within the framework of process execution, etc.',
       aiSolutionsName: 'Intelligent engineering solutions',
       aiSolutionsSpecific1: '<span></span>Local automation of engineering systems (AES)',
