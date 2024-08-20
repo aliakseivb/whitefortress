@@ -2,6 +2,7 @@
   .nav {
     margin-right: 5%;
   }
+
   .aboutOffer {
     font-size: 22px;
   }
@@ -11,9 +12,11 @@
   .header-container {
     grid-template-columns: 130px 1fr;
   }
+
   .nav {
     margin-right: unset;
   }
+
   .what-we-info {
     row-gap: 20px;
   }
@@ -228,9 +231,11 @@
   .partner-slider-item-name {
     font-size: 19px;
   }
+
   .what-we-info {
     padding: 0 0;
   }
+
   .what-we-info-item {
     flex-direction: column;
     padding: 30px 0;
@@ -240,6 +245,7 @@
     margin: 0 auto 40px;
     background: -webkit-linear-gradient(-30deg, #9fa8bd 0%, rgb(23 72 133) 100%);
   }
+
   .what-we-info-text {
     order: 1;
     width: 90%;
@@ -428,7 +434,6 @@
     font-size: 22px;
   }
 
-
   .partners-items {
     grid-template-columns: repeat(3, minmax(10%, 30%));
     column-gap: 30px;
@@ -467,7 +472,6 @@
     font-size: 16px;
     width: 90%;
   }
-
 
   .slogan-title {
     font-size: 30px;
@@ -602,7 +606,6 @@
     width: 100vw;
   }
 
-
   .burger {
     display: flex;
     position: absolute;
@@ -664,7 +667,6 @@
     font-size: 26px;
     width: 115%;
   }
-
 
   .intro-title span {
     padding: 10px 15px;
@@ -774,7 +776,6 @@
     padding: 0 0;
   }
 }
-
 
 @media screen and (max-width: 600px) {
   .intro-container {
@@ -1081,7 +1082,6 @@
     grid-template-columns: 120px 1fr;
   }
 }
-
 
 @media screen and (max-width: 400px) {
 

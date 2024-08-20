@@ -553,7 +553,6 @@ body.hidden {
   margin-bottom: 60px;
 }
 
-
 .partner-slider-items {
   display: flex;
   align-items: center;
@@ -926,18 +925,6 @@ h2 {
   width: 60%;
   box-shadow: 0 0 5px 2px rgb(38 70 149 / 70%);
 }
-/*.what-we-info-item:nth-child(2) .what-we-info-image img {*/
-/*  width: 70%;*/
-/*}*/
-/*.what-we-info-item:nth-child(3) .what-we-info-image img {*/
-/*  width: 80%;*/
-/*}*/
-/*.what-we-info-item:nth-child(4) .what-we-info-image img {*/
-/*  width: 90%;*/
-/*}*/
-/*.what-we-info-item:nth-child(even) .what-we-info-image {*/
-/*  order: 1;*/
-/*}*/
 
 .what-we-info-text {
   font-family: Murecho-Regular, sans-serif;
@@ -994,7 +981,6 @@ h3 {
   color: #264695;
 }
 
-
 .services {
   scroll-margin-top: 5em;
 }
@@ -1006,10 +992,6 @@ h3 {
 .services-title {
   color: #264695;
   margin-bottom: 50px;
-}
-
-.services-items {
-
 }
 
 .services-item {
@@ -1062,8 +1044,6 @@ h3 {
   min-height: 5px;
   background: #264695;
   margin-right: 5px;
-  /* position: relative; */
-  /* bottom: 3px; */
 }
 .services-item:last-child {
   margin-bottom: 0;
@@ -1087,7 +1067,7 @@ h3 {
 }
 
 .certificates {
-  background-image: url(../images/bg.jpg);
+  background-image: url("../images/bg.jpg");
   background-size: cover;
   position: relative;
 }
@@ -1350,7 +1330,6 @@ textarea {
   margin-bottom: 25px;
 }
 
-
 .footer-top .nav-item .nav-link {
   background-image: unset;
   display: inline-block;
@@ -1367,7 +1346,6 @@ textarea {
 .footer-top .nav-item {
   margin: unset;
 }
-
 
 .footer-top .nav-item .nav-link.active {
   color: #254695;
