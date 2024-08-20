@@ -237,10 +237,10 @@
   }
 
   .what-we-info-item {
-    flex-direction: column;
-    padding: 30px 0;
+    grid-template-columns: 1fr;
+    padding: 30px 30px;
     gap: 20px;
-    box-shadow: 0 3px 10px 2px rgb(14 14 14 / 50%) inset;
+    justify-items: center;
     width: 80%;
     margin: 0 auto 40px;
     background: -webkit-linear-gradient(-30deg, #9fa8bd 0%, rgb(23 72 133) 100%);
@@ -358,9 +358,7 @@
   }
 
   .what-we-info-image {
-    width: 80%;
-    text-align: center;
-    padding: 0;
+    width: 60%;
   }
 
   .services-container {
@@ -1020,8 +1018,7 @@
   }
 
   .what-we-info-image {
-    width: 90%;
-    padding: 0;
+    width: 70%;
   }
 
   .what-we-info-text {

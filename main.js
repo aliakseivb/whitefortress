@@ -40,8 +40,6 @@ import {languageObj} from "./scripts/languageData.js";
   }
 
   document.addEventListener('scroll', () => {
-    console.log('partnersBlock.offsetTop', partnersBlock.offsetTop)
-    console.log('window.scrollY', window.scrollY)
     if (window.scrollY + 300 > partnersBlock.offsetTop) {
       changeActiveLink(partnersBlock);
     }

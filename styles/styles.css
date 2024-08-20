@@ -887,6 +887,9 @@ h2 {
   background: -moz-linear-gradient(1deg, #264695 0%, rgba(101, 127, 159, 0.5) 100%);
   padding: 25px 40px;
   border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -903,35 +906,39 @@ h2 {
 .what-we-info {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 20px;
+  row-gap: 40px;
   padding: 0 20px;
 }
 
 .what-we-info-item {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  align-self: center;
+  justify-self: center;
   align-items: center;
+  gap: 40px;
+  padding: 0 30px;
+  width: 100%;
 }
 
 .what-we-info-image {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+
 }
 
 .what-we-info-image img {
-  width: 60%;
+  width: 100%;
   box-shadow: 0 0 5px 2px rgb(38 70 149 / 70%);
 }
 
 .what-we-info-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: Murecho-Regular, sans-serif;
   font-size: 22px;
   line-height: 120%;
   color: #ffffff;
-  width: 54%;
+  height: 100%;
   padding: 30px 30px;
   background: #f5ac70;
   box-shadow: inset 0 0 11px 2px rgb(255 255 255);
@@ -997,7 +1004,7 @@ h3 {
 .services-item {
   margin-bottom: 20px;
   border: 1px solid #264695;
-  padding: 20px 20px;
+  padding: 30px 30px;
   background: #264695;
 }
 
@@ -1005,7 +1012,7 @@ h3 {
   display: grid;
   grid-template-columns: 334px 1fr;
   column-gap: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   align-items: center;
   border: 1px solid #264695;
   padding: 20px 20px;
