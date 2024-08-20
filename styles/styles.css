@@ -182,7 +182,7 @@ body.hidden {
 }
 
 .nav-link {
-  font-family: Murecho-Regular, sans-serif;
+  font-family: Murecho-Medium, sans-serif;
   font-size: 18px;
   text-decoration: none;
   color: #264695;
@@ -760,7 +760,7 @@ body.hidden {
 }
 
 .go-back {
-margin-left: 9px;
+  margin-left: 9px;
 }
 
 .partner-link:hover,
@@ -904,15 +904,14 @@ h2 {
 .what-we-info {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 0;
+  row-gap: 20px;
+  padding: 0 20px;
 }
 
 .what-we-info-item {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0 50px;
-  gap: 50px;
 }
 
 .what-we-info-image {
@@ -928,16 +927,16 @@ h2 {
   box-shadow: 0 0 5px 2px rgb(38 70 149 / 70%);
 }
 
-.what-we-info-item:nth-child(even) .what-we-info-image {
-  order: 1;
-}
+/*.what-we-info-item:nth-child(even) .what-we-info-image {*/
+/*  order: 1;*/
+/*}*/
 
 .what-we-info-text {
   font-family: Murecho-Regular, sans-serif;
   font-size: 22px;
   line-height: 120%;
   color: #ffffff;
-  width: 73%;
+  width: 54%;
   padding: 30px 30px;
   background: #f5ac70;
   box-shadow: inset 0 0 11px 2px rgb(255 255 255);

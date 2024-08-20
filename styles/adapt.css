@@ -1,11 +1,19 @@
 @media screen and (max-width: 1300px) {
-
+  .nav {
+    margin-right: 5%;
+  }
   .aboutOffer {
     font-size: 22px;
   }
 }
 
 @media screen and (max-width: 1230px) {
+  .header-container {
+    grid-template-columns: 130px 1fr;
+  }
+  .nav {
+    margin-right: unset;
+  }
   .what-we-info {
     row-gap: 20px;
   }
@@ -223,7 +231,7 @@
 
   .what-we-info-item {
     flex-direction: column;
-    padding: 40px 0;
+    padding: 30px 0;
     gap: 20px;
     box-shadow: 0 3px 10px 2px rgb(14 14 14 / 50%) inset;
     width: 80%;
@@ -231,8 +239,8 @@
     background: -webkit-linear-gradient(-30deg, #9fa8bd 0%, rgb(23 72 133) 100%);
   }
 
-  .what-we-info-item:nth-child(even) .what-we-info-image {
-    order: unset;
+  .what-we-info-text {
+    order: 1;
   }
 
   .contacts-item,
