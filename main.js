@@ -3,10 +3,13 @@ import {languageObj} from "./scripts/languageData.js";
 
 (() => {
 
+
   const body = document.querySelector('body');
   const header = document.querySelector('header');
   const bodyOverlay = document.querySelector('.body-overlay');
   const navbar = document.querySelector('.navbar');
+  const navbarLinks = document.querySelectorAll('.navbar .nav-link');
+  const headerLinks = document.querySelectorAll('.header .nav-link');
   const menuNavbar = document.querySelector('.navbar .menu');
   const ruButtons = document.querySelectorAll('.lang-item-ru');
   const enButtons = document.querySelectorAll('.lang-item-en');
@@ -14,18 +17,98 @@ import {languageObj} from "./scripts/languageData.js";
   const burger = document.querySelector('#burger');
   const logoScroll = document.querySelector('.logo-scroll');
   const container = document.querySelector('.container');
+
+
+  const partnersBlock = document.querySelector('#partners');
+  const aboutBlock = document.querySelector('#about');
+  const servicesBlock = document.querySelector('#services');
+  const questionsBlock = document.querySelector('#questions');
+
+  function changeActiveLink(block) {
+    navbarLinks.forEach(item => {
+      item.classList.remove('active');
+      if (item.dataset.name === block.dataset.name) {
+        item.classList.add('active');
+      }
+    });
+    headerLinks.forEach(item => {
+      item.classList.remove('active');
+      if (item.dataset.name === block.dataset.name) {
+        item.classList.add('active');
+      }
+    });
+  }
+
+  document.addEventListener('scroll', () => {
+    console.log('partnersBlock.offsetTop', partnersBlock.offsetTop)
+    console.log('window.scrollY', window.scrollY)
+    if (window.scrollY + 300 > partnersBlock.offsetTop) {
+      changeActiveLink(partnersBlock);
+    }
+    if(window.scrollY + 300 > aboutBlock.offsetTop){
+      changeActiveLink(aboutBlock);
+    }
+    if(window.scrollY + 300 > servicesBlock.offsetTop){
+      changeActiveLink(servicesBlock);
+    }
+    if(window.scrollY + 300 > questionsBlock.offsetTop){
+      changeActiveLink(questionsBlock);
+    }
+    if (window.scrollY < 200) {
+      navbarLinks.forEach(item => {
+        item.classList.remove('active');
+
+      });
+      headerLinks.forEach(item => {
+        item.classList.remove('active');
+      });
+      navbarLinks[0].classList.add('active');
+      headerLinks[0].classList.add('active');
+    }
+  });
+  // header.addEventListener('click', (e) => {
+  //   if (e.target.classList.contains('nav-link')) {
+  //     headerLinks.forEach(item => {
+  //       item.classList.remove('active');
+  //     });
+  //     e.target.classList.add('active');
+  //     navbarLinks.forEach(item => {
+  //       item.classList.remove('active');
+  //       if (item.dataset.name === e.target.dataset.name) {
+  //         item.classList.add('active');
+  //       }
+  //     });
+  //   }
+  // });
+
+  // navbar.addEventListener('click', (e) => {
+  //   if (e.target.classList.contains('nav-link')) {
+  //     navbarLinks.forEach(item => {
+  //       item.classList.remove('active');
+  //     });
+  //     e.target.classList.add('active');
+  //     headerLinks.forEach(item => {
+  //       item.classList.remove('active');
+  //       if (item.dataset.name === e.target.dataset.name) {
+  //         item.classList.add('active');
+  //       }
+  //     });
+  //   }
+  // });
+
   let language
   const whitefortress = JSON.parse(localStorage.getItem('whitefortress')) ? JSON.parse(localStorage.getItem('whitefortress')) : null;
   if (whitefortress) {
     language = whitefortress.language ? whitefortress.language : 'ru';
-  }else {
+  } else {
     language = 'ru';
     localStorage.setItem('whitefortress', JSON.stringify({language: 'ru'}))
   }
   /** ЛОВИМ ТЕКУЩИЙ ЯЗЫК И МЕНЯЕМ ТАМ ГДЕ НАДО ВСЕ ЧТО НАДО*/
 
   changeLanguage(language);
-  function changeLanguage(language){
+
+  function changeLanguage(language) {
     document.querySelector('.html').setAttribute('lang', language);
     if (language === 'ru') {
 
@@ -35,64 +118,64 @@ import {languageObj} from "./scripts/languageData.js";
       enButtons.forEach(item => {
         item.classList.remove('active');
       });
-      for (let key in languageObj.ru.navbarItem){
+      for (let key in languageObj.ru.navbarItem) {
         let elem = document.querySelector(`.${key}`)
-        if(elem){
+        if (elem) {
           elem.innerHTML = languageObj.ru.navbarItem[`${key}`];
         }
       }
-      for (let key in languageObj.ru.headerItem){
+      for (let key in languageObj.ru.headerItem) {
         let elem = document.querySelector(`.${key}`)
-        if(elem){
+        if (elem) {
           elem.innerHTML = languageObj.ru.headerItem[`${key}`];
         }
       }
-      for (let key in languageObj.ru.footerItem){
+      for (let key in languageObj.ru.footerItem) {
         let elem = document.querySelector(`.${key}`)
-        if(elem){
+        if (elem) {
           elem.innerHTML = languageObj.ru.footerItem[`${key}`];
         }
       }
-      if(location.href.includes('index.html')){
-        for (let key in languageObj.ru.successPopup){
+      if (location.href.includes('index.html')) {
+        for (let key in languageObj.ru.successPopup) {
           let elem = document.querySelector(`.${key}`)
-          if(elem){
+          if (elem) {
             elem.innerHTML = languageObj.ru.successPopup[`${key}`];
           }
         }
-        for (let key in languageObj.ru.placeholders){
+        for (let key in languageObj.ru.placeholders) {
           let elem = document.querySelector(`#${key}`)
-          if(elem){
+          if (elem) {
             elem.placeholder = languageObj.ru.placeholders[`${key}`];
           }
         }
-        for (let key in languageObj.ru.mainPage){
+        for (let key in languageObj.ru.mainPage) {
           let elem = document.querySelector(`.${key}`)
-          if(elem){
+          if (elem) {
             elem.innerHTML = languageObj.ru.mainPage[`${key}`];
           }
         }
       }
-      if(location.href.includes('partner.html')){
-        for (let key in languageObj.ru.partnerPage){
+      if (location.href.includes('partner.html')) {
+        for (let key in languageObj.ru.partnerPage) {
           let elem = document.querySelector(`.${key}`)
-          if(elem){
+          if (elem) {
             elem.innerHTML = languageObj.ru.partnerPage[`${key}`];
           }
         }
       }
-      if(location.href.includes('privacy.html')){
-        for (let key in languageObj.ru.privacyPage){
+      if (location.href.includes('privacy.html')) {
+        for (let key in languageObj.ru.privacyPage) {
           let elem = document.querySelector(`.${key}`)
-          if(elem){
+          if (elem) {
             elem.innerHTML = languageObj.ru.privacyPage[`${key}`];
           }
         }
       }
-      if(location.href.includes('conditions.html')){
-        for (let key in languageObj.ru.conditionsPage){
+      if (location.href.includes('conditions.html')) {
+        for (let key in languageObj.ru.conditionsPage) {
           let elem = document.querySelector(`.${key}`)
-          if(elem){
+          if (elem) {
             elem.innerHTML = languageObj.ru.conditionsPage[`${key}`];
           }
         }
@@ -105,70 +188,71 @@ import {languageObj} from "./scripts/languageData.js";
       enButtons.forEach(item => {
         item.classList.add('active');
       });
-      for (let key in languageObj.en.navbarItem){
+      for (let key in languageObj.en.navbarItem) {
         let elem = document.querySelector(`.${key}`)
-        if(elem){
+        if (elem) {
           elem.innerHTML = languageObj.en.navbarItem[`${key}`];
         }
       }
-      for (let key in languageObj.en.headerItem){
+      for (let key in languageObj.en.headerItem) {
         let elem = document.querySelector(`.${key}`)
-        if(elem){
+        if (elem) {
           elem.innerHTML = languageObj.en.headerItem[`${key}`];
         }
       }
-      for (let key in languageObj.en.footerItem){
+      for (let key in languageObj.en.footerItem) {
         let elem = document.querySelector(`.${key}`)
-        if(elem){
+        if (elem) {
           elem.innerHTML = languageObj.en.footerItem[`${key}`];
         }
       }
-      if(location.href.includes('index.html')){
-        for (let key in languageObj.en.successPopup){
+      if (location.href.includes('index.html')) {
+        for (let key in languageObj.en.successPopup) {
           let elem = document.querySelector(`.${key}`)
-          if(elem){
+          if (elem) {
             elem.innerHTML = languageObj.en.successPopup[`${key}`];
           }
         }
-        for (let key in languageObj.en.placeholders){
+        for (let key in languageObj.en.placeholders) {
           let elem = document.querySelector(`#${key}`)
-          if(elem){
+          if (elem) {
             elem.placeholder = languageObj.en.placeholders[`${key}`];
           }
         }
-        for (let key in languageObj.en.mainPage){
+        for (let key in languageObj.en.mainPage) {
           let elem = document.querySelector(`.${key}`)
-          if(elem){
+          if (elem) {
             elem.innerHTML = languageObj.en.mainPage[`${key}`];
           }
         }
       }
-      if(location.href.includes('partner.html')){
-        for (let key in languageObj.en.partnerPage){
+      if (location.href.includes('partner.html')) {
+        for (let key in languageObj.en.partnerPage) {
           let elem = document.querySelector(`.${key}`)
-          if(elem){
+          if (elem) {
             elem.innerHTML = languageObj.en.partnerPage[`${key}`];
           }
         }
       }
-      if(location.href.includes('privacy.html')){
-        for (let key in languageObj.en.privacyPage){
+      if (location.href.includes('privacy.html')) {
+        for (let key in languageObj.en.privacyPage) {
           let elem = document.querySelector(`.${key}`)
-          if(elem){
+          if (elem) {
             elem.innerHTML = languageObj.en.privacyPage[`${key}`];
           }
         }
       }
-      if(location.href.includes('conditions.html')){
-        for (let key in languageObj.en.conditionsPage){
+      if (location.href.includes('conditions.html')) {
+        for (let key in languageObj.en.conditionsPage) {
           let elem = document.querySelector(`.${key}`)
-          if(elem){
+          if (elem) {
             elem.innerHTML = languageObj.en.conditionsPage[`${key}`];
           }
         }
       }
     }
   }
+
   langBlocks.forEach(item => {
     item.addEventListener('click', (e) => {
       if (e.target.classList.contains('lang-item-ru')) {
@@ -270,7 +354,6 @@ import {languageObj} from "./scripts/languageData.js";
     navbar.classList.remove('show');
     navbar.style.right = '-100%';
   }
-
 
 
   if (location.href.includes('index.html')) {

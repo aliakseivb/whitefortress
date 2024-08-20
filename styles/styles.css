@@ -1052,17 +1052,18 @@ h3 {
 .services-item-specific li {
   line-height: 120%;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: flex-start;
 }
 .services-item-specific li span{
   display: inline-block;
   min-width: 5px;
+  max-height: 5px;
   min-height: 5px;
   background: #264695;
   margin-right: 5px;
-  position: relative;
-  bottom: 3px;
+  /* position: relative; */
+  /* bottom: 3px; */
 }
 .services-item:last-child {
   margin-bottom: 0;
