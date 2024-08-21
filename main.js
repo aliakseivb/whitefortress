@@ -18,82 +18,6 @@ import {languageObj} from "./scripts/languageData.js";
   const logoScroll = document.querySelector('.logo-scroll');
   const container = document.querySelector('.container');
 
-
-  const partnersBlock = document.querySelector('#partners');
-  const aboutBlock = document.querySelector('#about');
-  const servicesBlock = document.querySelector('#services');
-  const questionsBlock = document.querySelector('#questions');
-
-  function changeActiveLink(block) {
-    navbarLinks.forEach(item => {
-      item.classList.remove('active');
-      if (item.dataset.name === block.dataset.name) {
-        item.classList.add('active');
-      }
-    });
-    headerLinks.forEach(item => {
-      item.classList.remove('active');
-      if (item.dataset.name === block.dataset.name) {
-        item.classList.add('active');
-      }
-    });
-  }
-
-  document.addEventListener('scroll', () => {
-    if (window.scrollY + 300 > partnersBlock.offsetTop) {
-      changeActiveLink(partnersBlock);
-    }
-    if(window.scrollY + 300 > aboutBlock.offsetTop){
-      changeActiveLink(aboutBlock);
-    }
-    if(window.scrollY + 300 > servicesBlock.offsetTop){
-      changeActiveLink(servicesBlock);
-    }
-    if(window.scrollY + 300 > questionsBlock.offsetTop){
-      changeActiveLink(questionsBlock);
-    }
-    if (window.scrollY < 200) {
-      navbarLinks.forEach(item => {
-        item.classList.remove('active');
-
-      });
-      headerLinks.forEach(item => {
-        item.classList.remove('active');
-      });
-      navbarLinks[0].classList.add('active');
-      headerLinks[0].classList.add('active');
-    }
-  });
-  // header.addEventListener('click', (e) => {
-  //   if (e.target.classList.contains('nav-link')) {
-  //     headerLinks.forEach(item => {
-  //       item.classList.remove('active');
-  //     });
-  //     e.target.classList.add('active');
-  //     navbarLinks.forEach(item => {
-  //       item.classList.remove('active');
-  //       if (item.dataset.name === e.target.dataset.name) {
-  //         item.classList.add('active');
-  //       }
-  //     });
-  //   }
-  // });
-
-  // navbar.addEventListener('click', (e) => {
-  //   if (e.target.classList.contains('nav-link')) {
-  //     navbarLinks.forEach(item => {
-  //       item.classList.remove('active');
-  //     });
-  //     e.target.classList.add('active');
-  //     headerLinks.forEach(item => {
-  //       item.classList.remove('active');
-  //       if (item.dataset.name === e.target.dataset.name) {
-  //         item.classList.add('active');
-  //       }
-  //     });
-  //   }
-  // });
-
   let language
   const whitefortress = JSON.parse(localStorage.getItem('whitefortress')) ? JSON.parse(localStorage.getItem('whitefortress')) : null;
   if (whitefortress) {
@@ -288,9 +212,17 @@ import {languageObj} from "./scripts/languageData.js";
 
   window.onscroll = () => {
     navbar.removeAttribute('style');
-    if (window.scrollY > 30 && window.innerWidth > 1000) {
+    if (window.scrollY > 40 && window.innerWidth > 1000) {
       header.classList.add('scroll');
+      if (location.href.includes('partner.html')) {
+        const partnerContainer = document.querySelector('.partner-container');
+        partnerContainer.style.padding = '150px 10px 40px';
+      }
     } else {
+      if (location.href.includes('partner.html')) {
+        const partnerContainer = document.querySelector('.partner-container');
+        partnerContainer.style.padding = '40px 10px';
+      }
       header.classList.remove('scroll');
     }
     if (window.scrollY > 80 && window.innerWidth <= 1000) {
@@ -358,6 +290,121 @@ import {languageObj} from "./scripts/languageData.js";
     new WOW({
       animateClass: 'animate__animated',
     }).init();
+
+    /** РАБОТАЕМ С ФИЛЬТРОМ */
+    const filterButton = document.querySelector('.products-filter-button');
+    const inside = document.querySelector('.inside');
+    filterButton.addEventListener('click', () => {
+      filterButton.classList.toggle('active');
+      inside.classList.toggle('see');
+    })
+    // const selectOption = document.querySelectorAll('.select-option');
+    //
+    // select.addEventListener('click', (e) => {
+    //   if (select.classList.contains('open')) {
+    //     select.classList.remove('open');
+    //     inside.style.maxHeight = `0`;
+    //     setTimeout(() => {
+    //       inside.classList.remove('see');
+    //     }, 250)
+    //
+    //   } else {
+    //
+    //     inside.style.maxHeight = `${inside.scrollHeight}px`;
+    //     // inside.style.maxWidth = `max-content`;
+    //     // inside.style.display = `flex`;
+    //     // inside.style.display = `flex`;
+    //     // inside.style.overflow = `unset`;
+    //     inside.classList.add('see');
+    //     select.classList.toggle('open');
+    //   }
+    // });
+    // selectOption.forEach(elem => {
+    //   elem.addEventListener('click', (e) => {
+    //     inside.style.maxHeight = `0`;
+    //     setTimeout(() => {
+    //       select.innerText = e.target.innerText;
+    //       select.classList.remove('open');
+    //       select.style.color = '#333';
+    //       inside.classList.remove('see')
+    //     }, 250);
+    //   });
+    // });
+    /** АКТИВИРУЕМ ССЫЛКИ ПРИ СКРОЛЛЕ */
+    const partnersBlock = document.querySelector('#partners');
+    const aboutBlock = document.querySelector('#about');
+    const servicesBlock = document.querySelector('#services');
+    const questionsBlock = document.querySelector('#questions');
+
+    function changeActiveLink(block) {
+      navbarLinks.forEach(item => {
+        item.classList.remove('active');
+        if (item.dataset.name === block.dataset.name) {
+          item.classList.add('active');
+        }
+      });
+      headerLinks.forEach(item => {
+        item.classList.remove('active');
+        if (item.dataset.name === block.dataset.name) {
+          item.classList.add('active');
+        }
+      });
+    }
+
+    document.addEventListener('scroll', () => {
+      if (window.scrollY + 300 > partnersBlock.offsetTop) {
+        changeActiveLink(partnersBlock);
+      }
+      if (window.scrollY + 300 > aboutBlock.offsetTop) {
+        changeActiveLink(aboutBlock);
+      }
+      if (window.scrollY + 300 > servicesBlock.offsetTop) {
+        changeActiveLink(servicesBlock);
+      }
+      if (window.scrollY + 300 > questionsBlock.offsetTop) {
+        changeActiveLink(questionsBlock);
+      }
+      if (window.scrollY < 200) {
+        navbarLinks.forEach(item => {
+          item.classList.remove('active');
+
+        });
+        headerLinks.forEach(item => {
+          item.classList.remove('active');
+        });
+        navbarLinks[0].classList.add('active');
+        headerLinks[0].classList.add('active');
+      }
+    });
+    // header.addEventListener('click', (e) => {
+    //   if (e.target.classList.contains('nav-link')) {
+    //     headerLinks.forEach(item => {
+    //       item.classList.remove('active');
+    //     });
+    //     e.target.classList.add('active');
+    //     navbarLinks.forEach(item => {
+    //       item.classList.remove('active');
+    //       if (item.dataset.name === e.target.dataset.name) {
+    //         item.classList.add('active');
+    //       }
+    //     });
+    //   }
+    // });
+
+    // navbar.addEventListener('click', (e) => {
+    //   if (e.target.classList.contains('nav-link')) {
+    //     navbarLinks.forEach(item => {
+    //       item.classList.remove('active');
+    //     });
+    //     e.target.classList.add('active');
+    //     headerLinks.forEach(item => {
+    //       item.classList.remove('active');
+    //       if (item.dataset.name === e.target.dataset.name) {
+    //         item.classList.add('active');
+    //       }
+    //     });
+    //   }
+    // });
 
     /** СОЗДАЕМ КАРТОЧКИ ПАРТНЕРОВ */
     const partnersItemsBlock = document.querySelector('.partners-items');
