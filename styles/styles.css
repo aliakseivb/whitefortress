@@ -39,6 +39,7 @@
   font-weight: 900;
   font-style: normal;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -466,7 +467,7 @@ body.hidden {
   font-family: Magistral-Regular, sans-serif;
   font-size: 24px;
   line-height: 130%;
-  width: 170%;
+  width: 165%;
   margin-bottom: 90px;
   color: #ffffff;
   position: relative;
@@ -542,6 +543,7 @@ body.hidden {
 .intro-image img {
   width: 100%;
 }
+
 h2 {
   font-family: Magistral-Bold, sans-serif;
   font-size: 32px;
@@ -550,6 +552,7 @@ h2 {
   line-height: 110%;
   margin-bottom: 50px;
 }
+
 .partners-title {
   color: #264695;
 }
@@ -1677,43 +1680,135 @@ textarea {
   background: #264695;
 }
 
-.inside {
-  width: 100%;
-  /*max-height: 0; !* изначально блок свёрнут *!*/
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 0;
-  display: grid;
-  grid-template-columns: repeat(4, fit-content(300px));
-  column-gap: 10px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: #ffffff;
-  /*transition: max-height .5s;*/
-  z-index: -1;
+
+/* СТРАНИЦА ПРОДУКТОВ*/
+.products {
+ /* background-image: url("../images/services-bg.jpg");*/
+ /* background-position: center center;*/
+ /* background-size: cover;*/
+ /* background-repeat: no-repeat;*/
+ /*height: 1000px;*/
+  background: #264695;
 }
-
-.inside.see {
-  border: 1px solid #264695;
-  /*display: grid;*/
-  /*grid-template-columns: repeat(5, 250px);*/
-  /*align-items: center;*/
-  /*flex-wrap: wrap;*/
-
-  background: #ffffff;
-  z-index: 3;
+.products-container{
+  padding: 80px 10px 40px;
+  column-gap: 5%;
+  position: relative;
 }
+/*.products-info {*/
+/*  max-width: 40%;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: flex-end;*/
+/*  text-align: left;*/
+/*}*/
+.products-title {
+  /*width: 100%;*/
+  /*padding: 10px 30px;*/
+  /*box-shadow: 0 0 8px 2px rgb(255, 255, 255);*/
+  /*background: rgba(88, 122, 199, 0.3);*/
 
-.select-option {
-  padding: 5px 15px;
-  font-family: Magistral-Regular, sans-serif;
-  font-size: 14px;
-  color: #264695;
-  background: #ffffff;
-}
-
-.select-option:hover {
-  cursor: pointer;
-  background: #f5ac70;
   color: #ffffff;
+  margin-bottom: 20px;
+  /*text-align: left;*/
+}
+
+.products-desc {
+  font-family: Magistral-Book, sans-serif;
+  font-size: 14px;
+  text-shadow: 1px 1px 1px rgb(27 27 27);
+  color: #f5ac70;
+  /*background: rgba(255, 255, 255, 0.53);*/
+  /*box-shadow: 0 0 7px 7px rgb(255, 255, 255);*/
+  width: max-content;
+  /*padding: 2px 20px;*/
+  margin-bottom: 10px;
+}
+
+.products-items {
+  padding: 20px 20px;
+  box-shadow: 0 0 8px 2px rgb(255, 255, 255);
+  background: rgba(88, 122, 199, 0.3);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+  margin-bottom: 30px;
+}
+.products-item {
+  font-family: Magistral-Regular, sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+border: 1px solid #ffffff;
+  padding: 2px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.products-item.selected {
+  background: #f5ac70;
+}
+
+.partner-items {
+  padding: 20px 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  background: #264695;
+  border: 2px dotted #ffffff;
+}
+
+.partner-item {
+  display: grid;
+  grid-template-columns: 10% 1fr;
+  column-gap: 20px;
+  background: #ffffff;
+  padding: 10px 10px;
+}
+.partner-item-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.partner-item-image img{
+  width: 100%;
+}
+.partner-item-body {
+  border-left: 3px solid #264695;
+}
+.partner-item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #264695;
+  padding: 10px 20px 10px 10px;
+}
+
+.partner-item-name {
+  font-family: Magistral-C-Bold, sans-serif;
+  font-size: 18px;
+  color: #264695;
+}
+
+.partner-item-link {
+  font-family: Magistral-C-Bold, sans-serif;
+  font-size: 16px;
+  color: #264695;
+}
+
+.partner-item-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 10px 10px;
+  border-top: 1px solid #264695;
+}
+
+.partner-item-service {
+  font-family: Magistral-C-Bold, sans-serif;
+  font-size: 16px;
+  color: #264695;
 }

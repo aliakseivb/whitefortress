@@ -1,11 +1,10 @@
-export const partnersArr = [
+export const partnersData = [
   {
+    forExample: ['dss', 'iptele'],
+    // pathToProduct: '',
     name: 'garda',
     image: 'images/garda-p.png',
     url: 'https://gardatech.ru/',
-    // products: [
-    //
-    // ],
     ru: {
       title: 'Гарда Технологии',
       text: 'Гарда Технологии – российский разработчик высокотехнологичных систем информационной безопасности для различных цифровых инфраструктур, обеспечивающих защиту от внутренних/внешних киберугроз и мошеннических действий.<br><br>Компания обладает многолетним опытом в сфере информационных технологий и разрабатывает решения для различных задач безопасности.<br><br>Разработки аппаратно-программных решений информационной безопасности ведутся с 2005 года. Решения «Гарды Технологии» внедрены в крупнейших компаниях финансового сектора, промышленных предприятиях, телеком-операторах и государственных структурах России и СНГ.<br><br>Собственный исследовательский центр компании имеет большой опыт разработки решений высокой сложности, а также запатентованные технологии решений информационной безопасности.<br><br>Собственная технологическая платформа компании для хранения информации не требует сторонних лицензий.',
@@ -84,6 +83,8 @@ export const partnersArr = [
     },
   },
   {
+    forExample: ['internet', 'wireless', 'iptele'],
+    // pathToProduct: '',
     name: 'hewlett',
     image: 'images/hewlett-p.png',
     url: 'https://www.hpe.com/us/en/home.html',
@@ -165,6 +166,8 @@ export const partnersArr = [
     },
   },
   {
+    forExample: ['internet', 'wireless', 'dataSecurity'],
+    // pathToProduct: '',
     name: 'cisco',
     image: 'images/cisco-p.png',
     url: 'https://www.cisco.com/',
@@ -246,6 +249,8 @@ export const partnersArr = [
     },
   },
   {
+    forExample: ['smis', 'acs'],
+    // pathToProduct: '',
     name: 'huawei',
     image: 'images/huawei-p.png',
     url: 'https://www.huawei.com/en/?ic_medium=direct&ic_source=surlent',
@@ -327,6 +332,8 @@ export const partnersArr = [
     },
   },
   {
+    forExample: ['netSecurity', 'appSecurity', 'dataSecurity'],
+    // pathToProduct: '',
     name: 'symantec',
     image: 'images/symantec-p.png',
     url: 'https://www.broadcom.com/products/cybersecurity',
@@ -408,6 +415,8 @@ export const partnersArr = [
     },
   },
   {
+    forExample: ['crm', 'analytic', 'collaborat'],
+    // pathToProduct: '',
     name: 'redhat',
     url: 'https://www.redhat.com/en',
     image: 'images/redhat-p.png',
@@ -490,6 +499,8 @@ export const partnersArr = [
     },
   },
   {
+    forExample: ['netSecurity', 'appSecurity', 'dataSecurity', 'dss', 'backup', 'cloud'],
+    // pathToProduct: '',
     name: 'veritas',
     url: 'https://www.veritas.com/',
     image: 'images/veritas-p.png',

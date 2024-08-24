@@ -1,5 +1,6 @@
-import {partnersArr} from "./scripts/partnersData.js";
+import {partnersData} from "./scripts/partnersData.js";
 import {languageData} from "./scripts/languageData.js";
+import {productsData} from "./scripts/products.js";
 
 (() => {
 
@@ -257,7 +258,7 @@ import {languageData} from "./scripts/languageData.js";
   });
 
 
-  /** СЛАШЕМ БУРГЕР */
+  /** СЛУШАЕМ БУРГЕР */
   burger.addEventListener('click', (e) => {
     burger.classList.toggle('active');
     navbar.classList.toggle('show');
@@ -293,11 +294,8 @@ import {languageData} from "./scripts/languageData.js";
 
     /** РАБОТАЕМ С ФИЛЬТРОМ */
     const filterButton = document.querySelector('.products-filter-button');
-    const inside = document.querySelector('.inside');
     filterButton.addEventListener('click', () => {
-      filterButton.classList.toggle('active');
-      filterButton.innerText = 'Сделайте выбор';
-      inside.classList.toggle('see');
+      location.href = 'products.html';
     })
     // const selectOption = document.querySelectorAll('.select-option');
     //
@@ -409,7 +407,7 @@ import {languageData} from "./scripts/languageData.js";
 
     /** СОЗДАЕМ КАРТОЧКИ ПАРТНЕРОВ */
     const partnersItemsBlock = document.querySelector('.partners-items');
-    partnersArr.forEach(item => {
+    partnersData.forEach(item => {
       const newElem = document.createElement('div');
       newElem.className = 'partners-item wow animate__bounce';
       newElem.setAttribute('data-name', item.name);
@@ -425,7 +423,7 @@ import {languageData} from "./scripts/languageData.js";
     /** ЛОВИМ КЛИК ПО КАРТОЧКЕ ПАРТНЕРОВ */
     partnersItemsBlock.addEventListener('click', (e) => {
       if (e.target.tagName === 'IMG' || e.target.classList.contains('partners-item')) {
-        const currentPartner = partnersArr.find(item => {
+        const currentPartner = partnersData.find(item => {
           return item.name.toLowerCase() === e.target.dataset.name.toLowerCase();
         });
         if (currentPartner) {
@@ -443,21 +441,6 @@ import {languageData} from "./scripts/languageData.js";
     const successPopupButton = document.querySelector('.success-popup-button');
     const successPopupOverlay = document.querySelector('.success-popup-overlay');
     const successPopup = document.querySelector('.success-popup');
-
-    // Array.from(formInputs).forEach(elem => {
-    //   // elem.addEventListener('input', (e) => {
-    //   //   if (e.target.value.length >= 2) {
-    //   //     e.target.classList.remove('error');
-    //   //     // e.target.parentElement.lastChild.remove();
-    //   //   }
-    //   // });
-    //   elem.addEventListener('change', (e) => {
-    //     if (e.target.value.length >= 2) {
-    //       e.target.classList.remove('error');
-    //     }
-    //   });
-    //
-    // });
 
     const fields = [
       {
@@ -510,14 +493,14 @@ import {languageData} from "./scripts/languageData.js";
       validateField(field, element) {
         if (!element.value || !element.value.match(field.regex)) {
           element.classList.add('error');
-          if(!element.parentElement.children[1]){
+          if (!element.parentElement.children[1]) {
             element.insertAdjacentHTML('afterend', '<div class="input-error">Обязательное поле</div>');
           }
 
           field.valid = false;
         } else {
           element.classList.remove('error');
-          if(element.parentElement.children[1]){
+          if (element.parentElement.children[1]) {
             element.parentElement.children[1].remove();
           }
           field.valid = true;
@@ -644,11 +627,60 @@ import {languageData} from "./scripts/languageData.js";
       }
     }
   }
+
   if (location.href.includes('privacy.html')) {
 
   }
   if (location.href.includes('conditions.html')) {
 
   }
+  if (location.href.includes('products.html')) {
+
+    const productsItemsBlock = document.querySelector('.products-items');
+    if (language === 'ru') {
+      for (const key in productsData.ru) {
+
+        if (productsData.ru[`${key}`].length) {
+          productsData.ru[`${key}`].forEach(item => {
+            const newProductsElem = document.createElement('div');
+            newProductsElem.className = 'products-item';
+            newProductsElem.dataset.name = `${Object.keys(item)}`;
+            newProductsElem.textContent = item[Object.keys(item)];
+            productsItemsBlock.append(newProductsElem)
+          });
+        }
+      }
+    }
+    // const productsItems = document.querySelectorAll('.products-item');
+    const partnerItemsBlock = document.querySelector('.partner-items');
+
+    productsItemsBlock.addEventListener('click', (e) => {
+      if (e.target.classList.contains('products-item') && !e.target.classList.contains('selected')) {
+        e.target.classList.add('selected');
+        partnersData.forEach(item => {
+          if (item.forExample.includes(e.target.dataset.name)) {
+            const newPartnerElem = document.createElement('div');
+            newPartnerElem.className = 'partner-item';
+            newPartnerElem.dataset.name = e.target.dataset.name;
+            newPartnerElem.innerHTML = `<div class="partner-item-image"><img src="${item.image}" alt="partner"></div>
+<div class="partner-item-body"><div class="partner-item-head"><div class="partner-item-name">
+${language === 'ru' ? item.ru.title : item.en.title}</div><a href="${item.url}" class="partner-item-link">
+${language === 'ru' ? 'К партнеру' : 'To partner'}</a></div><div class="partner-item-info">
+<div class="partner-item-service">${e.target.innerText}</div><a href="https://gardatech.ru/" class="partner-item-link">
+${language === 'ru' ? 'Посмотреть подробнее' : 'See more details'}</a></div></div>`
+            partnerItemsBlock.append(newPartnerElem)
+          }
+        });
+      } else if (e.target.classList.contains('products-item') && e.target.classList.contains('selected')) {
+        e.target.classList.remove('selected');
+       Array.from(partnerItemsBlock.children).forEach(item => {
+          if(e.target.dataset.name === item.dataset.name) {
+            item.remove();
+          }
+        })
+      }
+    });
+  }
+
 })();
 
