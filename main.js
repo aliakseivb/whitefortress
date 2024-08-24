@@ -1,5 +1,5 @@
 import {partnersArr} from "./scripts/partnersData.js";
-import {languageObj} from "./scripts/languageData.js";
+import {languageData} from "./scripts/languageData.js";
 
 (() => {
 
@@ -40,65 +40,65 @@ import {languageObj} from "./scripts/languageData.js";
       enButtons.forEach(item => {
         item.classList.remove('active');
       });
-      for (let key in languageObj.ru.navbarItem) {
+      for (let key in languageData.ru.navbarItem) {
         let elem = document.querySelector(`.${key}`)
         if (elem) {
-          elem.innerHTML = languageObj.ru.navbarItem[`${key}`];
+          elem.innerHTML = languageData.ru.navbarItem[`${key}`];
         }
       }
-      for (let key in languageObj.ru.headerItem) {
+      for (let key in languageData.ru.headerItem) {
         let elem = document.querySelector(`.${key}`)
         if (elem) {
-          elem.innerHTML = languageObj.ru.headerItem[`${key}`];
+          elem.innerHTML = languageData.ru.headerItem[`${key}`];
         }
       }
-      for (let key in languageObj.ru.footerItem) {
+      for (let key in languageData.ru.footerItem) {
         let elem = document.querySelector(`.${key}`)
         if (elem) {
-          elem.innerHTML = languageObj.ru.footerItem[`${key}`];
+          elem.innerHTML = languageData.ru.footerItem[`${key}`];
         }
       }
       if (location.href.includes('index.html')) {
-        for (let key in languageObj.ru.successPopup) {
+        for (let key in languageData.ru.successPopup) {
           let elem = document.querySelector(`.${key}`)
           if (elem) {
-            elem.innerHTML = languageObj.ru.successPopup[`${key}`];
+            elem.innerHTML = languageData.ru.successPopup[`${key}`];
           }
         }
-        for (let key in languageObj.ru.placeholders) {
+        for (let key in languageData.ru.placeholders) {
           let elem = document.querySelector(`#${key}`)
           if (elem) {
-            elem.placeholder = languageObj.ru.placeholders[`${key}`];
+            elem.placeholder = languageData.ru.placeholders[`${key}`];
           }
         }
-        for (let key in languageObj.ru.mainPage) {
+        for (let key in languageData.ru.mainPage) {
           let elem = document.querySelector(`.${key}`)
           if (elem) {
-            elem.innerHTML = languageObj.ru.mainPage[`${key}`];
+            elem.innerHTML = languageData.ru.mainPage[`${key}`];
           }
         }
       }
       if (location.href.includes('partner.html')) {
-        for (let key in languageObj.ru.partnerPage) {
+        for (let key in languageData.ru.partnerPage) {
           let elem = document.querySelector(`.${key}`)
           if (elem) {
-            elem.innerHTML = languageObj.ru.partnerPage[`${key}`];
+            elem.innerHTML = languageData.ru.partnerPage[`${key}`];
           }
         }
       }
       if (location.href.includes('privacy.html')) {
-        for (let key in languageObj.ru.privacyPage) {
+        for (let key in languageData.ru.privacyPage) {
           let elem = document.querySelector(`.${key}`)
           if (elem) {
-            elem.innerHTML = languageObj.ru.privacyPage[`${key}`];
+            elem.innerHTML = languageData.ru.privacyPage[`${key}`];
           }
         }
       }
       if (location.href.includes('conditions.html')) {
-        for (let key in languageObj.ru.conditionsPage) {
+        for (let key in languageData.ru.conditionsPage) {
           let elem = document.querySelector(`.${key}`)
           if (elem) {
-            elem.innerHTML = languageObj.ru.conditionsPage[`${key}`];
+            elem.innerHTML = languageData.ru.conditionsPage[`${key}`];
           }
         }
       }
@@ -110,65 +110,65 @@ import {languageObj} from "./scripts/languageData.js";
       enButtons.forEach(item => {
         item.classList.add('active');
       });
-      for (let key in languageObj.en.navbarItem) {
+      for (let key in languageData.en.navbarItem) {
         let elem = document.querySelector(`.${key}`)
         if (elem) {
-          elem.innerHTML = languageObj.en.navbarItem[`${key}`];
+          elem.innerHTML = languageData.en.navbarItem[`${key}`];
         }
       }
-      for (let key in languageObj.en.headerItem) {
+      for (let key in languageData.en.headerItem) {
         let elem = document.querySelector(`.${key}`)
         if (elem) {
-          elem.innerHTML = languageObj.en.headerItem[`${key}`];
+          elem.innerHTML = languageData.en.headerItem[`${key}`];
         }
       }
-      for (let key in languageObj.en.footerItem) {
+      for (let key in languageData.en.footerItem) {
         let elem = document.querySelector(`.${key}`)
         if (elem) {
-          elem.innerHTML = languageObj.en.footerItem[`${key}`];
+          elem.innerHTML = languageData.en.footerItem[`${key}`];
         }
       }
       if (location.href.includes('index.html')) {
-        for (let key in languageObj.en.successPopup) {
+        for (let key in languageData.en.successPopup) {
           let elem = document.querySelector(`.${key}`)
           if (elem) {
-            elem.innerHTML = languageObj.en.successPopup[`${key}`];
+            elem.innerHTML = languageData.en.successPopup[`${key}`];
           }
         }
-        for (let key in languageObj.en.placeholders) {
+        for (let key in languageData.en.placeholders) {
           let elem = document.querySelector(`#${key}`)
           if (elem) {
-            elem.placeholder = languageObj.en.placeholders[`${key}`];
+            elem.placeholder = languageData.en.placeholders[`${key}`];
           }
         }
-        for (let key in languageObj.en.mainPage) {
+        for (let key in languageData.en.mainPage) {
           let elem = document.querySelector(`.${key}`)
           if (elem) {
-            elem.innerHTML = languageObj.en.mainPage[`${key}`];
+            elem.innerHTML = languageData.en.mainPage[`${key}`];
           }
         }
       }
       if (location.href.includes('partner.html')) {
-        for (let key in languageObj.en.partnerPage) {
+        for (let key in languageData.en.partnerPage) {
           let elem = document.querySelector(`.${key}`)
           if (elem) {
-            elem.innerHTML = languageObj.en.partnerPage[`${key}`];
+            elem.innerHTML = languageData.en.partnerPage[`${key}`];
           }
         }
       }
       if (location.href.includes('privacy.html')) {
-        for (let key in languageObj.en.privacyPage) {
+        for (let key in languageData.en.privacyPage) {
           let elem = document.querySelector(`.${key}`)
           if (elem) {
-            elem.innerHTML = languageObj.en.privacyPage[`${key}`];
+            elem.innerHTML = languageData.en.privacyPage[`${key}`];
           }
         }
       }
       if (location.href.includes('conditions.html')) {
-        for (let key in languageObj.en.conditionsPage) {
+        for (let key in languageData.en.conditionsPage) {
           let elem = document.querySelector(`.${key}`)
           if (elem) {
-            elem.innerHTML = languageObj.en.conditionsPage[`${key}`];
+            elem.innerHTML = languageData.en.conditionsPage[`${key}`];
           }
         }
       }
@@ -296,6 +296,7 @@ import {languageObj} from "./scripts/languageData.js";
     const inside = document.querySelector('.inside');
     filterButton.addEventListener('click', () => {
       filterButton.classList.toggle('active');
+      filterButton.innerText = 'Сделайте выбор';
       inside.classList.toggle('see');
     })
     // const selectOption = document.querySelectorAll('.select-option');
@@ -443,20 +444,27 @@ import {languageObj} from "./scripts/languageData.js";
     const successPopupOverlay = document.querySelector('.success-popup-overlay');
     const successPopup = document.querySelector('.success-popup');
 
-    Array.from(formInputs).forEach(elem => {
-      elem.addEventListener('input', (e) => {
-        if (e.target.value.length >= 2) {
-          e.target.classList.remove('error');
-        }
-      });
-    });
+    // Array.from(formInputs).forEach(elem => {
+    //   // elem.addEventListener('input', (e) => {
+    //   //   if (e.target.value.length >= 2) {
+    //   //     e.target.classList.remove('error');
+    //   //     // e.target.parentElement.lastChild.remove();
+    //   //   }
+    //   // });
+    //   elem.addEventListener('change', (e) => {
+    //     if (e.target.value.length >= 2) {
+    //       e.target.classList.remove('error');
+    //     }
+    //   });
+    //
+    // });
 
     const fields = [
       {
         name: 'name',
         id: 'name',
         element: null,
-        regex: /^([a-zA-Zа-яА-ЯёЁ]{2,}\s?-?)+/s,
+        regex: /^([a-zA-Zа-яА-ЯёЁ]{2,}[ -]?)+$/s,
         valid: false,
       },
       {
@@ -502,9 +510,16 @@ import {languageObj} from "./scripts/languageData.js";
       validateField(field, element) {
         if (!element.value || !element.value.match(field.regex)) {
           element.classList.add('error');
+          if(!element.parentElement.children[1]){
+            element.insertAdjacentHTML('afterend', '<div class="input-error">Обязательное поле</div>');
+          }
+
           field.valid = false;
         } else {
           element.classList.remove('error');
+          if(element.parentElement.children[1]){
+            element.parentElement.children[1].remove();
+          }
           field.valid = true;
         }
         this.validateForm();

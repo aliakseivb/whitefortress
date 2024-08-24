@@ -80,7 +80,7 @@
   }
 
   h2 {
-    font-size: 36px;
+    font-size: 30px;
     margin-bottom: 40px;
     letter-spacing: 1px;
   }
@@ -231,8 +231,8 @@
     grid-template-columns: repeat(4, minmax(10%, 25%));
   }
 
-  .partner-slider-item-text,
-  .partner-slider-item-name {
+  .partners-slider-item-text,
+  .partners-slider-item-name {
     font-size: 19px;
   }
   .what-we {
@@ -424,21 +424,21 @@
     letter-spacing: 0;
   }
 
-  .partner-slider-items {
+  .partners-slider-items {
     display: flex;
     flex-direction: column;
     gap: 30px;
   }
 
-  .partner-slider-item {
+  .partners-slider-item {
     max-width: 40%;
     border: 1px solid #f5ac70;
     padding: 20px 20px;
     margin: 0 auto;
   }
 
-  .partner-slider-item-text,
-  .partner-slider-item-name {
+  .partners-slider-item-text,
+  .partners-slider-item-name {
     font-size: 22px;
   }
 
@@ -715,11 +715,11 @@
     margin-bottom: 30px;
   }
 
-  .partner-slider {
+  .partners-slider {
     margin-bottom: 60px;
   }
 
-  .partner-slider-item {
+  .partners-slider-item {
     max-width: 50%;
   }
 
@@ -812,7 +812,7 @@
 
   .intro-desc {
     padding: 15px 20px;
-    width: 165%;
+    width: 155%;
     font-size: 18px;
   }
 
@@ -873,7 +873,7 @@
   }
 
   .services-item-text {
-    padding: 10px 15px;
+    padding: 10px 10px;
     font-size: 14px;
     border: 1px solid #ffffff;
     border-top: none;
@@ -934,7 +934,7 @@
   }
 
   .intro-title .infras {
-    left: 15px;
+    left: 9px;
   }
 
   .intro-title span {
@@ -946,7 +946,7 @@
   }
 
   .intro-desc {
-    width: 140%;
+    width: 135%;
     font-size: 16px;
     padding: 15px 15px;
     margin-bottom: 110px;
@@ -989,11 +989,11 @@
     font-size: 24px;
   }
 
-  .partner-slider {
+  .partners-slider {
     margin-bottom: 30px;
   }
 
-  .partner-slider-item {
+  .partners-slider-item {
     max-width: 70%;
   }
 
@@ -1008,7 +1008,7 @@
   }
 
   .about-title span {
-    font-family: Murecho-Light, sans-serif;
+    font-family: Murecho-Regular, sans-serif;
     font-size: 15px;
     margin-top: 10px;
   }
@@ -1016,7 +1016,7 @@
   .aboutOffer {
     font-size: 14px;
     margin-bottom: 20px;
-    width: 90%;
+    width: 100%;
   }
 
   .what-we {
@@ -1116,17 +1116,17 @@
   }
 
   .intro-title {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 20px;
   }
 
   .intro-title span:last-child {
-    left: 0;
-    width: 95%;
+    left: -7px;
+    width: 94%;
   }
 
   .intro-desc {
-    width: 119%;
+    width: 135%;
     font-size: 13px;
     padding: 10px 10px;
     margin-bottom: 100px;
@@ -1136,9 +1136,9 @@
     font-size: 20px;
   }
 
-  .partner-slider-item-text,
-  .partner-slider-item-name {
-    font-size: 20px;
+  .partners-slider-item-text,
+  .partners-slider-item-name {
+    font-size: 16px;
   }
 
   .partners-items {
@@ -1156,17 +1156,17 @@
   }
 
   .slogan-title span {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .slogan-small {
     font-size: 16px;
-    width: 92%;
+    width: 95%;
     margin-bottom: 20px;
   }
 
   .slogan-big {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .what-doing-items li {
@@ -1235,6 +1235,7 @@
 
   .form-button {
     padding: 10px 20px;
+    font-size: 14px;
   }
 
   .footer-container {
@@ -1307,5 +1308,10 @@
 
   .partner-text-item-desc {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .intro-desc{
+    width: 115%;
   }
 }
