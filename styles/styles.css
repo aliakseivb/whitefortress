@@ -1725,7 +1725,7 @@ textarea {
   background: rgb(38 70 149 / 90%);
   padding: 5px 10px 5px 10px;
   box-shadow: 0 0 8px 2px rgb(255 255 255);
-  width: max-content;
+  width: 40%;
 }
 
 .products-items {
@@ -1795,7 +1795,7 @@ textarea {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #264695;
-  padding: 10px 20px 10px 10px;
+  padding: 10px 10px 10px 10px;
   gap: 20px;
 }
 
@@ -1820,7 +1820,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px 10px 10px;
+  padding: 10px 10px 10px 10px;
   border-top: 1px solid #264695;
   gap: 20px;
 }

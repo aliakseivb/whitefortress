@@ -250,6 +250,9 @@
     margin-bottom: 20px;
   }
 
+  .products-desc {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -257,6 +260,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media screen and (max-width: 835px) {
   .header-container {
     display: flex;
@@ -510,6 +514,10 @@
     font-size: 20px;
   }
 
+  .rights {
+    font-size: 15px;
+  }
+
   .success-popup-body {
     width: 70%;
     padding: 35px 20px;
@@ -562,15 +570,19 @@
     grid-template-columns: 15% 1fr;
     column-gap: 15px;
   }
+
   .partner-item-name {
     font-size: 16px;
   }
+
   .partner-item-link {
     font-size: 14px;
   }
+
   .partner-item-info {
     gap: 15px;
   }
+
   .partner-item-service {
     font-size: 14px;
   }
@@ -601,9 +613,11 @@
   .products-desc {
     font-size: 12px;
   }
+
   .products-items {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .products-item {
     font-size: 14px;
   }
@@ -802,6 +816,10 @@
   .partner-body {
     padding: 0 0;
   }
+
+  .products-desc {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -928,9 +946,11 @@
   .partner-item {
     grid-template-columns: 20% 1fr;
   }
+
   .partner-item-name {
     font-size: 14px;
   }
+
   .partner-item-link {
     font-size: 12px;
   }
@@ -1183,10 +1203,12 @@
     column-gap: 30px;
     row-gap: 30px;
   }
+
   .products-filter-button {
     margin: 0 auto 10px;
     width: 100%;
   }
+
   .partners-title,
   .what-we-title,
   .services-title,
@@ -1291,11 +1313,11 @@
   }
 
   .subtitle {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .contacts-item, .address-place {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .rights {
@@ -1349,8 +1371,17 @@
   .partner-text-item-desc {
     font-size: 12px;
   }
+
   .products-items {
+    padding: 10px 10px;
     grid-template-columns: 1fr;
+    row-gap: 5px;
+    margin-bottom: 20px;
+  }
+
+  .partner-items {
+    padding: 10px 10px;
+    row-gap: 10px;
   }
 
   .partner-item {
@@ -1360,12 +1391,25 @@
   .partner-item-image img {
     width: 30%;
   }
+
   .partner-item-body {
     border-left: none;
   }
+
+  .partner-item-head {
+    padding: 10px 0 5px;
+    gap: 15px;
+  }
+
   .partner-item-name {
     font-size: 14px;
   }
+
+  .partner-item-info {
+    padding: 5px 0;
+    gap: 15px;
+  }
+
   .partner-item-link {
     font-size: 12px;
   }

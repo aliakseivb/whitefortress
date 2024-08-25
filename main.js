@@ -721,7 +721,7 @@ ${language === 'ru' ? 'Подробнее' : 'Details'}</a></div></div>`
   function goToNewElem(elem) {
     setTimeout(() => {
       elem.scrollIntoView({block: "center", behavior: "smooth"});
-    }, 500);
+    }, 100);
   }
 })();
 
