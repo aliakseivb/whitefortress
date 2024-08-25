@@ -629,10 +629,10 @@ import {productsData} from "./scripts/products.js";
   }
 
   if (location.href.includes('privacy.html')) {
-
+    // some code here
   }
   if (location.href.includes('conditions.html')) {
-
+    // some code here
   }
   if (location.href.includes('products.html')) {
 
@@ -651,36 +651,67 @@ import {productsData} from "./scripts/products.js";
         }
       }
     }
-    // const productsItems = document.querySelectorAll('.products-item');
-    const partnerItemsBlock = document.querySelector('.partner-items');
 
+    const partnerItemsBlock = document.querySelector('.partner-items');
     productsItemsBlock.addEventListener('click', (e) => {
       if (e.target.classList.contains('products-item') && !e.target.classList.contains('selected')) {
         e.target.classList.add('selected');
         partnersData.forEach(item => {
           if (item.forExample.includes(e.target.dataset.name)) {
-            const newPartnerElem = document.createElement('div');
-            newPartnerElem.className = 'partner-item';
-            newPartnerElem.dataset.name = e.target.dataset.name;
-            newPartnerElem.innerHTML = `<div class="partner-item-image"><img src="${item.image}" alt="partner"></div>
-<div class="partner-item-body"><div class="partner-item-head"><div class="partner-item-name">
-${language === 'ru' ? item.ru.title : item.en.title}</div><a href="${item.url}" class="partner-item-link">
-${language === 'ru' ? 'К партнеру' : 'To partner'}</a></div><div class="partner-item-info">
-<div class="partner-item-service">${e.target.innerText}</div><a href="https://gardatech.ru/" class="partner-item-link">
-${language === 'ru' ? 'Посмотреть подробнее' : 'See more details'}</a></div></div>`
-            partnerItemsBlock.append(newPartnerElem)
+            if (partnerItemsBlock.children.length) {
+              const currentElemToAddProduct = Array.from(partnerItemsBlock.children).find(elem => {
+                return elem.dataset.name === item.name;
+              });
+              if (currentElemToAddProduct) {
+                currentElemToAddProduct.dataset.product = `${currentElemToAddProduct.dataset.product} ${e.target.dataset.name}`;
+                currentElemToAddProduct.children[1].insertAdjacentHTML('beforeend', `
+<div class="partner-item-info" data-name="${e.target.dataset.name}"><div class="partner-item-service">
+${e.target.innerText}</div>
+<a href="https://gardatech.ru/" class="partner-item-link">
+${language === 'ru' ? 'Посмотреть подробнее' : 'See more details'}
+</a></div>`);
+              } else {
+                createAndAppendNewPartnerElem(e.target, item, partnerItemsBlock);
+              }
+            } else {
+              createAndAppendNewPartnerElem(e.target, item, partnerItemsBlock);
+              partnerItemsBlock.classList.add('fully');
+            }
           }
         });
       } else if (e.target.classList.contains('products-item') && e.target.classList.contains('selected')) {
         e.target.classList.remove('selected');
-       Array.from(partnerItemsBlock.children).forEach(item => {
-          if(e.target.dataset.name === item.dataset.name) {
-            item.remove();
-          }
-        })
+        if (partnerItemsBlock.children.length) {
+          Array.from(partnerItemsBlock.children).forEach(elem => {
+            for (let i = 1; i < elem.children[1].children.length; i++) {
+              if (elem.children[1].children[i].dataset.name === e.target.dataset.name) {
+                elem.children[1].children[i].remove();
+                if (elem.children[1].children.length < 2) {
+                  elem.remove();
+                }
+                if (!partnerItemsBlock.children.length) {
+                  partnerItemsBlock.classList.remove('fully');
+                }
+              }
+            }
+          });
+        }
       }
     });
   }
 
+  function createAndAppendNewPartnerElem(targetElem, data, parentBlock) {
+    const newPartnerElem = document.createElement('div');
+    newPartnerElem.className = 'partner-item';
+    newPartnerElem.dataset.product = targetElem.dataset.name;
+    newPartnerElem.dataset.name = data.name;
+    newPartnerElem.innerHTML = `<div class="partner-item-image"><img src="${data.image}" alt="partner"></div>
+<div class="partner-item-body"><div class="partner-item-head"><div class="partner-item-name">
+${language === 'ru' ? data.ru.title : data.en.title}</div><a href="${data.url}" class="partner-item-link">
+${language === 'ru' ? 'К партнеру' : 'To partner'}</a></div><div class="partner-item-info" data-name="${targetElem.dataset.name}">
+<div class="partner-item-service">${targetElem.innerText}</div><a href="https://gardatech.ru/" class="partner-item-link">
+${language === 'ru' ? 'Посмотреть подробнее' : 'See more details'}</a></div></div>`
+    parentBlock.append(newPartnerElem);
+  }
 })();
 
