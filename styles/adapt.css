@@ -1,3 +1,9 @@
+@media screen and (max-width: 1440px) {
+  .products-item {
+    font-size: 16px;
+  }
+}
+
 @media screen and (max-width: 1300px) {
   .nav {
     margin-right: 5%;
@@ -21,6 +27,7 @@
   .aboutOffer {
     width: 75%;
   }
+
   .what-we-info {
     row-gap: 20px;
   }
@@ -58,39 +65,35 @@
   .form-input::placeholder {
     font-size: 16px;
   }
+
+  .products-items {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media screen and (max-width: 1100px) {
+  .header-container .menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+    grid-template-rows: 1fr 1fr;
+  }
 
-  .nav {
+  .header-container .menu .nav {
+    grid-column: 1;
+    display: flex;
+    justify-content: flex-end;
     margin-right: unset;
   }
 
-  .intro-image {
-    top: 5%;
-    width: 70%;
+  .nav-link,
+  .lang {
+    font-size: 17px;
   }
 
-  .intro-desc {
-    margin-bottom: 60px;
-  }
-
-  .intro-action {
-    bottom: 60px;
-  }
-
-  h2 {
-    font-size: 30px;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
-  }
-
-  .about-title span.wf-name {
-    font-size: 36px;
-  }
-
-  .about-title span {
-    font-size: 20px;
+  .menu-add {
+    grid-row: 2;
+    justify-content: end;
   }
 
   .intro-container,
@@ -99,11 +102,78 @@
   .services-container,
   .certificates-container,
   .questions-container {
-    padding: 60px 20px;
+    padding: 60px 20px 40px;
+  }
+
+  .intro-image {
+    top: 5%;
+    width: 70%;
+  }
+
+  .intro-title {
+    letter-spacing: 2px;
+    font-size: 34px;
+  }
+
+  .intro-title span:last-child {
+    width: 80%;
+  }
+
+  .intro-desc {
+    font-size: 22px;
+    width: 160%;
+    margin-bottom: 60px;
+  }
+
+  .intro-action {
+    bottom: 60px;
   }
 
   .intro-button {
+    padding: 15px 20px;
     font-size: 20px;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
+
+  .about-title span {
+    font-size: 20px;
+  }
+
+  .partners-items {
+    grid-template-columns: repeat(4, minmax(10%, 25%));
+  }
+
+  .partners-slider-item-text,
+  .partners-slider-item-name {
+    font-size: 19px;
+  }
+
+  .what-we {
+    padding: 60px 0 0;
+  }
+
+  .what-we-info {
+    padding: 0 0;
+  }
+
+  .what-we-info-item {
+    grid-template-columns: 1fr;
+    padding: 30px 30px;
+    gap: 20px;
+    justify-items: center;
+    width: 80%;
+    margin: 0 auto 40px;
+    background: -webkit-linear-gradient(-30deg, #9fa8bd 0%, rgb(23 72 133) 100%);
+  }
+
+  .what-we-info-text {
+    order: 1;
+    width: 90%;
   }
 
   .what-doing {
@@ -116,24 +186,8 @@
     padding: 20px 20px;
   }
 
-  /*.slogan-title {*/
-  /*  font-size: 36px;*/
-  /*}*/
-
-  /*.slogan-title span {*/
-  /*  font-size: 30px;*/
-  /*}*/
-
-  /*.slogan-small {*/
-  /*  font-size: 28px;*/
-  /*}*/
-
-  /*.slogan-big {*/
-  /*  font-size: 36px;*/
-  /*}*/
-
-  .services-container {
-    padding-bottom: 40px;
+  .slogan {
+    padding: 0 20px 40px;
   }
 
   .contacts-items {
@@ -143,7 +197,28 @@
     column-gap: 30px;
   }
 
-  .about-title span {
+  .contacts-item,
+  .address-place {
+    font-size: 14px;
+  }
+
+  .success-popup-body {
+    width: 60%;
+    padding: 40px 20px;
+  }
+
+  .success-popup-title {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+
+  .success-popup-text {
+    font-size: 22px;
+    margin-bottom: 35px;
+  }
+
+  .success-popup-button {
+    padding: 15px 25px;
     font-size: 22px;
   }
 
@@ -174,118 +249,14 @@
     font-size: 20px;
     margin-bottom: 20px;
   }
+
 }
 
-@media screen and (max-width: 1000px) {
-  .header-container .menu {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 5px;
-    grid-template-rows: 1fr 1fr;
-  }
-
-  .header-container .menu .nav {
-    grid-column: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .nav-link,
-  .lang {
-    font-size: 17px;
-  }
-
-  .menu-add {
-    grid-row: 2;
-    justify-content: end;
-  }
-
-  .intro-title {
-    letter-spacing: 2px;
-    font-size: 34px;
-  }
-
-  .intro-title span:last-child {
-    width: 80%;
-  }
-
-  .intro-desc {
-    font-size: 22px;
-    width: 160%;
-  }
-
-  .intro-button {
-    padding: 15px 20px;
-  }
-
-  h2,
-  .about-title {
-    font-size: 30px;
-  }
-
-  .about-title span {
-    font-size: 20px;
-  }
-
-  .partners-items {
-    grid-template-columns: repeat(4, minmax(10%, 25%));
-  }
-
-  .partners-slider-item-text,
-  .partners-slider-item-name {
-    font-size: 19px;
-  }
-  .what-we {
-    padding: 60px 0 0;
-  }
-  .what-we-info {
-    padding: 0 0;
-  }
-
-  .what-we-info-item {
-    grid-template-columns: 1fr;
-    padding: 30px 30px;
-    gap: 20px;
-    justify-items: center;
-    width: 80%;
-    margin: 0 auto 40px;
-    background: -webkit-linear-gradient(-30deg, #9fa8bd 0%, rgb(23 72 133) 100%);
-  }
-
-  .what-we-info-text {
-    order: 1;
-    width: 90%;
-  }
-  .slogan {
-    padding: 0 20px 40px;
-  }
-
-  .contacts-item,
-  .address-place {
-    font-size: 14px;
-  }
-
-  .success-popup-body {
-    width: 60%;
-    padding: 40px 20px;
-  }
-
-  .success-popup-title {
-    font-size: 30px;
-    margin-bottom: 25px;
-  }
-
-  .success-popup-text {
-    font-size: 22px;
-    margin-bottom: 35px;
-  }
-
-  .success-popup-button {
-    padding: 15px 25px;
-    font-size: 22px;
+@media screen and (max-width: 900px) {
+  .products-items {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-
 @media screen and (max-width: 835px) {
   .header-container {
     display: flex;
@@ -415,6 +386,10 @@
     font-size: 18px;
     line-height: 110%;
   }
+
+  .products-start-block {
+    background-image: url("../images/products-bg-small.png");
+  }
 }
 
 @media screen and (max-width: 785px) {
@@ -441,9 +416,11 @@
   .partners-slider-item-name {
     font-size: 22px;
   }
+
   .products-filter-button {
     font-size: 16px;
   }
+
   .partners-items {
     grid-template-columns: repeat(3, minmax(10%, 30%));
     column-gap: 30px;
@@ -580,6 +557,23 @@
     font-size: 18px;
     margin-bottom: 10px;
   }
+
+  .partner-item {
+    grid-template-columns: 15% 1fr;
+    column-gap: 15px;
+  }
+  .partner-item-name {
+    font-size: 16px;
+  }
+  .partner-item-link {
+    font-size: 14px;
+  }
+  .partner-item-info {
+    gap: 15px;
+  }
+  .partner-item-service {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -602,6 +596,16 @@
 
   .services-item-specific li span {
     bottom: 4px;
+  }
+
+  .products-desc {
+    font-size: 12px;
+  }
+  .products-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .products-item {
+    font-size: 14px;
   }
 }
 
@@ -852,9 +856,11 @@
     font-size: 17px;
     padding: 15px 15px;
   }
+
   .what-we-info-text {
     font-size: 17px;
   }
+
   .services-title {
     margin-bottom: 30px;
   }
@@ -918,6 +924,20 @@
   .rule-container p {
     font-size: 14px;
   }
+
+  .partner-item {
+    grid-template-columns: 20% 1fr;
+  }
+  .partner-item-name {
+    font-size: 14px;
+  }
+  .partner-item-link {
+    font-size: 12px;
+  }
+
+  .partner-item-service {
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -979,10 +999,6 @@
     font-size: 16px;
     padding: 10px 15px;
   }
-
-  /*.slogan {*/
-  /*  padding: 30px 20px;*/
-  /*}*/
 
   .slogan-title {
     font-size: 20px;
@@ -1055,12 +1071,15 @@
     padding: 15px 15px;
     width: 85%;
   }
+
   .slogan-title {
     margin-bottom: 20px;
   }
+
   .slogan {
     padding: 0 20px 20px;
   }
+
   .certificates-slider {
     width: 90%;
   }
@@ -1112,6 +1131,10 @@
   .partner-header {
     grid-template-columns: 120px 1fr;
   }
+
+  .products-desc {
+    width: unset;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -1160,7 +1183,10 @@
     column-gap: 30px;
     row-gap: 30px;
   }
-
+  .products-filter-button {
+    margin: 0 auto 10px;
+    width: 100%;
+  }
   .partners-title,
   .what-we-title,
   .services-title,
@@ -1205,6 +1231,7 @@
   .services-item-specific {
     font-size: 13px;
   }
+
   .services-item-specific li span {
     width: 4px;
     height: 4px;
@@ -1322,9 +1349,34 @@
   .partner-text-item-desc {
     font-size: 12px;
   }
+  .products-items {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-item {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-item-image img {
+    width: 30%;
+  }
+  .partner-item-body {
+    border-left: none;
+  }
+  .partner-item-name {
+    font-size: 14px;
+  }
+  .partner-item-link {
+    font-size: 12px;
+  }
+
+  .partner-item-service {
+    font-size: 12px;
+  }
 }
+
 @media screen and (max-width: 360px) {
-  .intro-desc{
+  .intro-desc {
     width: 115%;
   }
 }

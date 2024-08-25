@@ -668,13 +668,16 @@ import {productsData} from "./scripts/products.js";
 <div class="partner-item-info" data-name="${e.target.dataset.name}"><div class="partner-item-service">
 ${e.target.innerText}</div>
 <a href="https://gardatech.ru/" class="partner-item-link">
-${language === 'ru' ? 'Посмотреть подробнее' : 'See more details'}
+${language === 'ru' ? 'Подробнее' : 'Details'}
 </a></div>`);
+                goToNewElem(partnerItemsBlock.lastElementChild);
               } else {
                 createAndAppendNewPartnerElem(e.target, item, partnerItemsBlock);
+                goToNewElem(partnerItemsBlock.lastElementChild);
               }
             } else {
               createAndAppendNewPartnerElem(e.target, item, partnerItemsBlock);
+              goToNewElem(partnerItemsBlock.lastElementChild);
               partnerItemsBlock.classList.add('fully');
             }
           }
@@ -710,8 +713,15 @@ ${language === 'ru' ? 'Посмотреть подробнее' : 'See more deta
 ${language === 'ru' ? data.ru.title : data.en.title}</div><a href="${data.url}" class="partner-item-link">
 ${language === 'ru' ? 'К партнеру' : 'To partner'}</a></div><div class="partner-item-info" data-name="${targetElem.dataset.name}">
 <div class="partner-item-service">${targetElem.innerText}</div><a href="https://gardatech.ru/" class="partner-item-link">
-${language === 'ru' ? 'Посмотреть подробнее' : 'See more details'}</a></div></div>`
+${language === 'ru' ? 'Подробнее' : 'Details'}</a></div></div>`
     parentBlock.append(newPartnerElem);
+    goToNewElem(parentBlock.lastElementChild);
+  }
+
+  function goToNewElem(elem) {
+    setTimeout(() => {
+      elem.scrollIntoView({block: "center", behavior: "smooth"});
+    }, 500);
   }
 })();
 
