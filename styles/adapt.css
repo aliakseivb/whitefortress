@@ -314,6 +314,8 @@
   .intro-desc {
     font-size: 20px;
     width: 170%;
+    line-height: 120%;
+    letter-spacing: 1px;
   }
 
   .intro-image {
@@ -497,7 +499,7 @@
 
   .footer-top {
     grid-template-columns: 130px 1fr;
-    gap: 40px;
+    gap: 30px;
   }
 
   .footer-top .nav-item .nav-link {
@@ -730,6 +732,7 @@
   .intro-desc {
     padding: 20px 20px;
     width: 150%;
+    box-shadow: 0 0 4px 4px rgb(255, 255, 255);
   }
 
   .intro-action {
@@ -797,6 +800,7 @@
   .partner-link,
   .go-back {
     font-size: 14px;
+    letter-spacing: unset;
   }
 
   .partner-menu-item {
@@ -884,7 +888,7 @@
   }
 
   .services-item {
-    padding: 15px 15px;
+    padding: 15px 10px;
   }
 
   .services-item-head {
@@ -1069,7 +1073,7 @@
   }
 
   .what-we {
-    padding: 30px 20px 20px;
+    padding: 30px 15px 20px;
   }
 
   .what-doing-items {
@@ -1089,7 +1093,7 @@
   .what-we-info-text {
     font-size: 13px;
     padding: 15px 15px;
-    width: 85%;
+    width: 90%;
   }
 
   .slogan-title {
@@ -1097,7 +1101,7 @@
   }
 
   .slogan {
-    padding: 0 20px 20px;
+    padding: 0 15px 20px;
   }
 
   .certificates-slider {
@@ -1217,7 +1221,7 @@
   }
 
   .slogan-title span {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .slogan-small {
@@ -1263,7 +1267,6 @@
   }
 
   .services-item-text {
-    font-family: Murecho-Light, sans-serif;
     font-size: 13px;
     text-align: center;
   }
@@ -1275,7 +1278,7 @@
   }
 
   .questions-container p {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .contacts-link {
@@ -1289,6 +1292,17 @@
 
   .label-confirm {
     font-size: 14px;
+    padding-left: 25px;
+  }
+
+  .custom-checkbox {
+    width: 12px;
+    height: 12px;
+  }
+
+  .custom-checkbox + .label-confirm::before {
+    width: 12px;
+    height: 12px;
   }
 
   .form-input {
@@ -1317,7 +1331,7 @@
   }
 
   .contacts-item, .address-place {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .rights {
@@ -1354,13 +1368,13 @@
   }
 
   .partner-menu-item {
-    font-size: 13px;
+    font-size: 12px;
     padding: 9px 9px;
   }
 
   .partner-link,
   .go-back {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .partner-text {
@@ -1421,6 +1435,6 @@
 
 @media screen and (max-width: 360px) {
   .intro-desc {
-    width: 115%;
+    width: 117%;
   }
 }
