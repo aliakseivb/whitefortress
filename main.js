@@ -1,207 +1,208 @@
 import {partnersData} from "./scripts/partnersData.js";
-import {languageData} from "./scripts/languageData.js";
-import {productsData} from "./scripts/products.js";
+import vendorsData from "./src/data/vendors.js";
+
+// import {languageData} from "./scripts/languageData.js";
+// import {productsData} from "./scripts/products.js";
 
 (() => {
-
-
   const body = document.querySelector('body');
   const header = document.querySelector('header');
   const bodyOverlay = document.querySelector('.body-overlay');
   const navbar = document.querySelector('.navbar');
   const navbarLinks = document.querySelectorAll('.navbar .nav-link');
   const headerLinks = document.querySelectorAll('.header .nav-link');
-  const menuNavbar = document.querySelector('.navbar .menu');
-  const ruButtons = document.querySelectorAll('.lang-item-ru');
-  const enButtons = document.querySelectorAll('.lang-item-en');
-  const langBlocks = document.querySelectorAll('.lang');
+  const menuNavbar = document.getElementById('navbarMenu');
+  // const ruButtons = document.querySelectorAll('.lang-item-ru');
+  // const enButtons = document.querySelectorAll('.lang-item-en');
+  // const langBlocks = document.querySelectorAll('.lang');
   const burger = document.querySelector('#burger');
   const logoScroll = document.querySelector('.logo-scroll');
   const container = document.querySelector('.container');
 
-  let language
-  const whitefortress = JSON.parse(localStorage.getItem('whitefortress')) ? JSON.parse(localStorage.getItem('whitefortress')) : null;
-  if (whitefortress) {
-    language = whitefortress.language ? whitefortress.language : 'ru';
-  } else {
-    language = 'ru';
-    localStorage.setItem('whitefortress', JSON.stringify({language: 'ru'}))
-  }
+  // let language
+  // const whitefortress = JSON.parse(localStorage.getItem('whitefortress')) ? JSON.parse(localStorage.getItem('whitefortress')) : null;
+  // if (whitefortress) {
+  //   language = whitefortress.language ? whitefortress.language : 'ru';
+  // } else {
+  //   language = 'ru';
+  //   localStorage.setItem('whitefortress', JSON.stringify({language: 'ru'}))
+  // }
+
+
   /** ЛОВИМ ТЕКУЩИЙ ЯЗЫК И МЕНЯЕМ ТАМ ГДЕ НАДО ВСЕ ЧТО НАДО*/
+  // changeLanguage(language);
 
-  changeLanguage(language);
+  // function changeLanguage(language) {
+  //   document.querySelector('.html').setAttribute('lang', language);
+  //   if (language === 'ru') {
+  //
+  //     ruButtons.forEach(item => {
+  //       item.classList.add('active');
+  //     });
+  //     enButtons.forEach(item => {
+  //       item.classList.remove('active');
+  //     });
+  //     for (let key in languageData.ru.navbarItem) {
+  //       let elem = document.querySelector(`.${key}`)
+  //       if (elem) {
+  //         elem.innerHTML = languageData.ru.navbarItem[`${key}`];
+  //       }
+  //     }
+  //     for (let key in languageData.ru.headerItem) {
+  //       let elem = document.querySelector(`.${key}`)
+  //       if (elem) {
+  //         elem.innerHTML = languageData.ru.headerItem[`${key}`];
+  //       }
+  //     }
+  //     for (let key in languageData.ru.footerItem) {
+  //       let elem = document.querySelector(`.${key}`)
+  //       if (elem) {
+  //         elem.innerHTML = languageData.ru.footerItem[`${key}`];
+  //       }
+  //     }
+  //     if (location.href.includes('index.html')) {
+  //       for (let key in languageData.ru.successPopup) {
+  //         let elem = document.querySelector(`.${key}`)
+  //         if (elem) {
+  //           elem.innerHTML = languageData.ru.successPopup[`${key}`];
+  //         }
+  //       }
+  //       for (let key in languageData.ru.placeholders) {
+  //         let elem = document.querySelector(`#${key}`)
+  //         if (elem) {
+  //           elem.placeholder = languageData.ru.placeholders[`${key}`];
+  //         }
+  //       }
+  //       for (let key in languageData.ru.mainPage) {
+  //         let elem = document.querySelector(`.${key}`)
+  //         if (elem) {
+  //           elem.innerHTML = languageData.ru.mainPage[`${key}`];
+  //         }
+  //       }
+  //     }
+  //     if (location.href.includes('partner.html')) {
+  //       for (let key in languageData.ru.partnerPage) {
+  //         let elem = document.querySelector(`.${key}`)
+  //         if (elem) {
+  //           elem.innerHTML = languageData.ru.partnerPage[`${key}`];
+  //         }
+  //       }
+  //     }
+  //     if (location.href.includes('privacy.html')) {
+  //       for (let key in languageData.ru.privacyPage) {
+  //         let elem = document.querySelector(`.${key}`)
+  //         if (elem) {
+  //           elem.innerHTML = languageData.ru.privacyPage[`${key}`];
+  //         }
+  //       }
+  //     }
+  //     if (location.href.includes('conditions.html')) {
+  //       for (let key in languageData.ru.conditionsPage) {
+  //         let elem = document.querySelector(`.${key}`)
+  //         if (elem) {
+  //           elem.innerHTML = languageData.ru.conditionsPage[`${key}`];
+  //         }
+  //       }
+  //     }
+  //   }
+  //   if (language === 'en') {
+  //     ruButtons.forEach(item => {
+  //       item.classList.remove('active');
+  //     });
+  //     enButtons.forEach(item => {
+  //       item.classList.add('active');
+  //     });
+  //     for (let key in languageData.en.navbarItem) {
+  //       let elem = document.querySelector(`.${key}`)
+  //       if (elem) {
+  //         elem.innerHTML = languageData.en.navbarItem[`${key}`];
+  //       }
+  //     }
+  //     for (let key in languageData.en.headerItem) {
+  //       let elem = document.querySelector(`.${key}`)
+  //       if (elem) {
+  //         elem.innerHTML = languageData.en.headerItem[`${key}`];
+  //       }
+  //     }
+  //     for (let key in languageData.en.footerItem) {
+  //       let elem = document.querySelector(`.${key}`)
+  //       if (elem) {
+  //         elem.innerHTML = languageData.en.footerItem[`${key}`];
+  //       }
+  //     }
+  //     if (location.href.includes('index.html')) {
+  //       for (let key in languageData.en.successPopup) {
+  //         let elem = document.querySelector(`.${key}`)
+  //         if (elem) {
+  //           elem.innerHTML = languageData.en.successPopup[`${key}`];
+  //         }
+  //       }
+  //       for (let key in languageData.en.placeholders) {
+  //         let elem = document.querySelector(`#${key}`)
+  //         if (elem) {
+  //           elem.placeholder = languageData.en.placeholders[`${key}`];
+  //         }
+  //       }
+  //       for (let key in languageData.en.mainPage) {
+  //         let elem = document.querySelector(`.${key}`)
+  //         if (elem) {
+  //           elem.innerHTML = languageData.en.mainPage[`${key}`];
+  //         }
+  //       }
+  //     }
+  //     if (location.href.includes('partner.html')) {
+  //       for (let key in languageData.en.partnerPage) {
+  //         let elem = document.querySelector(`.${key}`)
+  //         if (elem) {
+  //           elem.innerHTML = languageData.en.partnerPage[`${key}`];
+  //         }
+  //       }
+  //     }
+  //     if (location.href.includes('privacy.html')) {
+  //       for (let key in languageData.en.privacyPage) {
+  //         let elem = document.querySelector(`.${key}`)
+  //         if (elem) {
+  //           elem.innerHTML = languageData.en.privacyPage[`${key}`];
+  //         }
+  //       }
+  //     }
+  //     if (location.href.includes('conditions.html')) {
+  //       for (let key in languageData.en.conditionsPage) {
+  //         let elem = document.querySelector(`.${key}`)
+  //         if (elem) {
+  //           elem.innerHTML = languageData.en.conditionsPage[`${key}`];
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
-  function changeLanguage(language) {
-    document.querySelector('.html').setAttribute('lang', language);
-    if (language === 'ru') {
-
-      ruButtons.forEach(item => {
-        item.classList.add('active');
-      });
-      enButtons.forEach(item => {
-        item.classList.remove('active');
-      });
-      for (let key in languageData.ru.navbarItem) {
-        let elem = document.querySelector(`.${key}`)
-        if (elem) {
-          elem.innerHTML = languageData.ru.navbarItem[`${key}`];
-        }
-      }
-      for (let key in languageData.ru.headerItem) {
-        let elem = document.querySelector(`.${key}`)
-        if (elem) {
-          elem.innerHTML = languageData.ru.headerItem[`${key}`];
-        }
-      }
-      for (let key in languageData.ru.footerItem) {
-        let elem = document.querySelector(`.${key}`)
-        if (elem) {
-          elem.innerHTML = languageData.ru.footerItem[`${key}`];
-        }
-      }
-      if (location.href.includes('index.html')) {
-        for (let key in languageData.ru.successPopup) {
-          let elem = document.querySelector(`.${key}`)
-          if (elem) {
-            elem.innerHTML = languageData.ru.successPopup[`${key}`];
-          }
-        }
-        for (let key in languageData.ru.placeholders) {
-          let elem = document.querySelector(`#${key}`)
-          if (elem) {
-            elem.placeholder = languageData.ru.placeholders[`${key}`];
-          }
-        }
-        for (let key in languageData.ru.mainPage) {
-          let elem = document.querySelector(`.${key}`)
-          if (elem) {
-            elem.innerHTML = languageData.ru.mainPage[`${key}`];
-          }
-        }
-      }
-      if (location.href.includes('partner.html')) {
-        for (let key in languageData.ru.partnerPage) {
-          let elem = document.querySelector(`.${key}`)
-          if (elem) {
-            elem.innerHTML = languageData.ru.partnerPage[`${key}`];
-          }
-        }
-      }
-      if (location.href.includes('privacy.html')) {
-        for (let key in languageData.ru.privacyPage) {
-          let elem = document.querySelector(`.${key}`)
-          if (elem) {
-            elem.innerHTML = languageData.ru.privacyPage[`${key}`];
-          }
-        }
-      }
-      if (location.href.includes('conditions.html')) {
-        for (let key in languageData.ru.conditionsPage) {
-          let elem = document.querySelector(`.${key}`)
-          if (elem) {
-            elem.innerHTML = languageData.ru.conditionsPage[`${key}`];
-          }
-        }
-      }
-    }
-    if (language === 'en') {
-      ruButtons.forEach(item => {
-        item.classList.remove('active');
-      });
-      enButtons.forEach(item => {
-        item.classList.add('active');
-      });
-      for (let key in languageData.en.navbarItem) {
-        let elem = document.querySelector(`.${key}`)
-        if (elem) {
-          elem.innerHTML = languageData.en.navbarItem[`${key}`];
-        }
-      }
-      for (let key in languageData.en.headerItem) {
-        let elem = document.querySelector(`.${key}`)
-        if (elem) {
-          elem.innerHTML = languageData.en.headerItem[`${key}`];
-        }
-      }
-      for (let key in languageData.en.footerItem) {
-        let elem = document.querySelector(`.${key}`)
-        if (elem) {
-          elem.innerHTML = languageData.en.footerItem[`${key}`];
-        }
-      }
-      if (location.href.includes('index.html')) {
-        for (let key in languageData.en.successPopup) {
-          let elem = document.querySelector(`.${key}`)
-          if (elem) {
-            elem.innerHTML = languageData.en.successPopup[`${key}`];
-          }
-        }
-        for (let key in languageData.en.placeholders) {
-          let elem = document.querySelector(`#${key}`)
-          if (elem) {
-            elem.placeholder = languageData.en.placeholders[`${key}`];
-          }
-        }
-        for (let key in languageData.en.mainPage) {
-          let elem = document.querySelector(`.${key}`)
-          if (elem) {
-            elem.innerHTML = languageData.en.mainPage[`${key}`];
-          }
-        }
-      }
-      if (location.href.includes('partner.html')) {
-        for (let key in languageData.en.partnerPage) {
-          let elem = document.querySelector(`.${key}`)
-          if (elem) {
-            elem.innerHTML = languageData.en.partnerPage[`${key}`];
-          }
-        }
-      }
-      if (location.href.includes('privacy.html')) {
-        for (let key in languageData.en.privacyPage) {
-          let elem = document.querySelector(`.${key}`)
-          if (elem) {
-            elem.innerHTML = languageData.en.privacyPage[`${key}`];
-          }
-        }
-      }
-      if (location.href.includes('conditions.html')) {
-        for (let key in languageData.en.conditionsPage) {
-          let elem = document.querySelector(`.${key}`)
-          if (elem) {
-            elem.innerHTML = languageData.en.conditionsPage[`${key}`];
-          }
-        }
-      }
-    }
-  }
-
-  langBlocks.forEach(item => {
-    item.addEventListener('click', (e) => {
-      if (e.target.classList.contains('lang-item-ru')) {
-        ruButtons.forEach(item => {
-          item.classList.add('active');
-          language = 'ru';
-        });
-        enButtons.forEach(item => {
-          item.classList.remove('active');
-        });
-      }
-      if (e.target.classList.contains('lang-item-en')) {
-        ruButtons.forEach(item => {
-          item.classList.remove('active')
-        });
-        enButtons.forEach(item => {
-          item.classList.add('active')
-          language = 'en';
-        });
-      }
-      let tmp = JSON.parse(localStorage.getItem('whitefortress'));
-      tmp.language = language;
-      localStorage.setItem('whitefortress', JSON.stringify(tmp));
-      changeLanguage(language);
-    })
-  });
+  // langBlocks.forEach(item => {
+  //   item.addEventListener('click', (e) => {
+  //     if (e.target.classList.contains('lang-item-ru')) {
+  //       ruButtons.forEach(item => {
+  //         item.classList.add('active');
+  //         language = 'ru';
+  //       });
+  //       enButtons.forEach(item => {
+  //         item.classList.remove('active');
+  //       });
+  //     }
+  //     if (e.target.classList.contains('lang-item-en')) {
+  //       ruButtons.forEach(item => {
+  //         item.classList.remove('active')
+  //       });
+  //       enButtons.forEach(item => {
+  //         item.classList.add('active')
+  //         language = 'en';
+  //       });
+  //     }
+  //     let tmp = JSON.parse(localStorage.getItem('whitefortress'));
+  //     tmp.language = language;
+  //     localStorage.setItem('whitefortress', JSON.stringify(tmp));
+  //     changeLanguage(language);
+  //   })
+  // });
 
   window.onresize = () => {
     navbar.classList.remove('show');
@@ -236,6 +237,7 @@ import {productsData} from "./scripts/products.js";
     }
   };
 
+  /** СЛУШАЕМ КЛИК НА ИНТЕРАКТИВНОМ ЛОГОТИПЕ **/
   logoScroll.addEventListener('click', () => {
     navbar.classList.toggle('show');
     if (navbar.classList.contains('show')) {
@@ -250,15 +252,15 @@ import {productsData} from "./scripts/products.js";
     }
   });
 
+  /** СЛУШАЕМ КЛИК НА ВЫПАДАЮЩЕМ МЕНЮ **/
   menuNavbar.addEventListener('click', (e) => {
-    if (e.target.classList.contains('nav-link') || e.target.classList.contains('soc-link')
-        || e.target.tagName === 'svg' || e.target.tagName === 'path' || e.target.classList.contains('lang-item')) {
+    if (e.target.classList.contains('nav-link')) {
       closeNavbar();
     }
   });
 
 
-  /** СЛУШАЕМ БУРГЕР */
+  /** СЛУШАЕМ БУРГЕР **/
   burger.addEventListener('click', (e) => {
     burger.classList.toggle('active');
     navbar.classList.toggle('show');
@@ -293,10 +295,10 @@ import {productsData} from "./scripts/products.js";
     }).init();
 
     /** РАБОТАЕМ С ФИЛЬТРОМ */
-    const filterButton = document.querySelector('.products-filter-button');
-    filterButton.addEventListener('click', () => {
-      location.href = 'products.html';
-    })
+    // const filterButton = document.querySelector('.products-filter-button');
+    // filterButton.addEventListener('click', () => {
+    //   location.href = 'products.html';
+    // })
     // const selectOption = document.querySelectorAll('.select-option');
     //
     // select.addEventListener('click', (e) => {
@@ -407,28 +409,34 @@ import {productsData} from "./scripts/products.js";
 
     /** СОЗДАЕМ КАРТОЧКИ ПАРТНЕРОВ */
     const partnersItemsBlock = document.querySelector('.partners-items');
-    partnersData.forEach(item => {
-      const newElem = document.createElement('div');
-      newElem.className = 'partners-item wow animate__bounce';
-      newElem.setAttribute('data-name', item.name);
-      // newElem.setAttribute('href', 'partner.html');
-      // newElem.setAttribute('target', '_blank');
-      newElem.innerHTML = `
-        <img src="${item.image}" alt="${item.name}" data-name="${item.name}">
+    // const res = JSON.parse(vendorsData);
+    // console.log(res)
+    vendorsData.forEach(item => {
+        console.log(item)
+        const newElem = document.createElement('div');
+        newElem.className = 'partners-item wow animate__bounce';
+        newElem.setAttribute('data-name', item.provider);
+        // newElem.setAttribute('href', 'partner.html');
+        // newElem.setAttribute('target', '_blank');
+        newElem.innerHTML = `
+        <img src="${item.picPath}" alt="${item.provider}" data-name="${item.provider}">
       `;
-      partnersItemsBlock.append(newElem);
-    });
+        partnersItemsBlock.append(newElem);
+      });
+
+    // console.log(vendors)
+
 
 
     /** ЛОВИМ КЛИК ПО КАРТОЧКЕ ПАРТНЕРОВ */
     partnersItemsBlock.addEventListener('click', (e) => {
       if (e.target.tagName === 'IMG' || e.target.classList.contains('partners-item')) {
-        const currentPartner = partnersData.find(item => {
-          return item.name.toLowerCase() === e.target.dataset.name.toLowerCase();
+        const currentPartner = vendorsData.find(item => {
+          return item.provider.toLowerCase() === e.target.dataset.name.toLowerCase();
         });
         if (currentPartner) {
-          localStorage.setItem('whitefortress', JSON.stringify({partner: currentPartner, language: language}));
-          location.href = 'partner.html' + '?partner=' + currentPartner.name;
+          localStorage.setItem('whiteFortress', JSON.stringify({partner: currentPartner}));
+          location.href = 'partner.html' + '?partner=' + currentPartner.provider;
         }
       }
     });
@@ -550,59 +558,65 @@ import {productsData} from "./scripts/products.js";
     const partnerTitle = document.querySelector('.partner-title');
     const partnerText = document.querySelector('.partner-text');
     const partnerLink = document.querySelector('.partner-link');
-    const aboutButton = document.getElementById('about');
-    const solutionsButton = document.getElementById('solutions');
-    const whitefortress = JSON.parse(localStorage.getItem('whitefortress'));
-    const currentPartner = whitefortress.partner;
+    // const aboutButton = document.getElementById('about');
+    // const solutionsButton = document.getElementById('solutions');
+    // const whiteFortress = ;
+    const currentPartner = JSON.parse(localStorage.getItem('whiteFortress')).partner;
 
-    langBlocks.forEach(item => {
-      item.addEventListener('click', (e) => {
-        if (e.target.classList.contains('lang-item-ru')) {
-          ruButtons.forEach(item => {
-            item.classList.add('active');
-            language = 'ru';
-          });
-          enButtons.forEach(item => {
-            item.classList.remove('active');
-          });
-
-        }
-        if (e.target.classList.contains('lang-item-en')) {
-          ruButtons.forEach(item => {
-            item.classList.remove('active')
-          });
-          enButtons.forEach(item => {
-            item.classList.add('active')
-            language = 'en';
-          });
-        }
-        localStorage.setItem('whitefortress', JSON.stringify({partner: currentPartner, language: language}));
-
-        partnerTitle.textContent = language === "ru" ? currentPartner.ru.title : currentPartner.en.title;
-        doSolutions(currentPartner, language);
-      })
-    });
+    // langBlocks.forEach(item => {
+    //   item.addEventListener('click', (e) => {
+    //     if (e.target.classList.contains('lang-item-ru')) {
+    //       ruButtons.forEach(item => {
+    //         item.classList.add('active');
+    //         // language = 'ru';
+    //       });
+    //       enButtons.forEach(item => {
+    //         item.classList.remove('active');
+    //       });
+    //
+    //     }
+    //     if (e.target.classList.contains('lang-item-en')) {
+    //       ruButtons.forEach(item => {
+    //         item.classList.remove('active')
+    //       });
+    //       enButtons.forEach(item => {
+    //         item.classList.add('active')
+    //         language = 'en';
+    //       });
+    //     }
+    //     localStorage.setItem('whitefortress', JSON.stringify({partner: currentPartner, language: language}));
+    //
+    //     partnerTitle.textContent = language === "ru" ? currentPartner.ru.title : currentPartner.en.title;
+    //     doSolutions(currentPartner, language);
+    //   })
+    // });
 
 
     if (currentPartner) {
-      partnerLogo.setAttribute('src', currentPartner.image);
-      partnerTitle.textContent = language === "ru" ? currentPartner.ru.title : currentPartner.en.title;
-      partnerText.innerHTML = language === "ru" ? currentPartner.ru.text : currentPartner.en.text;
-      partnerLink.setAttribute('href', currentPartner.url);
+      partnerLogo.setAttribute('src', currentPartner.picPath);
+      partnerTitle.textContent = currentPartner.provider;
+        currentPartner.descriptions.forEach(elem => {
+          const newElem = document.createElement('p')
+          newElem.insertAdjacentHTML('beforeend', elem)
+          partnerText.append(newElem)
+        })
+
+      // partnerText.innerHTML
+      partnerLink.setAttribute('href', currentPartner.pLink);
     }
 
-    aboutButton.addEventListener('click', () => {
-      partnerText.innerHTML = language === "ru" ? currentPartner.ru.text : currentPartner.en.text;
-      aboutButton.classList.add('active');
-      solutionsButton.classList.remove('active');
-    });
-
-    solutionsButton.addEventListener('click', () => {
-      aboutButton.classList.remove('active');
-      solutionsButton.classList.add('active');
-      partnerText.textContent = '';
-      doSolutions(currentPartner, language);
-    });
+    // aboutButton.addEventListener('click', () => {
+    //   partnerText.innerHTML = language === "ru" ? currentPartner.ru.text : currentPartner.en.text;
+    //   aboutButton.classList.add('active');
+    //   solutionsButton.classList.remove('active');
+    // });
+    //
+    // solutionsButton.addEventListener('click', () => {
+    //   aboutButton.classList.remove('active');
+    //   solutionsButton.classList.add('active');
+    //   partnerText.textContent = '';
+    //   doSolutions(currentPartner, language);
+    // });
 
     function doSolutions(currentPartner, language) {
 
@@ -634,74 +648,75 @@ import {productsData} from "./scripts/products.js";
   if (location.href.includes('conditions.html')) {
     // some code here
   }
-  if (location.href.includes('products.html')) {
-
-    const productsItemsBlock = document.querySelector('.products-items');
-    if (language === 'ru') {
-      for (const key in productsData.ru) {
-
-        if (productsData.ru[`${key}`].length) {
-          productsData.ru[`${key}`].forEach(item => {
-            const newProductsElem = document.createElement('div');
-            newProductsElem.className = 'products-item';
-            newProductsElem.dataset.name = `${Object.keys(item)}`;
-            newProductsElem.textContent = item[Object.keys(item)];
-            productsItemsBlock.append(newProductsElem)
-          });
-        }
-      }
-    }
-
-    const partnerItemsBlock = document.querySelector('.partner-items');
-    productsItemsBlock.addEventListener('click', (e) => {
-      if (e.target.classList.contains('products-item') && !e.target.classList.contains('selected')) {
-        e.target.classList.add('selected');
-        partnersData.forEach(item => {
-          if (item.forExample.includes(e.target.dataset.name)) {
-            if (partnerItemsBlock.children.length) {
-              const currentElemToAddProduct = Array.from(partnerItemsBlock.children).find(elem => {
-                return elem.dataset.name === item.name;
-              });
-              if (currentElemToAddProduct) {
-                currentElemToAddProduct.dataset.product = `${currentElemToAddProduct.dataset.product} ${e.target.dataset.name}`;
-                currentElemToAddProduct.children[1].insertAdjacentHTML('beforeend', `
-<div class="partner-item-info" data-name="${e.target.dataset.name}"><div class="partner-item-service">
-${e.target.innerText}</div>
-<a href="https://gardatech.ru/" class="partner-item-link">
-${language === 'ru' ? 'Подробнее' : 'Details'}
-</a></div>`);
-                goToNewElem(partnerItemsBlock.lastElementChild);
-              } else {
-                createAndAppendNewPartnerElem(e.target, item, partnerItemsBlock);
-                goToNewElem(partnerItemsBlock.lastElementChild);
-              }
-            } else {
-              createAndAppendNewPartnerElem(e.target, item, partnerItemsBlock);
-              goToNewElem(partnerItemsBlock.lastElementChild);
-              partnerItemsBlock.classList.add('fully');
-            }
-          }
-        });
-      } else if (e.target.classList.contains('products-item') && e.target.classList.contains('selected')) {
-        e.target.classList.remove('selected');
-        if (partnerItemsBlock.children.length) {
-          Array.from(partnerItemsBlock.children).forEach(elem => {
-            for (let i = 1; i < elem.children[1].children.length; i++) {
-              if (elem.children[1].children[i].dataset.name === e.target.dataset.name) {
-                elem.children[1].children[i].remove();
-                if (elem.children[1].children.length < 2) {
-                  elem.remove();
-                }
-                if (!partnerItemsBlock.children.length) {
-                  partnerItemsBlock.classList.remove('fully');
-                }
-              }
-            }
-          });
-        }
-      }
-    });
-  }
+//   if (location.href.includes('products.html')) {
+//
+//     const productsItemsBlock = document.querySelector('.products-items');
+//     if (language === 'ru') {
+//       for (const key in productsData.ru) {
+//
+//         if (productsData.ru[`${key}`].length) {
+//           productsData.ru[`${key}`].forEach(item => {
+//             const newProductsElem = document.createElement('div');
+//             newProductsElem.className = 'products-item';
+//             newProductsElem.dataset.name = `${Object.keys(item)}`;
+//             newProductsElem.textContent = item[Object.keys(item)];
+//             productsItemsBlock.append(newProductsElem)
+//           });
+//         }
+//       }
+//     }
+//
+//     const partnerItemsBlock = document.querySelector('.partner-items');
+//     productsItemsBlock.addEventListener('click', (e) => {
+//       if (e.target.classList.contains('products-item') && !e.target.classList.contains('selected')) {
+//         e.target.classList.add('selected');
+//         partnersData.forEach(item => {
+//           if (item.forExample.includes(e.target.dataset.name)) {
+//             if (partnerItemsBlock.children.length) {
+//               const currentElemToAddProduct = Array.from(partnerItemsBlock.children).find(elem => {
+//                 return elem.dataset.name === item.name;
+//               });
+//               if (currentElemToAddProduct) {
+//                 currentElemToAddProduct.dataset.product = `${currentElemToAddProduct.dataset.product} ${e.target.dataset.name}`;
+//                 currentElemToAddProduct.children[1].insertAdjacentHTML('beforeend', `
+// <div class="partner-item-info" data-name="${e.target.dataset.name}"><div class="partner-item-service">
+// ${e.target.innerText}</div>
+// <a href="https://gardatech.ru/" class="partner-item-link">
+// ${language === 'ru' ? 'Подробнее' : 'Details'}
+// </a></div>`);
+//                 goToNewElem(partnerItemsBlock.lastElementChild);
+//               } else {
+//                 createAndAppendNewPartnerElem(e.target, item, partnerItemsBlock);
+//                 goToNewElem(partnerItemsBlock.lastElementChild);
+//               }
+//             } else {
+//               createAndAppendNewPartnerElem(e.target, item, partnerItemsBlock);
+//               goToNewElem(partnerItemsBlock.lastElementChild);
+//               partnerItemsBlock.classList.add('fully');
+//             }
+//           }
+//         });
+//       } else if (e.target.classList.contains('products-item') && e.target.classList.contains('selected')) {
+//         e.target.classList.remove('selected');
+//         if (partnerItemsBlock.children.length) {
+//           Array.from(partnerItemsBlock.children).forEach(elem => {
+//             for (let i = 1; i < elem.children[1].children.length; i++) {
+//               if (elem.children[1].children[i].dataset.name === e.target.dataset.name) {
+//                 elem.children[1].children[i].remove();
+//                 if (elem.children[1].children.length < 2) {
+//                   elem.remove();
+//                 }
+//                 if (!partnerItemsBlock.children.length) {
+//                   partnerItemsBlock.classList.remove('fully');
+//                   productsItemsBlock.scrollIntoView({block: "start", behavior: "smooth"})
+//                 }
+//               }
+//             }
+//           });
+//         }
+//       }
+//     });
+//   }
 
   function createAndAppendNewPartnerElem(targetElem, data, parentBlock) {
     const newPartnerElem = document.createElement('div');

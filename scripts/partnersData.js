@@ -294,7 +294,7 @@ export const partnersData = [
     },
     en: {
       title: 'Huawei',
-      text: 'A leading global provider of infocommunications solutions, our goal is to enrich people\'s lives through communication. Through customer-focused innovation and an extensive partner network, we have achieved outstanding results in the development of telecommunications networks, terminal solutions, and cloud computing systems. Huawei\'s 180,000 employees worldwide are committed to creating the best possible conditions for operators, enterprises, and end users by providing them with competitive solutions and services. One-third of the world\'s population uses our innovative products, solutions, and services in more than 170 countries and territories. Founded in 1987, Huawei is a privately held company wholly owned by its employees.',
+      text: 'A leading global providers of infocommunications solutions, our goal is to enrich people\'s lives through communication. Through customer-focused innovation and an extensive partner network, we have achieved outstanding results in the development of telecommunications networks, terminal solutions, and cloud computing systems. Huawei\'s 180,000 employees worldwide are committed to creating the best possible conditions for operators, enterprises, and end users by providing them with competitive solutions and services. One-third of the world\'s population uses our innovative products, solutions, and services in more than 170 countries and territories. Founded in 1987, Huawei is a privately held company wholly owned by its employees.',
       solutions: [
         {
           head: 'Garda Enterprise',
@@ -461,7 +461,7 @@ export const partnersData = [
     },
     en: {
       title: 'Red Hat',
-      text: 'A leading global provider of enterprise IT products and services based on open source, reliable and high-performance cloud computing, virtualization, storage, middleware and Linux operating systems. The company also offers award-winning technical support, training and consulting services.',
+      text: 'A leading global providers of enterprise IT products and services based on open source, reliable and high-performance cloud computing, virtualization, storage, middleware and Linux operating systems. The company also offers award-winning technical support, training and consulting services.',
       solutions: [
         {
           head: 'Garda Enterprise',
