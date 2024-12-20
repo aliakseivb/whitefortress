@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="src/styles/swiper.min.css">
   <link href="src/styles/styles.css" rel="stylesheet">
   <link href="src/styles/adapt.css" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/mpopup.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- Magnific Popup core JS file -->
+  <script defer src="scripts/jquery.magnific-popup.min.js"></script>
   <script defer src="scripts/wow.min.js"></script>
   <script defer type="module" src="main.js"></script>
 </head>
@@ -619,8 +624,8 @@
     </div>
   </section>
 
-  <section class="questions" data-name="questionsLink">
-    <div class="container questions-container" id="questions">
+  <section class="questions">
+    <div class="container questions-container" data-name="questionsLink"  id="questions">
       <h2 class="questions-title questionsTitle">Мы открыты к обсуждению<br>вашего вопроса</h2>
       <p class="questionsSubTitle">Оставьте заявку на консультацию<br>и мы перезвоним вам в ближайшее время</p>
       <div class="questions-block wow animate__fadeInUpBig">
@@ -776,6 +781,8 @@
     </div>
   </div>
 </div>
+
+
 <script type="module">
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
