@@ -1,5 +1,6 @@
-import {partnersData} from "./scripts/partnersData.js";
+// import {partnersData} from "./scripts/partnersData.js";
 import vendorsData from "./src/data/vendors.js";
+import certificates from "./src/data/certificates.js";
 
 // import {languageData} from "./scripts/languageData.js";
 // import {productsData} from "./scripts/products.js";
@@ -412,7 +413,6 @@ import vendorsData from "./src/data/vendors.js";
     // const res = JSON.parse(vendorsData);
     // console.log(res)
     vendorsData.forEach(item => {
-        console.log(item)
         const newElem = document.createElement('div');
         newElem.className = 'partners-item wow animate__bounce';
         newElem.setAttribute('data-name', item.provider);
@@ -551,6 +551,14 @@ import vendorsData from "./src/data/vendors.js";
       successPopup.classList.remove('show');
       body.classList.remove('hidden');
     });
+
+    function makeCertificateSlider(certificates){
+      const swiperWrapper = document.getElementById('swiperWrapper');
+      certificates.forEach(item => {
+        swiperWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide"><div class="swiper-slide-image" style="background-image:  url('${item}'); background-size: cover;background-position: center; background-repeat: no-repeat"></div></div>`)
+      })
+    }
+    makeCertificateSlider(certificates)
   }
 
   if (location.href.includes('partner.html')) {
@@ -618,29 +626,31 @@ import vendorsData from "./src/data/vendors.js";
     //   doSolutions(currentPartner, language);
     // });
 
-    function doSolutions(currentPartner, language) {
-
-      if (aboutButton.classList.contains('active')) {
-        partnerText.innerHTML = language === "ru" ? currentPartner.ru.text : currentPartner.en.text;
-      }
-      if (solutionsButton.classList.contains('active')) {
-        partnerText.innerHTML = '';
-        currentPartner[language].solutions.forEach(item => {
-          const newElem = document.createElement('div');
-          newElem.className = 'partner-text-item';
-          const newElemHead = document.createElement('div');
-          newElemHead.className = 'partner-text-item-head';
-          newElemHead.textContent = item.head;
-          const newElemDesc = document.createElement('div');
-          newElemDesc.className = 'partner-text-item-desc';
-          newElemDesc.textContent = item.desc;
-          newElem.append(newElemHead);
-          newElem.append(newElemDesc);
-          partnerText.append(newElem);
-        });
-      }
-    }
+    // function doSolutions(currentPartner, language) {
+    //
+    //   if (aboutButton.classList.contains('active')) {
+    //     partnerText.innerHTML = language === "ru" ? currentPartner.ru.text : currentPartner.en.text;
+    //   }
+    //   if (solutionsButton.classList.contains('active')) {
+    //     partnerText.innerHTML = '';
+    //     currentPartner[language].solutions.forEach(item => {
+    //       const newElem = document.createElement('div');
+    //       newElem.className = 'partner-text-item';
+    //       const newElemHead = document.createElement('div');
+    //       newElemHead.className = 'partner-text-item-head';
+    //       newElemHead.textContent = item.head;
+    //       const newElemDesc = document.createElement('div');
+    //       newElemDesc.className = 'partner-text-item-desc';
+    //       newElemDesc.textContent = item.desc;
+    //       newElem.append(newElemHead);
+    //       newElem.append(newElemDesc);
+    //       partnerText.append(newElem);
+    //     });
+    //   }
+    // }
   }
+
+
 
   if (location.href.includes('privacy.html')) {
     // some code here
