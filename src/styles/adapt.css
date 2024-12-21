@@ -1,9 +1,3 @@
-@media screen and (max-width: 1440px) {
-  .products-item {
-    font-size: 16px;
-  }
-}
-
 @media screen and (max-width: 1300px) {
   .nav {
     margin-right: 5%;
@@ -72,13 +66,6 @@
 }
 
 @media screen and (max-width: 1100px) {
-  .header-container .menu {
-    /* display: grid; */
-    /* grid-template-columns: 1fr; */
-    /* row-gap: 5px; */
-    /* grid-template-rows: 1fr 1fr; */
-  }
-
   .header-container .menu .nav {
     grid-column: 1;
     display: flex;
@@ -86,14 +73,8 @@
     margin-right: unset;
   }
 
-  .nav-link,
-  .lang {
+  .nav-link {
     font-size: 17px;
-  }
-
-  .menu-add {
-    grid-row: 2;
-    justify-content: end;
   }
 
   .intro-container,
@@ -146,11 +127,6 @@
 
   .partners-items {
     grid-template-columns: repeat(4, minmax(10%, 25%));
-  }
-
-  .partners-slider-item-text,
-  .partners-slider-item-name {
-    font-size: 19px;
   }
 
   .what-we {
@@ -271,7 +247,6 @@
 
   .header.scroll .logo-small {
     display: none;
-
   }
 
   .header.scroll .header-logo,
@@ -283,19 +258,9 @@
     row-gap: 15px;
   }
 
-  .menu-add {
-    justify-content: center;
-  }
-
-  .menu-add .soc-link {
-    width: 25px;
-    height: 25px;
-  }
-
   .intro-container {
     grid-template-columns: 55% 1fr;
   }
-
 
   .intro-title {
     letter-spacing: 1px;
@@ -394,7 +359,7 @@
   }
 
   .products-start-block {
-    background-image: url("../../images/products-bg-small.png");
+    background-image: url("../images/products-bg-small.png");
   }
 }
 
@@ -404,28 +369,6 @@
     font-size: 26px;
     letter-spacing: 0;
   }
-
-  .partners-slider-items {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .partners-slider-item {
-    max-width: 40%;
-    border: 1px solid #f5ac70;
-    padding: 20px 20px;
-    margin: 0 auto;
-  }
-
-  .partners-slider-item-text,
-  .partners-slider-item-name {
-    font-size: 22px;
-  }
-
-  /*.products-filter-button {*/
-  /*  font-size: 16px;*/
-  /*}*/
 
   .partners-items {
     grid-template-columns: repeat(3, minmax(10%, 30%));
@@ -487,12 +430,6 @@
     font-size: 28px;
   }
 
-  .certificate-button-prev, .certificate-button-next {
-    width: 20px;
-    height: 40px;
-    top: calc(50% - 20px);
-  }
-
   .questions-container p {
     font-size: 20px;
   }
@@ -507,8 +444,7 @@
   }
 
   .nav-title,
-  .contacts-title,
-  .social-title {
+  .contacts-title{
     font-size: 22px;
   }
 
@@ -566,27 +502,6 @@
   .rule-container p {
     font-size: 18px;
     margin-bottom: 10px;
-  }
-
-  .partner-item {
-    grid-template-columns: 15% 1fr;
-    column-gap: 15px;
-  }
-
-  .partner-item-name {
-    font-size: 16px;
-  }
-
-  .partner-item-link {
-    font-size: 14px;
-  }
-
-  .partner-item-info {
-    gap: 15px;
-  }
-
-  .partner-item-service {
-    font-size: 14px;
   }
 }
 
@@ -747,14 +662,6 @@
     margin-bottom: 30px;
   }
 
-  .partners-slider {
-    margin-bottom: 60px;
-  }
-
-  .partners-slider-item {
-    max-width: 50%;
-  }
-
   .what-doing {
     margin-bottom: 30px;
   }
@@ -797,24 +704,14 @@
     min-width: unset;
   }
 
-  .partner-link,
-  .go-back {
+  .partner-link {
     font-size: 14px;
     letter-spacing: unset;
-  }
-
-  .partner-menu-item {
-    font-size: 14px;
   }
 
   .partner-text {
     font-size: 16px;
     line-height: 110%;
-  }
-
-  .footer .soc-link {
-    width: 20px;
-    height: 20px;
   }
 
   .partner-body {
@@ -946,22 +843,6 @@
   .rule-container p {
     font-size: 14px;
   }
-
-  .partner-item {
-    grid-template-columns: 20% 1fr;
-  }
-
-  .partner-item-name {
-    font-size: 14px;
-  }
-
-  .partner-item-link {
-    font-size: 12px;
-  }
-
-  .partner-item-service {
-    font-size: 12px;
-  }
 }
 
 @media screen and (max-width: 500px) {
@@ -1040,14 +921,6 @@
 
   .slogan-big {
     font-size: 24px;
-  }
-
-  .partners-slider {
-    margin-bottom: 30px;
-  }
-
-  .partners-slider-item {
-    max-width: 70%;
   }
 
   .partners-items {
@@ -1196,22 +1069,12 @@
     font-size: 20px;
   }
 
-  .partners-slider-item-text,
-  .partners-slider-item-name {
-    font-size: 16px;
-  }
-
   .partners-items {
     justify-content: space-evenly;
     padding: 30px 30px;
     column-gap: 30px;
     row-gap: 30px;
   }
-
-  /*.products-filter-button {*/
-  /*  margin: 0 auto 10px;*/
-  /*  width: 100%;*/
-  /*}*/
 
   .partners-title,
   .what-we-title,
@@ -1271,12 +1134,6 @@
     text-align: center;
   }
 
-  .certificate-button-prev, .certificate-button-next {
-    width: 10px;
-    height: 20px;
-    top: calc(50% - 10px);
-  }
-
   .questions-container p {
     font-size: 14px;
   }
@@ -1322,7 +1179,7 @@
     max-width: 130px;
   }
 
-  .nav-title, .contacts-title, .social-title {
+  .nav-title, .contacts-title {
     font-size: 18px;
   }
 
@@ -1367,11 +1224,6 @@
     font-size: 17px;
   }
 
-  .partner-menu-item {
-    font-size: 12px;
-    padding: 9px 9px;
-  }
-
   .partner-link,
   .go-back {
     font-size: 12px;
@@ -1382,54 +1234,11 @@
     font-size: 14px;
   }
 
-  .partner-text-item-desc {
-    font-size: 12px;
-  }
-
   .products-items {
     padding: 10px 10px;
     grid-template-columns: 1fr;
     row-gap: 5px;
     margin-bottom: 20px;
-  }
-
-  .partner-items {
-    padding: 10px 10px;
-    row-gap: 10px;
-  }
-
-  .partner-item {
-    grid-template-columns: 1fr;
-  }
-
-  .partner-item-image img {
-    width: 30%;
-  }
-
-  .partner-item-body {
-    border-left: none;
-  }
-
-  .partner-item-head {
-    padding: 10px 0 5px;
-    gap: 15px;
-  }
-
-  .partner-item-name {
-    font-size: 14px;
-  }
-
-  .partner-item-info {
-    padding: 5px 0;
-    gap: 15px;
-  }
-
-  .partner-item-link {
-    font-size: 12px;
-  }
-
-  .partner-item-service {
-    font-size: 12px;
   }
 }
 
