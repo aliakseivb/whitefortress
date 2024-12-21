@@ -1297,7 +1297,7 @@ h3 {
 }
 
 .form-input.error {
-  background: #f5ac70;
+  border: 1px solid #f5ac70;
 }
 
 textarea {

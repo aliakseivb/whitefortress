@@ -488,12 +488,28 @@ import certificates from "./src/data/certificates.js";
         const that = this;
         fields.forEach(item => {
           item.element = document.getElementById(item.id);
-          item.element.onchange = function () {
+          item.element.oninput = function () {
             that.validateField.call(that, item, this);
           }
+          item.element.addEventListener('blur', ()=> {
+            if(!item.element.value){
+              if (!item.element.parentElement.children[1]) {
+                item.element.insertAdjacentHTML('afterend', '<div class="input-error">Обязательное поле</div>');
+              }
+            }
+          })
         });
         agreeElement.onchange = function () {
           that.validateForm();
+          fields.forEach(item => {
+              if(!item.valid){
+                const elem = document.getElementById(item.id)
+                elem.classList.add('error');
+                if (!elem.parentElement.children[1]) {
+                  elem.insertAdjacentHTML('afterend', '<div class="input-error">Обязательное поле</div>');
+                }
+              }
+            })
         }
         formButton.onclick = function () {
           that.processForm()
@@ -502,7 +518,7 @@ import certificates from "./src/data/certificates.js";
 
       validateField(field, element) {
         if (!element.value || !element.value.match(field.regex)) {
-          element.classList.add('error');
+          // element.classList.add('error');
           if (!element.parentElement.children[1]) {
             element.insertAdjacentHTML('afterend', '<div class="input-error">Обязательное поле</div>');
           }
@@ -632,10 +648,11 @@ import certificates from "./src/data/certificates.js";
     const slider = document.querySelector('.swiper');
     slider.addEventListener('click', (e) => {
       const tmp = e.target.getAttribute('style').split(';')[0].split("url('.")[1]
-      const elemToPopup = tmp.slice(0,tmp.length-2)
+      const urlOfElemToPopup = tmp.slice(0,tmp.length-2)
+      console.log(urlOfElemToPopup)
       $.magnificPopup.open({
         items: {
-          src: `${elemToPopup}`
+          src: `.${urlOfElemToPopup}`
         },
         type: 'image'
       });
