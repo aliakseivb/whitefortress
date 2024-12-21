@@ -443,7 +443,9 @@ import certificates from "./src/data/certificates.js";
 
 
     /** РАБОТАЕМ С ФОРМОЙ ОТПРАВКИ */
-    const formInputs = document.querySelectorAll('.form-input');
+    const formBlock = document.querySelector('.form-block')
+    const form = document.getElementById('form');
+    // const formInputs = document.querySelectorAll('.form-input');
     const agreeElement = document.getElementById('agree');
     const formButton = document.querySelector('.form-button');
     const successPopupButton = document.querySelector('.success-popup-button');
@@ -462,7 +464,7 @@ import certificates from "./src/data/certificates.js";
         name: 'phone',
         id: 'phone',
         element: null,
-        regex: /^(?:[0-9]+-?){7,}/s,
+        regex: /^\+(?:[0-9]+-?){12,}/s,
         valid: false,
       },
       {
@@ -529,23 +531,65 @@ import certificates from "./src/data/certificates.js";
 
       processForm() {
         if (this.validateForm()) {
-          successPopupOverlay.classList.add('show');
-          successPopup.classList.add('show');
-          body.classList.add('hidden');
-          fields.forEach(item => {
-            item.valid = false;
-          })
-          Array.from(formInputs).forEach(elem => {
-            elem.value = '';
-          });
-          agreeElement.checked = false;
-          formButton.setAttribute('disabled', 'disabled');
+          form.addEventListener('submit', formSend);
+
+          // Array.from(formInputs).forEach(elem => {
+          //   elem.value = '';
+          // });
+          // agreeElement.checked = false;
+          // formButton.setAttribute('disabled', 'disabled');
+          // successPopupOverlay.classList.add('show');
+          // successPopup.classList.add('show');
+          // body.classList.add('hidden');
         }
       }
     }
 
     new Form();
 
+    async function formSend(e){
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      const loader = document.querySelector('.loader');
+      loader.classList.add('show');
+      formBlock.classList.add('sending');
+      fields.forEach(item => {
+        item.valid = false;
+      })
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+          .then(async (response) => {
+            // let json = await response.json();
+            if (response.status === 200) {
+              loader.classList.remove('show');
+              formBlock.classList.remove('sending');
+            } else {
+              console.log(response);
+              // result.innerHTML = json.message;
+            }
+          })
+          .catch(error => {
+            console.log(error);
+
+          })
+          .then(function() {
+            agreeElement.checked = false;
+            formButton.setAttribute('disabled', 'disabled');
+            form.reset();
+            successPopupOverlay.classList.add('show');
+            successPopup.classList.add('show');
+            body.classList.add('hidden');
+          });
+    }
     successPopupButton.addEventListener('click', () => {
       successPopupOverlay.classList.remove('show');
       successPopup.classList.remove('show');
@@ -566,7 +610,7 @@ import certificates from "./src/data/certificates.js";
     $('.swiper-slide-image').magnificPopup({
       type: 'image',
       mainClass: 'mfp-with-zoom', // this class is for CSS animation below
-      removalDelay: 300,
+      // removalDelay: 300,
       zoom: {
         enabled: true, // By default it's false, so don't forget to enable it
 
@@ -589,7 +633,6 @@ import certificates from "./src/data/certificates.js";
     slider.addEventListener('click', (e) => {
       const tmp = e.target.getAttribute('style').split(';')[0].split("url('.")[1]
       const elemToPopup = tmp.slice(0,tmp.length-2)
-
       $.magnificPopup.open({
         items: {
           src: `${elemToPopup}`
@@ -768,25 +811,25 @@ import certificates from "./src/data/certificates.js";
 //     });
 //   }
 
-  function createAndAppendNewPartnerElem(targetElem, data, parentBlock) {
-    const newPartnerElem = document.createElement('div');
-    newPartnerElem.className = 'partner-item';
-    newPartnerElem.dataset.product = targetElem.dataset.name;
-    newPartnerElem.dataset.name = data.name;
-    newPartnerElem.innerHTML = `<div class="partner-item-image"><img src="${data.image}" alt="partner"></div>
-<div class="partner-item-body"><div class="partner-item-head"><div class="partner-item-name">
-${language === 'ru' ? data.ru.title : data.en.title}</div><a href="${data.url}" class="partner-item-link">
-${language === 'ru' ? 'К партнеру' : 'To partner'}</a></div><div class="partner-item-info" data-name="${targetElem.dataset.name}">
-<div class="partner-item-service">${targetElem.innerText}</div><a href="https://gardatech.ru/" class="partner-item-link">
-${language === 'ru' ? 'Подробнее' : 'Details'}</a></div></div>`
-    parentBlock.append(newPartnerElem);
-    goToNewElem(parentBlock.lastElementChild);
-  }
+//   function createAndAppendNewPartnerElem(targetElem, data, parentBlock) {
+//     const newPartnerElem = document.createElement('div');
+//     newPartnerElem.className = 'partner-item';
+//     newPartnerElem.dataset.product = targetElem.dataset.name;
+//     newPartnerElem.dataset.name = data.name;
+//     newPartnerElem.innerHTML = `<div class="partner-item-image"><img src="${data.image}" alt="partner"></div>
+// <div class="partner-item-body"><div class="partner-item-head"><div class="partner-item-name">
+// ${language === 'ru' ? data.ru.title : data.en.title}</div><a href="${data.url}" class="partner-item-link">
+// ${language === 'ru' ? 'К партнеру' : 'To partner'}</a></div><div class="partner-item-info" data-name="${targetElem.dataset.name}">
+// <div class="partner-item-service">${targetElem.innerText}</div><a href="https://gardatech.ru/" class="partner-item-link">
+// ${language === 'ru' ? 'Подробнее' : 'Details'}</a></div></div>`
+//     parentBlock.append(newPartnerElem);
+//     goToNewElem(parentBlock.lastElementChild);
+//   }
 
-  function goToNewElem(elem) {
-    setTimeout(() => {
-      elem.scrollIntoView({block: "center", behavior: "smooth"});
-    }, 100);
-  }
+  // function goToNewElem(elem) {
+  //   setTimeout(() => {
+  //     elem.scrollIntoView({block: "center", behavior: "smooth"});
+  //   }, 100);
+  // }
 })();
 

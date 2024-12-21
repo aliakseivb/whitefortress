@@ -641,16 +641,17 @@
           </a>
         </div>
         <div class="form-block">
-          <form action="thanks.html" method="post" enctype="multipart/form-data">
+          <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" id="form">
+            <input type="hidden" name="access_key" value="eed9ccfa-af2d-4bbc-ad92-20dbe34fd3ea">
             <div class="form-inputs">
               <div class="form-input-block">
                 <input type="text" class="form-input" name="name" id="name" placeholder="Введите имя" required>
               </div>
               <div class="form-input-block">
-                <input type="text" class="form-input" name="name" id="phone" placeholder="Введите телефон" required>
+                <input type="text" class="form-input" name="phone" id="phone" placeholder="+375291234567" required>
               </div>
               <div class="form-input-block">
-                <input type="email" class="form-input" name="name" id="email" placeholder="Введите почту" required>
+                <input type="email" class="form-input" name="email" id="email" placeholder="Введите почту" required>
               </div>
               <div class="form-input-block">
                 <textarea class="form-input" name="message" id="message" placeholder="Введите сообщение..."></textarea>
@@ -665,10 +666,12 @@
               </div>
             </div>
             <div class="form-action">
-              <button type="button" class="button form-button formButton" disabled>Отправить</button>
+              <button type="submit" class="button form-button formButton" disabled>Отправить</button>
             </div>
           </form>
+          <div class="loader"></div>
         </div>
+
       </div>
     </div>
   </section>
@@ -771,7 +774,7 @@
   <div class="success-popup-overlay"></div>
   <div class="success-popup-body">
     <div class="success-popup-title successPopupTitle">
-      Вопрос успешно отправлен
+      Сообщение успешно отправлено
     </div>
     <div class="success-popup-text successPopupText">
       Мы скоро свяжемся с Вами...
