@@ -52,13 +52,12 @@ import certificates from "./src/data/certificates.js";
     navbar.classList.toggle('show');
     if (navbar.classList.contains('show')) {
       navbar.style.right = `calc(50% - ${container.clientWidth / 2}px)`;
+      body.classList.add('hidden');
+      bodyOverlay.classList.add('open');
     } else {
       navbar.removeAttribute('style');
-    }
-
-    if (window.innerWidth <= 650) {
-      body.classList.toggle('hidden');
-      bodyOverlay.classList.toggle('open');
+      body.classList.remove('hidden');
+      bodyOverlay.classList.remove('open');
     }
   });
 
@@ -102,6 +101,7 @@ import certificates from "./src/data/certificates.js";
   const rights = document.getElementById('rights');
   rights.innerText = `© 2010-${new Date().getFullYear()} "Белая крепость". Все права защищены`;
 
+  /** ИНИЦИАЛИЗАЦИЯ ЭФФЕКТОВ **/
   if (location.href.includes('index.html')) {
     new WOW({
       animateClass: 'animate__animated',
@@ -160,7 +160,7 @@ import certificates from "./src/data/certificates.js";
       const newElem = document.createElement('div');
       newElem.className = 'partners-item wow animate__bounce';
       newElem.setAttribute('data-name', item.provider);
-      newElem.innerHTML = `<img src="./src/images/providers/${item.image}" alt="${item.provider}" data-name="${item.provider}">`;
+      newElem.innerHTML = `<img src="./src/data/vendorsImages/${item.image}" alt="${item.provider}" data-name="${item.provider}">`;
       partnersItemsBlock.append(newElem);
     });
 
@@ -176,7 +176,6 @@ import certificates from "./src/data/certificates.js";
         }
       }
     });
-
 
     /** РАБОТАЕМ С ФОРМОЙ ОТПРАВКИ */
     const formBlock = document.querySelector('.form-block')
@@ -344,7 +343,7 @@ import certificates from "./src/data/certificates.js";
     function makeCertificateSlider(certificates) {
       const swiperWrapper = document.getElementById('swiperWrapper');
       certificates.forEach(item => {
-        swiperWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide"><div class="swiper-slide-image" style="background-image: url('./src/images/certificates/${item}'); background-size: cover;background-position: center; background-repeat: no-repeat"></div></div>`)
+        swiperWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide"><div class="swiper-slide-image" style="background-image: url('./src/data/certificatesImages/${item}'); background-size: cover;background-position: center; background-repeat: no-repeat"></div></div>`)
       })
     }
 
@@ -353,7 +352,6 @@ import certificates from "./src/data/certificates.js";
     /** ЛОВИМ КЛИК ПО СЛАЙДУ ДЛЯ ОТКРЫТИЯ ПОПАПА */
     $('.swiper-slide-image').magnificPopup({
       type: 'image',
-      // mainClass: 'mfp-with-zoom',
     });
 
     const slider = document.querySelector('.swiper');
@@ -377,7 +375,7 @@ import certificates from "./src/data/certificates.js";
     const currentPartner = JSON.parse(localStorage.getItem('whiteFortress')).partner;
 
     if (currentPartner) {
-      partnerLogo.setAttribute('src', `../images/providers/${currentPartner.image}`);
+      partnerLogo.setAttribute('src', `../data/vendorsImages/${currentPartner.image}`);
       partnerTitle.textContent = currentPartner.provider;
       currentPartner.descriptions.forEach(elem => {
         const newElem = document.createElement('p')

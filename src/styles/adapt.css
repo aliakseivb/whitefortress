@@ -359,7 +359,7 @@
   }
 
   .products-start-block {
-    background-image: url("../images/products-bg-small.png");
+    background-image: url("../images/unused/products-bg-small.png");
   }
 }
 
@@ -432,6 +432,9 @@
 
   .questions-container p {
     font-size: 20px;
+  }
+  .questions-block {
+    width: 100%;
   }
 
   .footer-top {
@@ -680,7 +683,7 @@
   }
 
   .questions-block {
-    width: 70%;
+    width: 90%;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
