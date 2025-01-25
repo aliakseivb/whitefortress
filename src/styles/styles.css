@@ -1257,6 +1257,7 @@ textarea {
   font-size: 26px;
   letter-spacing: 1px;
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .success-popup-action {

@@ -198,7 +198,7 @@ import certificates from "./src/data/certificates.js";
         name: 'phone',
         id: 'phone',
         element: null,
-        regex: /^\+(?:[0-9]+-?){12,}/s,
+        regex: /^(?:[0-9]+-?){11,}$/s,
         valid: false,
       },
       {
@@ -309,29 +309,32 @@ import certificates from "./src/data/certificates.js";
         body: json
       })
           .then(async (response) => {
-            // let json = await response.json();
             if (response.status === 200) {
               loader.classList.remove('show');
               formBlock.classList.remove('sending');
+              agreeElement.checked = false;
+              formButton.setAttribute('disabled', 'disabled');
+              form.reset();
+              successPopupOverlay.classList.add('show');
+              successPopup.classList.add('show');
+              body.classList.add('hidden');
             } else {
-              console.log(response);
-              // result.innerHTML = json.message;
             }
           })
           .catch(error => {
             console.log(error);
-
-          })
-          .then(function () {
-            agreeElement.checked = false;
-            formButton.setAttribute('disabled', 'disabled');
-            form.reset();
+            loader.classList.remove('show');
+            formBlock.classList.remove('sending');
             successPopupOverlay.classList.add('show');
             successPopup.classList.add('show');
+            fields.forEach(item => {
+              item.valid = true;
+            })
+            document.querySelector('.successPopupTitle').innerHTML = 'Во время отправки возникла ошибка';
+            document.querySelector('.successPopupText').innerHTML = 'Повторите отправку или позвоните нам по телефонам, указанным на сайте'
             body.classList.add('hidden');
-          });
+          })
     }
-
     successPopupButton.addEventListener('click', () => {
       successPopupOverlay.classList.remove('show');
       successPopup.classList.remove('show');
