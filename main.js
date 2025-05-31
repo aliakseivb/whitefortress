@@ -252,7 +252,6 @@ import certificates from "./src/data/certificates.js";
 
       validateField(field, element) {
         if (!element.value || !element.value.match(field.regex)) {
-          // element.classList.add('error');
           if (!element.parentElement.children[1]) {
             element.insertAdjacentHTML('afterend', '<div class="input-error">Обязательное поле</div>');
           }
@@ -346,7 +345,8 @@ import certificates from "./src/data/certificates.js";
     function makeCertificateSlider(certificates) {
       const swiperWrapper = document.getElementById('swiperWrapper');
       certificates.forEach(item => {
-        swiperWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide"><div class="swiper-slide-image" style="background-image: url('./src/data/certificatesImages/${item}'); background-size: cover;background-position: center; background-repeat: no-repeat"></div></div>`)
+        swiperWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide">
+<div class="swiper-slide-image" style="background-image: url('./src/data/certificatesImages/${item}'); background-size: cover;background-position: center; background-repeat: no-repeat"></div></div>`)
       })
     }
 
