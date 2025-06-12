@@ -1,0 +1,33 @@
+{
+  "name": "whitefortress",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "http-server ./dist",
+    "build": "webpack",
+    "dev": "webpack serve --open"
+  },
+  "keywords": [],
+  "author": "aliakseivb",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "html-webpack-plugin": "^5.5.1",
+    "http-server": "^14.1.1",
+    "webpack": "^5.85.1",
+    "webpack-cli": "^5.1.3",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliakseivb/whitefortress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aliakseivb/whitefortress/issues"
+  },
+  "homepage": "https://github.com/aliakseivb/whitefortress#readme",
+  "description": "",
+  "dependencies": {
+    "webpack": "^5.99.9"
+  }
+}

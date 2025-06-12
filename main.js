@@ -1,8 +1,8 @@
 import vendorsData from "./src/data/vendors.js";
 import certificates from "./src/data/certificates.js";
 
-
 (() => {
+
   const body = document.querySelector('body');
   const header = document.querySelector('header');
   const bodyOverlay = document.querySelector('.body-overlay');
@@ -13,6 +13,7 @@ import certificates from "./src/data/certificates.js";
   const burger = document.querySelector('#burger');
   const logoScroll = document.querySelector('.logo-scroll');
   const container = document.querySelector('.container');
+  const partnerInfo = document.querySelector('.partner-info');
 
   window.onresize = () => {
     navbar.classList.remove('show');
@@ -83,9 +84,11 @@ import certificates from "./src/data/certificates.js";
   });
 
   document.addEventListener('click', (e) => {
-    if (e.target === bodyOverlay || e.target.classList.contains('logo') || (!e.composedPath().includes(navbar) && navbar.classList.contains('show'))
+    if (e.target === bodyOverlay || e.target.classList.contains('logo')
+        || (!e.composedPath().includes(navbar) && navbar.classList.contains('show'))
         && !e.composedPath().includes(logoScroll) && !e.composedPath().includes(burger)) {
       closeNavbar();
+      closePartnerInfo();
     }
   });
 
@@ -95,6 +98,12 @@ import certificates from "./src/data/certificates.js";
     bodyOverlay.classList.remove('open');
     navbar.classList.remove('show');
     navbar.style.right = '-100%';
+  }
+
+  function closePartnerInfo() {
+    body.classList.remove('hidden');
+    bodyOverlay.classList.remove('open');
+    partnerInfo.classList.remove('show');
   }
 
   /** АКТУАЛЬНЫЙ ГОД В ФУТЕРЕ **/
@@ -172,7 +181,47 @@ import certificates from "./src/data/certificates.js";
         });
         if (currentPartner) {
           localStorage.setItem('whiteFortress', JSON.stringify({partner: currentPartner}));
-          location.href = 'src/pages/partner.html' + '?partner=' + currentPartner.provider;
+
+          partnerInfo.innerHTML = `
+  <div class="partner-body">
+    <div class="partner-header">
+      <div class="partner-logo">
+        <img src="#" alt="partner-logo" class="partner-logo-image">
+      </div>
+      <div class="partner-title"></div>
+    </div>
+    <div class="partner-description">
+      <div class="partner-menu-block">
+        <a href="#" class="partner-link toPartner" target="_blank">Официальный сайт</a>
+        <a href="javascript:void(0)" class="partner-link go-back goBack">Скрыть</a>
+      </div>
+      <div class="partner-text" data-id="information"></div>
+    </div>
+</div>`
+          const closePartnerInfoButton = document.querySelector('.goBack')
+          const partnerLogo = document.querySelector('.partner-logo-image');
+          const partnerTitle = document.querySelector('.partner-title');
+          const partnerText = document.querySelector('.partner-text');
+          const partnerLink = document.querySelector('.partner-link');
+          const currentPartnerItem = JSON.parse(localStorage.getItem('whiteFortress')).partner;
+
+
+          partnerLogo.setAttribute('src', `./src/data/vendorsImages/${currentPartnerItem.image}`);
+          partnerTitle.textContent = currentPartnerItem.provider;
+          currentPartner.descriptions.forEach(elem => {
+            const newElem = document.createElement('p')
+            newElem.insertAdjacentHTML('beforeend', elem)
+            partnerText.append(newElem)
+          })
+          partnerLink.setAttribute('href', currentPartnerItem.pLink);
+
+          body.classList.add('hidden');
+          bodyOverlay.classList.add('open');
+          partnerInfo.classList.add('show');
+
+          closePartnerInfoButton.addEventListener('click', () => {
+            closePartnerInfo();
+          })
         }
       }
     });
@@ -334,6 +383,7 @@ import certificates from "./src/data/certificates.js";
             body.classList.add('hidden');
           })
     }
+
     successPopupButton.addEventListener('click', () => {
       successPopupOverlay.classList.remove('show');
       successPopup.classList.remove('show');
@@ -353,6 +403,7 @@ import certificates from "./src/data/certificates.js";
     makeCertificateSlider(certificates)
 
     /** ЛОВИМ КЛИК ПО СЛАЙДУ ДЛЯ ОТКРЫТИЯ ПОПАПА */
+
     $('.swiper-slide-image').magnificPopup({
       type: 'image',
     });
@@ -370,24 +421,24 @@ import certificates from "./src/data/certificates.js";
     });
   }
 
-  if (location.href.includes('partner.html')) {
-    const partnerLogo = document.querySelector('.partner-logo-image');
-    const partnerTitle = document.querySelector('.partner-title');
-    const partnerText = document.querySelector('.partner-text');
-    const partnerLink = document.querySelector('.partner-link');
-    const currentPartner = JSON.parse(localStorage.getItem('whiteFortress')).partner;
-
-    if (currentPartner) {
-      partnerLogo.setAttribute('src', `../data/vendorsImages/${currentPartner.image}`);
-      partnerTitle.textContent = currentPartner.provider;
-      currentPartner.descriptions.forEach(elem => {
-        const newElem = document.createElement('p')
-        newElem.insertAdjacentHTML('beforeend', elem)
-        partnerText.append(newElem)
-      })
-      partnerLink.setAttribute('href', currentPartner.pLink);
-    }
-  }
+  // if (location.href.includes('partner.html')) {
+  //   const partnerLogo = document.querySelector('.partner-logo-image');
+  //   const partnerTitle = document.querySelector('.partner-title');
+  //   const partnerText = document.querySelector('.partner-text');
+  //   const partnerLink = document.querySelector('.partner-link');
+  //   const currentPartner = JSON.parse(localStorage.getItem('whiteFortress')).partner;
+  //
+  //   if (currentPartner) {
+  //     partnerLogo.setAttribute('src', `../data/vendorsImages/${currentPartner.image}`);
+  //     partnerTitle.textContent = currentPartner.provider;
+  //     currentPartner.descriptions.forEach(elem => {
+  //       const newElem = document.createElement('p')
+  //       newElem.insertAdjacentHTML('beforeend', elem)
+  //       partnerText.append(newElem)
+  //     })
+  //     partnerLink.setAttribute('href', currentPartner.pLink);
+  //   }
+  // }
 
   if (location.href.includes('privacy.html')) {
     // some code here

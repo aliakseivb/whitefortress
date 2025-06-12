@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="src/styles/adapt.css">
   <link rel="stylesheet" href="src/styles/mpopup.css">
   <!-- jquery JS file -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="src/scripts/jquery.min.js"></script>
   <!-- Magnific Popup core JS file -->
   <script defer src="src/scripts/jquery.magnific-popup.min.js"></script>
   <!-- Effects core JS file -->
@@ -22,7 +22,9 @@
   <!-- core JS file -->
 </head>
 <body class="">
-<div class="body-overlay"></div>
+<div class="body-overlay">
+  <div class="partner-info"></div>
+</div>
 <div class="logo-scroll"></div>
 <div class="navbar">
   <a href="index.html" class="logo header-logo">
@@ -124,6 +126,7 @@
       <h2 class="partners-title partnersTitle">Вендоры</h2>
       <div class="partners-items" id="partnersItems"></div>
     </div>
+
   </section>
 
   <section class="about" id="about" data-name="aboutLink">
@@ -454,7 +457,7 @@
         <div class="services-item wow animate__zoomIn">
           <div class="services-item-head">
             <div class="services-item-image">
-              <img src="src/images/pc_laptop_web.jpg" alt="network">
+              <img src="src/images/pc_laptop_web.jpg" alt="peripherals">
             </div>
             <div class="services-item-desc">
               <div class="services-item-name networks">
@@ -650,9 +653,7 @@
     </div>
   </div>
 </div>
-
-<script type="module" src="main.js"></script>
-<script type="module">
+<script defer type="module">
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
   new Swiper('.certificates-slider', {
@@ -664,7 +665,6 @@
     mousewheel: {
       sensitivity: 1
     },
-    // grabCursor: true,
     touchRatio: 1,
     slidesPerView: 2.5,
     spaceBetween: 5,
